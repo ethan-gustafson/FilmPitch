@@ -1,4 +1,5 @@
-Welcome to FilmPitch!
+# Welcome to FilmPitch!
+
 A Rails CMS application that allows users to CRUD their own film pitches and/or fund other filmmaker's projects.
 
 Installation
