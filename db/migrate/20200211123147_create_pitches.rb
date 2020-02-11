@@ -5,6 +5,7 @@ class CreatePitches < ActiveRecord::Migration[6.0]
       t.string :summary
       t.string :video_link
       t.integer :funding_goal
+      t.belongs_to :user
     end
   end
 end

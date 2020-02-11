@@ -1,5 +1,5 @@
 class Pitch < ActiveRecord::Base
-    has_many :funds, foreign_key: :funded_pitch
-	has_many :pitch_funders, through: :funds, source: :pitch_funder
+    has_many :funds
+	has_many :pitch_funders, through: :funds, source: :user
 	belongs_to :user
 end

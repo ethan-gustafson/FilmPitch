@@ -1,4 +1,4 @@
 class Fund < ActiveRecord::Base
-    belongs_to :pitch_funder, class_name: "User"
-	belongs_to :funded_pitch, class_name: "Pitch"
+    belongs_to :user
+	belongs_to :pitch
 end
