@@ -4,5 +4,10 @@ class User < ActiveRecord::Base
     validates :username, :email, uniqueness: true
     has_many :funds
 	has_many :funded_pitches, through: :funds, source: :pitch
-	has_many :pitches
+    has_many :pitches
+    
+    def transaction(dollars)
+        remaining_balance = self.wallet - dollars 
+    end
+
 end

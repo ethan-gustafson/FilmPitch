@@ -10,11 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_12_023405) do
+ActiveRecord::Schema.define(version: 2020_02_12_112451) do
 
   create_table "funds", force: :cascade do |t|
     t.integer "user_id"
     t.integer "pitch_id"
+    t.integer "amount"
     t.index ["pitch_id"], name: "index_funds_on_pitch_id"
     t.index ["user_id"], name: "index_funds_on_user_id"
   end
@@ -34,6 +35,7 @@ ActiveRecord::Schema.define(version: 2020_02_12_023405) do
     t.string "username"
     t.string "email"
     t.string "password_digest"
+    t.integer "wallet"
   end
 
 end

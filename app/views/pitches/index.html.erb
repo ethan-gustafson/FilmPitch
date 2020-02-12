@@ -2,6 +2,17 @@
 <%= link_to "Profile", user_path(current_user) %>
 <%= link_to "Create a new Pitch", new_user_pitch_path(current_user) %>
 <h1>Pitches:</h1>
+
+<% if current_user.pitches.include?(id: current_user.id) %>
 <% current_user.pitches.each do |pitch| %>
     <h3><%= link_to pitch.title, user_pitch_path(pitch.user, pitch.id) %></h3>
     <% end %>
+
+    <% else %>
+
+    <% @users.each do |user| %>
+        <%user.pitches.each do |pitch| %>
+            <h3><%=link_to pitch.title, pitch_path(pitch) %></h3>
+        <% end %>
+    <% end %>
+<% end %>

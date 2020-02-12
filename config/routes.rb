@@ -5,7 +5,9 @@ Rails.application.routes.draw do
     resources :pitches, only: [:index, :new, :create, :show, :edit, :update, :destroy]
   end
 
-  resources :pitches, only: [:index, :show]
+  resources :pitches, only: [:index, :show] do 
+    resources :funds, only: [:new, :create]
+  end
   
   get '/login', to: 'sessions#new' 
   post '/login', to: 'sessions#create' 
