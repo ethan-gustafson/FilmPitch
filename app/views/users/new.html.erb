@@ -1,5 +1,5 @@
 <div class="form">
-<%= form_for @user do |f| %>
+<%= form_for(@user, url:'/signup') do |f| %>
 
 <% if @user.errors.any? %>
 <div id="error_explanation">
