@@ -1100,3 +1100,119 @@ Processing by UsersController#new as HTML
 Completed 200 OK in 217ms (Views: 184.8ms | ActiveRecord: 0.0ms | Allocations: 2091035)
 
 
+Started GET "/login" for ::1 at 2020-02-11 20:38:23 -0500
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 32.5ms | Allocations: 299924)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 182ms (Views: 143.3ms | ActiveRecord: 0.0ms | Allocations: 1679140)
+
+
+Started POST "/login" for ::1 at 2020-02-11 20:38:30 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"P8KOfaFLZ0RUuPByLDGARZUNYuUmaklbSe6Pu/+p2FSkSZDqsPKsp7+O9Mh0PYo+6yzkLIT/zjMDa2khNbtolg==", "user"=>{"username"=>"Telep@th", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Telep@th"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+Redirected to http://localhost:3000/
+Completed 302 Found in 513ms (ActiveRecord: 16.1ms | Allocations: 2493386)
+
+
+Started GET "/" for ::1 at 2020-02-11 20:38:30 -0500
+Processing by UsersController#home as HTML
+  Rendering users/home.html.erb within layouts/application
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered users/home.html.erb within layouts/application (Duration: 40.6ms | Allocations: 367511)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 185ms (Views: 149.8ms | ActiveRecord: 1.4ms | Allocations: 1680649)
+
+
+Started GET "/" for ::1 at 2020-02-11 20:39:16 -0500
+Processing by UsersController#home as HTML
+  Rendering users/home.html.erb within layouts/application
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  [1m[36mCACHE User Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered users/home.html.erb within layouts/application (Duration: 2548.5ms | Allocations: 23565270)
+Completed 500 Internal Server Error in 2608ms (ActiveRecord: 1.8ms | Allocations: 24160589)
+
+
+  
+ActionView::Template::Error (undefined method `user_path' for #<#<Class:0x00007f8d47741dd8>:0x00007f8d4da6b710>
+Did you mean?  users_path):
+    1: <h1><%= current_user.username%></h1>
+    2: <%= link_to "Profile", user_path(current_user) %>
+    3: <%= link_to "Log Out", logout_path, method: 'delete' %>
+  
+app/views/users/home.html.erb:2
+Started GET "/rails/info/routes" for ::1 at 2020-02-11 20:39:36 -0500
+Processing by Rails::InfoController#routes as HTML
+  Rendering /Users/user/.rvm/gems/ruby-2.6.1/gems/railties-6.0.2.1/lib/rails/templates/rails/info/routes.html.erb within layouts/application
+  Rendered collection of /Users/user/.rvm/gems/ruby-2.6.1/gems/actionpack-6.0.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [25 times] (Duration: 160.1ms | Allocations: 1728546)
+  Rendered /Users/user/.rvm/gems/ruby-2.6.1/gems/actionpack-6.0.2.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (Duration: 17.9ms | Allocations: 135679)
+  Rendered /Users/user/.rvm/gems/ruby-2.6.1/gems/railties-6.0.2.1/lib/rails/templates/rails/info/routes.html.erb within layouts/application (Duration: 308.1ms | Allocations: 3280454)
+Completed 200 OK in 369ms (Views: 334.4ms | ActiveRecord: 0.0ms | Allocations: 3923475)
+
+
+Started GET "/rails/info/routes" for ::1 at 2020-02-11 20:39:45 -0500
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Rails::InfoController#routes as HTML
+  Rendering /Users/user/.rvm/gems/ruby-2.6.1/gems/railties-6.0.2.1/lib/rails/templates/rails/info/routes.html.erb within layouts/application
+  Rendered collection of /Users/user/.rvm/gems/ruby-2.6.1/gems/actionpack-6.0.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [26 times] (Duration: 161.2ms | Allocations: 1751904)
+  Rendered /Users/user/.rvm/gems/ruby-2.6.1/gems/actionpack-6.0.2.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (Duration: 9.8ms | Allocations: 84249)
+  Rendered /Users/user/.rvm/gems/ruby-2.6.1/gems/railties-6.0.2.1/lib/rails/templates/rails/info/routes.html.erb within layouts/application (Duration: 290.6ms | Allocations: 3198794)
+Completed 200 OK in 355ms (Views: 299.4ms | ActiveRecord: 0.0ms | Allocations: 3955530)
+
+
+Started GET "/" for ::1 at 2020-02-11 20:39:49 -0500
+Processing by UsersController#home as HTML
+  Rendering users/home.html.erb within layouts/application
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  [1m[36mCACHE User Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered users/home.html.erb within layouts/application (Duration: 212.2ms | Allocations: 2297320)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 330ms (Views: 297.0ms | ActiveRecord: 8.7ms | Allocations: 3549855)
+
+
+Started GET "/" for ::1 at 2020-02-11 20:39:51 -0500
+Processing by UsersController#home as HTML
+  Rendering users/home.html.erb within layouts/application
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  [1m[36mCACHE User Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered users/home.html.erb within layouts/application (Duration: 37.6ms | Allocations: 436933)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 136ms (Views: 111.6ms | ActiveRecord: 1.5ms | Allocations: 1595102)
+
+
+Started GET "/users/2" for ::1 at 2020-02-11 20:39:53 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered users/show.html.erb within layouts/application (Duration: 20.9ms | Allocations: 228332)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 123ms (Views: 95.9ms | ActiveRecord: 1.2ms | Allocations: 1423934)
+
+
+Started DELETE "/logout" for ::1 at 2020-02-11 20:39:56 -0500
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"hF5+OigCTWwhwL2GuEXf2wOTXVE4Wgj0xeK2XV19e3WhCC1vUOLxNK7kqNXHS5YMQPSyKhiJZhelX9dP8VnYhA=="}
+Redirected to http://localhost:3000/users/new
+Completed 302 Found in 33ms (ActiveRecord: 0.0ms | Allocations: 399729)
+
+
+Started GET "/users/new" for ::1 at 2020-02-11 20:39:56 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 88.8ms | Allocations: 1043485)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 200ms (Views: 168.3ms | ActiveRecord: 0.0ms | Allocations: 2250788)
+
+
