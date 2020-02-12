@@ -812,3 +812,240 @@ Processing by UsersController#new as HTML
 Completed 200 OK in 11ms (Views: 7.2ms | ActiveRecord: 0.3ms | Allocations: 8425)
 
 
+Started GET "/login" for ::1 at 2020-02-11 20:16:28 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.8ms | Allocations: 395)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 12ms (Views: 11.2ms | ActiveRecord: 0.0ms | Allocations: 4639)
+
+
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Telep@th"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "charles@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Started GET "/login" for ::1 at 2020-02-11 20:16:40 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.9ms | Allocations: 387)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 16ms (Views: 15.3ms | ActiveRecord: 0.0ms | Allocations: 4468)
+
+
+Started POST "/login" for ::1 at 2020-02-11 20:16:43 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"zFkfWzQ9uZbRrvPt0mJVLi9ABOyj0I2gJs+yARef/SHpD0wOTN0Fzl6K5r6tbBz5bCfrl4MD40NGctMTu7te0A==", "user"=>{"username"=>"telep@th", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "telep@th"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+Redirected to http://localhost:3000/users/new
+Completed 302 Found in 6ms (ActiveRecord: 0.4ms | Allocations: 3547)
+
+
+Started GET "/users/new" for ::1 at 2020-02-11 20:16:43 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1344)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 6.8ms | ActiveRecord: 0.4ms | Allocations: 8430)
+
+
+Started GET "/login" for ::1 at 2020-02-11 20:18:18 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.7ms | Allocations: 387)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.0ms | Allocations: 4469)
+
+
+Started POST "/login" for ::1 at 2020-02-11 20:18:21 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"dZ/0epagtuF5NL5g/crmRlgZ+g0pTLkywSCZJb4qRdBQyacv7kAKufYQqzOCxK+RG34Vdgmf19Ghnfg3Eg7mIQ==", "user"=>{"username"=>"telep@th", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "telep@th"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+Redirected to http://localhost:3000/users/new
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms | Allocations: 1138)
+
+
+Started GET "/users/new" for ::1 at 2020-02-11 20:18:21 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 1.6ms | Allocations: 1277)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 0.0ms | Allocations: 5377)
+
+
+Started GET "/login" for ::1 at 2020-02-11 20:18:52 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.7ms | Allocations: 395)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 5.8ms | ActiveRecord: 0.0ms | Allocations: 4634)
+
+
+Started POST "/login" for ::1 at 2020-02-11 20:18:55 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"SvGpqgwtZCvVfdoo8C1YEY/rcQrntSuwzXu6OhPLhBVvp/r/dM3Yc1pZz3uPIxHGzIyeccdmRVOtxtsov+8n5A==", "user"=>{"username"=>"telep@th", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "telep@th"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.4ms | Allocations: 4285)
+
+
+  
+NoMethodError (undefined method `pry' for #<Binding:0x00007f8d4d8a3220>
+Did you mean?  try):
+  
+app/controllers/sessions_controller.rb:8:in `create'
+Started POST "/login" for ::1 at 2020-02-11 20:19:09 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"SvGpqgwtZCvVfdoo8C1YEY/rcQrntSuwzXu6OhPLhBVvp/r/dM3Yc1pZz3uPIxHGzIyeccdmRVOtxtsov+8n5A==", "user"=>{"username"=>"telep@th", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "telep@th"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+Completed 500 Internal Server Error in 13040ms (ActiveRecord: 0.4ms | Allocations: 72780)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `create'
+app/controllers/sessions_controller.rb:9:in `create'
+Started POST "/login" for ::1 at 2020-02-11 20:19:27 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"SvGpqgwtZCvVfdoo8C1YEY/rcQrntSuwzXu6OhPLhBVvp/r/dM3Yc1pZz3uPIxHGzIyeccdmRVOtxtsov+8n5A==", "user"=>{"username"=>"telep@th", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "telep@th"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+Completed 500 Internal Server Error in 33252ms (ActiveRecord: 0.7ms | Allocations: 387303)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `create'
+app/controllers/sessions_controller.rb:9:in `create'
+Started GET "/login" for ::1 at 2020-02-11 20:20:04 -0500
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 20.9ms | Allocations: 200862)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 111ms (Views: 92.0ms | ActiveRecord: 0.0ms | Allocations: 1132328)
+
+
+Started POST "/login" for ::1 at 2020-02-11 20:20:10 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"sT6FQPmjrpQFdgLBFje6jEw1C6saSJh63BX1snjl4QyUaNYVgUMSzIpSF5JpOfNbD1Lk0Dqb9pm8qJSg1MFC/Q==", "user"=>{"username"=>"telep@th", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "telep@th"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+Redirected to http://localhost:3000/users/new
+Completed 302 Found in 128ms (ActiveRecord: 7.7ms | Allocations: 1357909)
+
+
+Started GET "/users/new" for ::1 at 2020-02-11 20:20:10 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 65.6ms | Allocations: 745631)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 207ms (Views: 133.3ms | ActiveRecord: 3.5ms | Allocations: 2225716)
+
+
+Started GET "/login" for ::1 at 2020-02-11 20:20:28 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 15.7ms | Allocations: 200854)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 106ms (Views: 85.2ms | ActiveRecord: 0.0ms | Allocations: 1086853)
+
+
+Started POST "/login" for ::1 at 2020-02-11 20:20:37 -0500
+  [1m[35m (5.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"+TYid8V2dbMLLNKQ79mwnOcSyF4fEn93btPGVhTxHVzcYHEivZbJ64QIx8OQ1/lLpHUnJT/BEZQObqdEuNW+rQ==", "user"=>{"username"=>"telep@th", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "telep@th"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+Redirected to http://localhost:3000/users/new
+Completed 302 Found in 146ms (ActiveRecord: 3.9ms | Allocations: 1368597)
+
+
+Started GET "/users/new" for ::1 at 2020-02-11 20:20:39 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 74.5ms | Allocations: 745630)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 235ms (Views: 153.7ms | ActiveRecord: 8.2ms | Allocations: 2225708)
+
+
+Started GET "/login" for ::1 at 2020-02-11 20:20:42 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 20.7ms | Allocations: 200861)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 113ms (Views: 92.2ms | ActiveRecord: 0.0ms | Allocations: 1120183)
+
+
+Started POST "/login" for ::1 at 2020-02-11 20:22:33 -0500
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"Q1YkArmUkaQYFZuoBIMnI20buklsfo22tlytING57I9mAHdXwXQt/Jcxjvt7jW70LnxVMkyt41XW4cwyfZ1Pfg==", "user"=>{"username"=>"telep@th", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "telep@th"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+Redirected to http://localhost:3000/users/new
+Completed 302 Found in 140ms (ActiveRecord: 3.5ms | Allocations: 1368596)
+
+
+Started GET "/users/new" for ::1 at 2020-02-11 20:22:35 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 78.4ms | Allocations: 745630)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 237ms (Views: 156.3ms | ActiveRecord: 7.7ms | Allocations: 2228014)
+
+
+Started GET "/login" for ::1 at 2020-02-11 20:23:29 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 19.6ms | Allocations: 200861)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 111ms (Views: 89.1ms | ActiveRecord: 0.0ms | Allocations: 1120181)
+
+
+Started POST "/login" for ::1 at 2020-02-11 20:23:36 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"Vr9Uv3dY1eYQWeIimjF6BnTZ/Q/aPnLk9F/abyIDPJFz6QfqD7hpvp9993HlPzPRN74SdPrtHAeU4rt9jiefYA==", "user"=>{"username"=>"Telep@th", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Telep@th"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+Redirected to http://localhost:3000/
+Completed 302 Found in 306ms (ActiveRecord: 1.0ms | Allocations: 469380)
+
+
+Started GET "/" for ::1 at 2020-02-11 20:23:36 -0500
+Processing by UsersController#home as HTML
+  Rendering users/home.html.erb within layouts/application
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered users/home.html.erb within layouts/application (Duration: 29.8ms | Allocations: 283927)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 122ms (Views: 97.8ms | ActiveRecord: 1.2ms | Allocations: 1205027)
+
+
+Started DELETE "/logout" for ::1 at 2020-02-11 20:23:44 -0500
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"1AFvIAu15VG0y9tXXughIdwQuedR0BQZWAWh5ZEcR5TxVzx1c1VZCTvvzgQh5mj2n3dWnHEDevo4uMD3PTjkZQ=="}
+Redirected to http://localhost:3000/users/new
+Completed 302 Found in 28ms (ActiveRecord: 0.0ms | Allocations: 298007)
+
+
+Started GET "/users/new" for ::1 at 2020-02-11 20:23:44 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 71.5ms | Allocations: 694973)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 162ms (Views: 140.5ms | ActiveRecord: 0.0ms | Allocations: 1600480)
+
+
