@@ -1,0 +1,3 @@
+<% current_user.pitches.each do |pitch| %>
+    <h3><%= link_to pitch.title, user_pitch_path(pitch.user, pitch.id) %></h3>
+    <% end %>
