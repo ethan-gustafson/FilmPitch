@@ -1,0 +1,7 @@
+<%= link_to "Profile", user_path(current_user) %>
+<%= link_to "Log Out", logout_path, method: 'delete' %>
+
+<h1>Title: <%= @pitch.title %></h1>
+<h3>Summary:</h3>
+<h4><%= @pitch.summary %></h4>
+<p>Funding Goal: <%= @pitch.funding_goal %></p>

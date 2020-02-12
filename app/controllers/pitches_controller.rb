@@ -13,7 +13,7 @@ class PitchesController < ApplicationController
     end
 
     def show
-        @user = User.find(params[:id])
+        @pitch = Pitch.find(params[:id])
     end
 
     def edit
