@@ -22,11 +22,10 @@ class PitchesController < ApplicationController
     end
 
     def edit
-
     end
 
     def update
-
+        @pitch = Pitch.find(params[:id])
     end
 
     def destroy
