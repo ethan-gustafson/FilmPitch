@@ -1,5 +1,5 @@
 <div class="pitch_form">
-<%= form_for @pitch do |f| %>
+<%= form_for @pitch, :url => { :action => "create" } do |f| %>
     <%= f.label :title %>
     <br>
     <%= f.text_field :title %>

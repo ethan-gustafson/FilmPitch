@@ -8,3 +8,4 @@
 <p><%= @pitch.summary %></p>
 <h3>Funding Goal: </h3>
 <p><%= @pitch.funding_goal %></p>
+<%= link_to "Delete Pitch", user_pitch_path(@pitch.user, @pitch), method: 'delete' %>
