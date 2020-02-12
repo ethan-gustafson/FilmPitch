@@ -15,10 +15,36 @@ xavior = User.create(
     password_confirmation: "123"
 )
 
+
+barry = User.create(
+    name: "Barry Allen",
+    username: "Flash",
+    email: "speed_force@gmail.com",
+    wallet: 1000,
+    password: "123",
+    password_confirmation: "123"
+)
+
 pitch_1 = Pitch.create(
     title: "Dramaq Weighn",
     summary: "A vampire who faints at the sight of blood.",
     funding_goal: 1000,
     user_id: 1,
+    genre: "Comedy"
+)
+
+pitch_2 = Pitch.create(
+    title: "Zombieland 3",
+    summary: "Zombies evolve",
+    funding_goal: 0,
+    user_id: 2,
+    genre: "Comedy"
+)
+
+pitch_3 = Pitch.create(
+    title: "The Flash",
+    summary: "Live action Flashpoint",
+    funding_goal: 0,
+    user_id: 2,
     genre: "Comedy"
 )
