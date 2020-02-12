@@ -375,3 +375,440 @@ Processing by UsersController#home as HTML
 Completed 200 OK in 10ms (Views: 7.8ms | ActiveRecord: 0.2ms | Allocations: 6100)
 
 
+Started GET "/" for ::1 at 2020-02-11 19:55:20 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#home as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendering users/home.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered users/home.html.erb within layouts/application (Duration: 261.8ms | Allocations: 148234)
+Completed 500 Internal Server Error in 272ms (ActiveRecord: 0.7ms | Allocations: 155751)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `logout_path' for #<#<Class:0x00007f8d48f25738>:0x00007f8d48f2f300>
+Did you mean?  root_path):
+    1: <h1><%= current_user.username%></h1>
+    2: <%= link_to "Log Out", logout_path, method: delete %>
+  
+app/views/users/home.html.erb:2
+Started GET "/" for ::1 at 2020-02-11 19:55:56 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#home as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendering users/home.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered users/home.html.erb within layouts/application (Duration: 255.6ms | Allocations: 147644)
+Completed 500 Internal Server Error in 264ms (ActiveRecord: 0.8ms | Allocations: 154333)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `logout_path' for #<#<Class:0x00007f8d48cbf278>:0x00007f8d48cce340>
+Did you mean?  root_path):
+    1: <h1><%= current_user.username%></h1>
+    2: <%= link_to "Log Out", logout_path, method: delete %>
+  
+app/views/users/home.html.erb:2
+Started GET "/" for ::1 at 2020-02-11 19:55:57 -0500
+Processing by UsersController#home as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendering users/home.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered users/home.html.erb within layouts/application (Duration: 245.1ms | Allocations: 147680)
+Completed 500 Internal Server Error in 247ms (ActiveRecord: 0.2ms | Allocations: 148929)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `logout_path' for #<#<Class:0x00007f8d48cbf278>:0x00007f8d49269818>
+Did you mean?  root_path):
+    1: <h1><%= current_user.username%></h1>
+    2: <%= link_to "Log Out", logout_path, method: delete %>
+  
+app/views/users/home.html.erb:2
+Started GET "/rails/info/routes" for ::1 at 2020-02-11 19:56:09 -0500
+Processing by Rails::InfoController#routes as HTML
+  Rendering /Users/user/.rvm/gems/ruby-2.6.1/gems/railties-6.0.2.1/lib/rails/templates/rails/info/routes.html.erb within layouts/application
+  Rendered collection of /Users/user/.rvm/gems/ruby-2.6.1/gems/actionpack-6.0.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [25 times] (Duration: 5.6ms | Allocations: 3613)
+  Rendered /Users/user/.rvm/gems/ruby-2.6.1/gems/actionpack-6.0.2.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (Duration: 1.5ms | Allocations: 703)
+  Rendered /Users/user/.rvm/gems/ruby-2.6.1/gems/railties-6.0.2.1/lib/rails/templates/rails/info/routes.html.erb within layouts/application (Duration: 10.4ms | Allocations: 6682)
+Completed 200 OK in 14ms (Views: 12.1ms | ActiveRecord: 0.0ms | Allocations: 8269)
+
+
+Started GET "/" for ::1 at 2020-02-11 19:56:41 -0500
+Processing by UsersController#home as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendering users/home.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered users/home.html.erb within layouts/application (Duration: 1.4ms | Allocations: 1531)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.1ms | Allocations: 3515)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"destroy", :controller=>"sessions"}, missing required keys: [:id]):
+    1: <h1><%= current_user.username%></h1>
+    2: <%= link_to "Log Out", session_path, method: delete %>
+  
+app/views/users/home.html.erb:2
+Started GET "/" for ::1 at 2020-02-11 19:56:42 -0500
+Processing by UsersController#home as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendering users/home.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered users/home.html.erb within layouts/application (Duration: 1.6ms | Allocations: 1422)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.1ms | Allocations: 2663)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"destroy", :controller=>"sessions"}, missing required keys: [:id]):
+    1: <h1><%= current_user.username%></h1>
+    2: <%= link_to "Log Out", session_path, method: delete %>
+  
+app/views/users/home.html.erb:2
+Started GET "/rails/info/routes" for ::1 at 2020-02-11 19:57:45 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Rails::InfoController#routes as HTML
+  Rendering /Users/user/.rvm/gems/ruby-2.6.1/gems/railties-6.0.2.1/lib/rails/templates/rails/info/routes.html.erb within layouts/application
+  Rendered collection of /Users/user/.rvm/gems/ruby-2.6.1/gems/actionpack-6.0.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [25 times] (Duration: 5.1ms | Allocations: 3613)
+  Rendered /Users/user/.rvm/gems/ruby-2.6.1/gems/actionpack-6.0.2.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (Duration: 1.3ms | Allocations: 703)
+  Rendered /Users/user/.rvm/gems/ruby-2.6.1/gems/railties-6.0.2.1/lib/rails/templates/rails/info/routes.html.erb within layouts/application (Duration: 9.8ms | Allocations: 6678)
+Completed 200 OK in 16ms (Views: 11.4ms | ActiveRecord: 0.0ms | Allocations: 9804)
+
+
+Started GET "/" for ::1 at 2020-02-11 19:57:55 -0500
+Processing by UsersController#home as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendering users/home.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered users/home.html.erb within layouts/application (Duration: 233.1ms | Allocations: 147868)
+Completed 500 Internal Server Error in 256ms (ActiveRecord: 0.6ms | Allocations: 155152)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `delete' for #<#<Class:0x00007f8d475ae7f0>:0x00007f8d475ac310>):
+    1: <h1><%= current_user.username%></h1>
+    2: <%= link_to "Log Out", logout_path, method: delete %>
+  
+app/views/users/home.html.erb:2
+Started GET "/" for ::1 at 2020-02-11 19:58:04 -0500
+Processing by UsersController#home as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendering users/home.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered users/home.html.erb within layouts/application (Duration: 1.2ms | Allocations: 643)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 25ms (Views: 22.2ms | ActiveRecord: 0.1ms | Allocations: 6172)
+
+
+Started DELETE "/logout" for ::1 at 2020-02-11 19:58:05 -0500
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"cML8dB/guLB9fP9GNK+8iryNpzrCVknpJx9XUSz3aDlVlK8hZwAE6PJY6hVLofVd/+pIQeKFJwpHojZDgNPLyA=="}
+Redirected to http://localhost:3000/users/new
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 685)
+
+
+Started GET "/users/new" for ::1 at 2020-02-11 19:58:05 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 3.1ms | Allocations: 1689)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 8.8ms | ActiveRecord: 0.0ms | Allocations: 5928)
+
+
+Started GET "/rails/info/routes" for ::1 at 2020-02-11 20:01:34 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Rails::InfoController#routes as HTML
+  Rendering /Users/user/.rvm/gems/ruby-2.6.1/gems/railties-6.0.2.1/lib/rails/templates/rails/info/routes.html.erb within layouts/application
+  Rendered collection of /Users/user/.rvm/gems/ruby-2.6.1/gems/actionpack-6.0.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [25 times] (Duration: 6.2ms | Allocations: 3614)
+  Rendered /Users/user/.rvm/gems/ruby-2.6.1/gems/actionpack-6.0.2.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (Duration: 0.9ms | Allocations: 703)
+  Rendered /Users/user/.rvm/gems/ruby-2.6.1/gems/railties-6.0.2.1/lib/rails/templates/rails/info/routes.html.erb within layouts/application (Duration: 9.8ms | Allocations: 6684)
+Completed 200 OK in 15ms (Views: 11.3ms | ActiveRecord: 0.0ms | Allocations: 9819)
+
+
+Started GET "/rails/info/routes" for ::1 at 2020-02-11 20:02:47 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Rails::InfoController#routes as HTML
+  Rendering /Users/user/.rvm/gems/ruby-2.6.1/gems/railties-6.0.2.1/lib/rails/templates/rails/info/routes.html.erb within layouts/application
+  Rendered collection of /Users/user/.rvm/gems/ruby-2.6.1/gems/actionpack-6.0.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [25 times] (Duration: 8.7ms | Allocations: 3363)
+  Rendered /Users/user/.rvm/gems/ruby-2.6.1/gems/actionpack-6.0.2.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (Duration: 0.2ms | Allocations: 121)
+  Rendered /Users/user/.rvm/gems/ruby-2.6.1/gems/railties-6.0.2.1/lib/rails/templates/rails/info/routes.html.erb within layouts/application (Duration: 13.6ms | Allocations: 5460)
+Completed 200 OK in 20ms (Views: 14.1ms | ActiveRecord: 0.0ms | Allocations: 7791)
+
+
+Started GET "/rails/info/routes" for ::1 at 2020-02-11 20:02:53 -0500
+Processing by Rails::InfoController#routes as HTML
+  Rendering /Users/user/.rvm/gems/ruby-2.6.1/gems/railties-6.0.2.1/lib/rails/templates/rails/info/routes.html.erb within layouts/application
+  Rendered collection of /Users/user/.rvm/gems/ruby-2.6.1/gems/actionpack-6.0.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [25 times] (Duration: 9.2ms | Allocations: 3363)
+  Rendered /Users/user/.rvm/gems/ruby-2.6.1/gems/actionpack-6.0.2.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (Duration: 0.4ms | Allocations: 120)
+  Rendered /Users/user/.rvm/gems/ruby-2.6.1/gems/railties-6.0.2.1/lib/rails/templates/rails/info/routes.html.erb within layouts/application (Duration: 13.0ms | Allocations: 5459)
+Completed 200 OK in 16ms (Views: 14.0ms | ActiveRecord: 0.0ms | Allocations: 6248)
+
+
+Started GET "/login" for ::1 at 2020-02-11 20:06:05 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 233.5ms | Allocations: 147341)
+Completed 500 Internal Server Error in 238ms (ActiveRecord: 0.0ms | Allocations: 148860)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `signin_path' for #<#<Class:0x00007f8d48b5c7c8>:0x00007f8d48b6c6c8>):
+    1: <%= form_for(:user, url: signin_path) do |f| %>
+    2:     <%= f.text_field :username %>
+    3:     <%= f.label :password %>
+    4:     <%= f.password_field :password %>
+  
+app/views/sessions/new.html.erb:1
+Started GET "/login" for ::1 at 2020-02-11 20:06:13 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.0ms | Allocations: 497)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 21ms (Views: 18.6ms | ActiveRecord: 0.0ms | Allocations: 5510)
+
+
+Started GET "/login" for ::1 at 2020-02-11 20:06:24 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.0ms | Allocations: 586)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 7.4ms | ActiveRecord: 0.0ms | Allocations: 5594)
+
+
+Started GET "/login" for ::1 at 2020-02-11 20:06:30 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.1ms | Allocations: 588)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 7.3ms | ActiveRecord: 0.0ms | Allocations: 5599)
+
+
+Started GET "/login" for ::1 at 2020-02-11 20:06:36 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.1ms | Allocations: 588)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 18ms (Views: 16.6ms | ActiveRecord: 0.0ms | Allocations: 5597)
+
+
+Started GET "/login" for ::1 at 2020-02-11 20:06:56 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.0ms | Allocations: 608)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 7.7ms | ActiveRecord: 0.0ms | Allocations: 5617)
+
+
+Started POST "/login" for ::1 at 2020-02-11 20:07:52 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"4vZrlOuG6677LVWo62CcWIzY4t1VLpZW2M4vQ+80eI7HoDjBk2ZX9nQJQPuUbtWPz78NpnX9+LW4c05RQxDbfw==", "user"=>{"username"=>"GoodGuyGuf", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "GoodGuyGuf"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+Redirected to http://localhost:3000/
+Completed 302 Found in 13ms (ActiveRecord: 0.4ms | Allocations: 5743)
+
+
+Started GET "/" for ::1 at 2020-02-11 20:07:52 -0500
+Processing by UsersController#home as HTML
+Filter chain halted as :require_login rendered or redirected
+Completed 403 Forbidden in 1ms (ActiveRecord: 0.0ms | Allocations: 640)
+
+
+Started GET "/" for ::1 at 2020-02-11 20:07:56 -0500
+Processing by UsersController#home as HTML
+Filter chain halted as :require_login rendered or redirected
+Completed 403 Forbidden in 1ms (ActiveRecord: 0.0ms | Allocations: 585)
+
+
+Started GET "/users/new" for ::1 at 2020-02-11 20:08:28 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 2.6ms | Allocations: 1656)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 15ms (Views: 10.1ms | ActiveRecord: 0.3ms | Allocations: 9150)
+
+
+Started GET "/users/new" for ::1 at 2020-02-11 20:08:41 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 2.9ms | Allocations: 1600)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 12ms (Views: 10.1ms | ActiveRecord: 0.0ms | Allocations: 6625)
+
+
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Telep@th"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "charles@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "username", "email", "password_digest") VALUES (?, ?, ?, ?)[0m  [["name", "Charlie"], ["username", "Telep@th"], ["email", "charles@gmail.com"], ["password_digest", "$2a$12$MoWE2I1quUoa0Ir6vTPiXOz7x.5pXTbhLUdB5KBPgdO5r9ZNVDVZG"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/login" for ::1 at 2020-02-11 20:11:29 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.4ms | Allocations: 607)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 13ms (Views: 11.1ms | ActiveRecord: 0.0ms | Allocations: 5256)
+
+
+Started POST "/login" for ::1 at 2020-02-11 20:11:36 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"lFS8g08VWPt/xf9pHKnRyGvOnvxoS6SZ+wnSel4De7OxAu/WN/Xko/Dh6jpjp5gfKKlxh0iYynqbtLNo8ifYQg==", "user"=>{"username"=>"telep@th", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "telep@th"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms | Allocations: 1142)
+
+
+Started GET "/" for ::1 at 2020-02-11 20:11:36 -0500
+Processing by UsersController#home as HTML
+Filter chain halted as :require_login rendered or redirected
+Completed 403 Forbidden in 1ms (ActiveRecord: 0.0ms | Allocations: 584)
+
+
+Started GET "/" for ::1 at 2020-02-11 20:12:09 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#home as HTML
+Filter chain halted as :require_login rendered or redirected
+Completed 403 Forbidden in 1ms (ActiveRecord: 0.0ms | Allocations: 640)
+
+
+Started GET "/" for ::1 at 2020-02-11 20:12:10 -0500
+Processing by UsersController#home as HTML
+Filter chain halted as :require_login rendered or redirected
+Completed 403 Forbidden in 1ms (ActiveRecord: 0.0ms | Allocations: 583)
+
+
+Started GET "/login" for ::1 at 2020-02-11 20:12:11 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.7ms | Allocations: 395)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 12ms (Views: 11.3ms | ActiveRecord: 0.0ms | Allocations: 4631)
+
+
+Started POST "/login" for ::1 at 2020-02-11 20:12:14 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"wDt5tw5rPCNmJ8sKW/+qUS/MhBc9+yu39u+4gC4HhenlbSridouAe+kD3lkk8eOGbKtrbB0oRVSWUtmSgiMmGA==", "user"=>{"username"=>"telep@th", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "telep@th"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+Redirected to http://localhost:3000/
+Completed 302 Found in 6ms (ActiveRecord: 0.5ms | Allocations: 3544)
+
+
+Started GET "/" for ::1 at 2020-02-11 20:12:14 -0500
+Processing by UsersController#home as HTML
+Filter chain halted as :require_login rendered or redirected
+Completed 403 Forbidden in 1ms (ActiveRecord: 0.0ms | Allocations: 587)
+
+
+Started GET "/login" for ::1 at 2020-02-11 20:12:30 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.7ms | Allocations: 387)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 6.6ms | ActiveRecord: 0.0ms | Allocations: 4465)
+
+
+Started GET "/login" for ::1 at 2020-02-11 20:12:57 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.7ms | Allocations: 395)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 6.6ms | ActiveRecord: 0.0ms | Allocations: 4636)
+
+
+Started POST "/login" for ::1 at 2020-02-11 20:13:00 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"xEIW9beCSYTJuqR/CylfFxxQ7pbZ8eQZ3lTQs5iedazhFEWgz2L13EaesSx0JxbAXzcB7fkiivq+6bGhNLrWXQ==", "user"=>{"username"=>"telep@th", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "telep@th"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+Redirected to http://localhost:3000/users/new
+Completed 302 Found in 7ms (ActiveRecord: 0.5ms | Allocations: 3547)
+
+
+Started GET "/users/new" for ::1 at 2020-02-11 20:13:00 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1344)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 12ms (Views: 7.9ms | ActiveRecord: 0.3ms | Allocations: 8425)
+
+
+Started GET "/login" for ::1 at 2020-02-11 20:13:04 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.6ms | Allocations: 387)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 17ms (Views: 15.4ms | ActiveRecord: 0.0ms | Allocations: 4462)
+
+
+Started GET "/login" for ::1 at 2020-02-11 20:13:05 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.4ms | Allocations: 387)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 14ms (Views: 12.7ms | ActiveRecord: 0.0ms | Allocations: 4468)
+
+
+Started POST "/login" for ::1 at 2020-02-11 20:13:17 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"gX8dOVKf4Y1Bgc3mdgHvvkaf3ceuaMgLoZvlbV/23qakKU5sKn9d1c6l2LUJD6ZpBfgyvI67pujBJoR/89J9Vw==", "user"=>{"username"=>"telep@th", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "telep@th"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+Redirected to http://localhost:3000/users/new
+Completed 302 Found in 6ms (ActiveRecord: 0.3ms | Allocations: 3588)
+
+
+Started GET "/users/new" for ::1 at 2020-02-11 20:13:17 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1344)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 15ms (Views: 7.5ms | ActiveRecord: 0.3ms | Allocations: 8430)
+
+
+Started GET "/login" for ::1 at 2020-02-11 20:13:24 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.7ms | Allocations: 395)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 6ms (Views: 5.8ms | ActiveRecord: 0.0ms | Allocations: 4629)
+
+
+Started POST "/login" for ::1 at 2020-02-11 20:13:26 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"6ywHDK2neIM7css7df/8w0OwFtFqYs3Os9O6OdVGELLOelRZ1UfE27RW3mgK8bUUANf5qkqxoy3TbtsreWKzQw==", "user"=>{"username"=>"telep@th", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "telep@th"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+Redirected to http://localhost:3000/users/new
+Completed 302 Found in 15ms (ActiveRecord: 0.4ms | Allocations: 3545)
+
+
+Started GET "/users/new" for ::1 at 2020-02-11 20:13:26 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1344)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 7.2ms | ActiveRecord: 0.3ms | Allocations: 8425)
+
+
