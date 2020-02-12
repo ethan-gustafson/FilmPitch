@@ -15,3 +15,8 @@
 <% end %>
 
 <%= link_to "Fund me?", new_pitch_fund_path(@pitch) %>
+
+<p>Users who funded: </p>
+<% @pitch.funds.each do |fund| %>
+    <p><%= fund.user.username %> funded "<%= fund.pitch.title %>" $<%=fund.amount%></p>
+    <% end %>
