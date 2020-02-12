@@ -22,10 +22,13 @@ class PitchesController < ApplicationController
     end
 
     def edit
+        @pitch = Pitch.find(params[:id])
     end
 
     def update
         @pitch = Pitch.find(params[:id])
+        @pitch.update(pitch_params)
+        redirect_to user_pitch_path(@pitch.user, @pitch)
     end
 
     def destroy

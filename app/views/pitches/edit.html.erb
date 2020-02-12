@@ -1,0 +1,6 @@
+<div class="pitch_form">
+<%= form_for @pitch, :url => { :action => "update" } do |f| %>
+        <%= render partial: "pitches/form", locals: {f: f } %>
+<%= f.submit "Submit" %>
+<% end %>
+</div>
