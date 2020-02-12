@@ -1,4 +1,5 @@
 <h1><%= link_to "Home", root_path%></h1>
+<%= link_to "Create a new Pitch", new_user_pitch_path(current_user) %>
 <%= link_to "Log Out", logout_path, method: 'delete' %>
 
 <h1>Username: <%= current_user.username%></h1>
