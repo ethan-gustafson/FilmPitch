@@ -1,4 +1,7 @@
-<h1>Name: <%= current_user.name%></h1>
+<h1><%= link_to "Home", root_path%></h1>
+<%= link_to "Log Out", logout_path, method: 'delete' %>
+
 <h1>Username: <%= current_user.username%></h1>
+<h4>Name: <%= current_user.name%></h4>
 <h1><%= link_to "Pitches", user_pitches_path(current_user)%></h1>
 
