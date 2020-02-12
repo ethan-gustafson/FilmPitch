@@ -22,9 +22,3 @@ pitch_1 = Pitch.create(
     user_id: 1,
     genre: "Comedy"
 )
-
-fund_1 = Fund.create(
-    user_id: 1,
-    pitch_id: 1,
-    amount: 500
-)
