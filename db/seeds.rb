@@ -13,3 +13,11 @@ xavior = User.create(
     password: "123",
     password_confirmation: "123"
 )
+
+pitch_1 = Pitch.create(
+    title: "Dramaq Weighn",
+    summary: "A vampire who faints at the sight of blood.",
+    funding_goal: 10000,
+    user_id: 1,
+    genre: "Comedy"
+)
