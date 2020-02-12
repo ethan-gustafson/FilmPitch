@@ -30,13 +30,22 @@ class PitchesController < ApplicationController
     end
 
     def destroy
-
+        @pitch = Pitch.find(params[:id])
+        @pitch.destroy
+        redirect_to user_pitches_path
     end
 
     private
     
     def pitch_params
-        params.require(:pitch).permit(:title, :summary, :genre, :video_link, :funding_goal, :user_id)
+        params.require(:pitch).permit(
+            :title, 
+            :summary, 
+            :genre, 
+            :video_link, 
+            :funding_goal, 
+            :user_id
+        )
     end
 
 end
