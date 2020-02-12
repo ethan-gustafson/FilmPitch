@@ -1,0 +1,27 @@
+<div class="pitch_form">
+<%= form_for @pitch do |f| %>
+    <%= f.label :title %>
+    <br>
+    <%= f.text_field :title %>
+    <br>
+    <%= f.label :summary %>
+    <br>
+    <%= f.text_area :summary %>
+    <br>
+    <%= f.label :genre %>
+    <br>
+    <%= f.text_field :genre %>
+    <br>
+    <%= f.label :video_link %>
+    <br>
+    <%= f.text_field :video_link %>
+    <br>
+    <%= f.label :funding_goal %>
+    <br>
+    <%= f.number_field :funding_goal %>
+    <br>
+    <%= f.hidden_field :user_id, value: current_user.id %>
+
+    <%= f.submit "Submit" %>
+    <% end %>
+</div>
