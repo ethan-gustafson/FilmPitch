@@ -10,5 +10,6 @@ xavior = User.create(
     name: "Charlie",
     username: "Telep@th",
     email: "charles@gmail.com",
-    password: "123"
+    password: "123",
+    password_confirmation: "123"
 )
