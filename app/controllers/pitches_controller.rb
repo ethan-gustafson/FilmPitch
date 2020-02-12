@@ -2,7 +2,8 @@ class PitchesController < ApplicationController
     before_action :require_login
 
     def index
-        @pitches = current_user.pitches
+        user = User.find(params[:user_id])
+        @pitches = user.pitches
     end
 
     def new
