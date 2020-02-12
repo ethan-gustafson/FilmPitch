@@ -17,4 +17,5 @@ class Pitch < ActiveRecord::Base
 	def self.order_by_title
 		fully_funded_projects.order(title: :asc)
 	end
+
 end
