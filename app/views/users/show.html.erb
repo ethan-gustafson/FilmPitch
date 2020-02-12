@@ -2,10 +2,18 @@
 <%= link_to "Create a new Pitch", new_user_pitch_path(current_user) %>
 <%= link_to "Log Out", logout_path, method: 'delete' %>
 
+<% if current_user.id == @user.id %>
 <h1>Username: <%= current_user.username%></h1>
 <h4>Name: <%= current_user.name%></h4>
 <h4>Wallet Balance: <%= current_user.wallet%></h4>
 <h1><%= link_to "Pitches", user_pitches_path(current_user)%></h1>
 
-<h1><%= link_to "Add money to your account?", edit_user_path(current_user)%></h1>
+<% else %>
+<h1>Username: <%= @user.username%></h1>
+<h4>Name: <%= @user.name%></h4>
+<h1><%= link_to "Pitches", user_pitches_path(@user)%></h1>
+<% end %>
 
+<% if current_user.id == user_path(@user) %>
+<h1><%= link_to "Add money to your account?", edit_user_path(current_user)%></h1>
+<% end %>

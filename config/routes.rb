@@ -16,9 +16,3 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create' 
   delete '/logout', to: 'sessions#destroy'
 end
-
-# sessions_path	POST	/sessions(.:format)	
-# sessions#create
-
-# new_session_path	GET	/sessions/new(.:format)	
-# sessions#new
