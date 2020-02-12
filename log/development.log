@@ -1049,3 +1049,54 @@ Processing by UsersController#new as HTML
 Completed 200 OK in 162ms (Views: 140.5ms | ActiveRecord: 0.0ms | Allocations: 1600480)
 
 
+Started GET "/users/new" for ::1 at 2020-02-11 20:34:45 -0500
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 106.6ms | Allocations: 1044757)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 425ms (Views: 226.6ms | ActiveRecord: 0.0ms | Allocations: 3959131)
+
+
+Started GET "/login" for ::1 at 2020-02-11 20:34:51 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 30.8ms | Allocations: 299924)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 167ms (Views: 138.7ms | ActiveRecord: 0.0ms | Allocations: 1598535)
+
+
+Started POST "/login" for ::1 at 2020-02-11 20:34:56 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"bDBGzClAzwvdeksqVVnK12O3P8BJaAIGmwrs8fvJ4kD3u1hbOPkE6DZMT5ANVcCsHZa5Cev9hW7RjwprMdtSgg==", "user"=>{"username"=>"Telep@th", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Telep@th"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+Redirected to http://localhost:3000/
+Completed 302 Found in 328ms (ActiveRecord: 1.7ms | Allocations: 737415)
+
+
+Started GET "/" for ::1 at 2020-02-11 20:34:57 -0500
+Processing by UsersController#home as HTML
+  Rendering users/home.html.erb within layouts/application
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered users/home.html.erb within layouts/application (Duration: 36.9ms | Allocations: 367509)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 164ms (Views: 132.2ms | ActiveRecord: 1.7ms | Allocations: 1560805)
+
+
+Started DELETE "/logout" for ::1 at 2020-02-11 20:35:05 -0500
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"HtjsXr6ETAm97ikTT8Lrl+AtZat7XnIEWTkJpoKkiEw7jr8LxmTwUTLKPEAwzKJAo0qK0FuNHOc5hGi0LoArvQ=="}
+Redirected to http://localhost:3000/users/new
+Completed 302 Found in 41ms (ActiveRecord: 0.0ms | Allocations: 388888)
+
+
+Started GET "/users/new" for ::1 at 2020-02-11 20:35:05 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 88.8ms | Allocations: 918856)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 217ms (Views: 184.8ms | ActiveRecord: 0.0ms | Allocations: 2091035)
+
+
