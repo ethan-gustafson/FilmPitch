@@ -5,7 +5,8 @@ class Pitch < ActiveRecord::Base
 	belongs_to :user
 
 	def user_fund(money)
-		remaining_goal = self.funding_goal - User.transaction(money)
-		remaining_goal
+		remaining_goal = self.funding_goal - money
+		self.update_attributes funding_goal: remaining_goal
+		self.funding_goal
 	end
 end

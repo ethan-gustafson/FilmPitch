@@ -8,6 +8,8 @@ class User < ActiveRecord::Base
     
     def transaction(dollars)
         remaining_balance = self.wallet - dollars 
+        self.update_attributes wallet: remaining_balance
+        self.wallet
     end
 
 end
