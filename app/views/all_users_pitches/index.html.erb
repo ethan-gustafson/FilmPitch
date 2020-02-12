@@ -1,8 +1,7 @@
 <h1><%= link_to "Home", root_path%></h1>
 <%= link_to "Profile", user_path(current_user) %>
 <%= link_to "Create a new Pitch", new_user_pitch_path(current_user) %>
-<h1>Pitches:</h1>
-
+<h1> Pitches: </h1>
 <% @pitches.each do |pitch| %>
-    <h3><%= link_to pitch.title, user_pitch_path(pitch.user, pitch.id) %></h3>
+    <h3><%= link_to pitch.user.username, user_pitches_path(pitch.user) %>: <%= link_to pitch.title, user_pitch_path(pitch.user, pitch.id) %></h3>
 <% end %>

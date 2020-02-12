@@ -6,7 +6,9 @@ Rails.application.routes.draw do
     resources :pitches, only: [:index, :new, :create, :show, :edit, :update, :destroy]
   end
 
-  resources :pitches, only: [:index, :show] do 
+  get '/pitches', to: 'all_users_pitches#index', as: 'pitches'
+
+  resources :pitches, only: [:show] do 
     resources :funds, only: [:new, :create]
   end
   
