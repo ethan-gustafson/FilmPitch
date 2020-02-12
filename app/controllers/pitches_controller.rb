@@ -15,7 +15,7 @@ class PitchesController < ApplicationController
         if @pitch.save
             redirect_to user_pitch_path(@pitch.user, @pitch)
         else
-            redirect_to new_user_pitch_path
+            render :new
         end
     end
 
