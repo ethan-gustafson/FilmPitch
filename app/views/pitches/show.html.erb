@@ -8,5 +8,10 @@
 <p><%= @pitch.summary %></p>
 <h3>Funding Goal: </h3>
 <p><%= @pitch.funding_goal %></p>
+
+<% if @pitch.user == current_user %>
 <%= link_to "Edit Pitch", edit_user_pitch_path(@pitch.user, @pitch)%>
 <%= link_to "Delete Pitch", user_pitch_path(@pitch.user, @pitch), method: 'delete' %>
+<% end %>
+
+<%= link_to "Fund me?", new_pitch_fund_path(@pitch) %>

@@ -10,6 +10,7 @@ xavior = User.create(
     name: "Charlie",
     username: "Telep@th",
     email: "charles@gmail.com",
+    wallet: 1000,
     password: "123",
     password_confirmation: "123"
 )
@@ -17,7 +18,13 @@ xavior = User.create(
 pitch_1 = Pitch.create(
     title: "Dramaq Weighn",
     summary: "A vampire who faints at the sight of blood.",
-    funding_goal: 10000,
+    funding_goal: 1000,
     user_id: 1,
     genre: "Comedy"
+)
+
+fund_1 = Fund.create(
+    user_id: 1,
+    pitch_id: 1,
+    amount: 500
 )
