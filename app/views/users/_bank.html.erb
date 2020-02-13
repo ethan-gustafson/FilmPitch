@@ -1,5 +1,5 @@
 <%= form_for @user, :url => { :action => "update" } do |f| %>
-    <%= f.label "Transfer money from 0 - 1,000" %>
+    <%= f.label "Enter the amount you wish to have in your account" %>
     <%= f.number_field :wallet %>
     <%= f.submit %>
     <% end %>
