@@ -5,5 +5,5 @@
 <h1>Pitches:</h1>
 
 <% @pitches.each do |pitch| %>
-    <h3><%= link_to pitch.title, pitch_path(pitch.id) %></h3>
+    <h3><%= link_to pitch.title, user_pitch_path(pitch.user_id, pitch.id) %></h3>
 <% end %>
