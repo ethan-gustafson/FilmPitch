@@ -34,14 +34,6 @@ pitch_1 = Pitch.create(
 )
 
 pitch_2 = Pitch.create(
-    title: "Zombieland 3",
-    summary: "Zombies evolve",
-    funding_goal: 0,
-    user_id: 2,
-    genre: "Comedy"
-)
-
-pitch_3 = Pitch.create(
     title: "The Flash",
     summary: "Live action Flashpoint",
     funding_goal: 0,
