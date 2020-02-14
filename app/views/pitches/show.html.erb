@@ -6,6 +6,9 @@
 
 <h1>"<%= @pitch.title %>"</h1>
 <h5>Genre: <%= @pitch.genre %></h5>
+<% if @pitch.video_link.present? %>
+<iframe width="560" height="315" src="<%=@pitch.video_link%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<% end %>
 <h2>Summary:</h2>
 <p><%= @pitch.summary %></p>
 <h3>Funding Goal: </h3>
