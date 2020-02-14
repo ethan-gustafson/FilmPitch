@@ -10,12 +10,12 @@ Rails.application.routes.draw do
   get '/auth/twitter/callback' => 'sessions#omniauth'
 
   resources :users, only: [:show, :edit, :update] do
-    resources :pitches, only: [:index, :new, :create, :show, :edit, :update, :destroy]
+    resources :pitches, only: [:index]
   end
 
   get '/pitches', to: 'all_users_pitches#index', as: 'pitches'
 
-  resources :pitches, only: [:show] do 
+  resources :pitches, only: [:new, :create, :edit, :update, :destroy, :show] do 
     resources :funds, only: [:new, :create]
   end
 end

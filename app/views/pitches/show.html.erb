@@ -1,6 +1,6 @@
 <h1><%= link_to "Home", root_path%></h1>
 <%= link_to "Profile", user_path(current_user) %>
-<%= link_to "Create a new Pitch", new_user_pitch_path(current_user) %>
+<%= link_to "Create a new Pitch", new_pitch_path(current_user) %>
 <%= link_to "All User Pitches", pitches_path %>
 <%= link_to "Log Out", logout_path, method: 'delete' %>
 
@@ -16,12 +16,12 @@
 <p>$<%= @pitch.funding_goal %></p>
 
 <% if @pitch.user == current_user %>
-<%= link_to "Edit Pitch", edit_user_pitch_path(@pitch.user, @pitch)%>
+<%= link_to "Edit Pitch", edit_pitch_path(@pitch)%>
 <% end %>
 
 <% if @pitch.funding_goal != 0 %>
 <%= link_to "Fund me?", new_pitch_fund_path(@pitch) %>
-<%= link_to "Delete Pitch", user_pitch_path(@pitch.user, @pitch), method: 'delete' %>
+<%= link_to "Delete Pitch", pitch_path(@pitch), method: 'delete' %>
 <% end %>
 
 <% if @pitch.funds.present? %>

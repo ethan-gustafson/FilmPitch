@@ -2,9 +2,9 @@ class PitchesController < ApplicationController
     before_action :require_login
 
     def index
-        user = User.find(params[:user_id])
+        user = User.find(params[:user_id]) # if user_id and find a user using that user_id
         @pitches = user.pitches
-    end
+    end # if nested - do this - set pitch to be pitch.all 
 
     def new
         @pitch = Pitch.new
@@ -13,15 +13,15 @@ class PitchesController < ApplicationController
     def create
         @pitch = Pitch.new(pitch_params)
         if @pitch.save
-            redirect_to user_pitch_path(@pitch.user, @pitch)
+            redirect_to pitch_path(@pitch)
         else
             render :new
         end
     end
 
     def show
-        @pitch = Pitch.find(params[:id])
-    end
+        @pitch = Pitch.find(params[:id]) # set pitch
+    end # could add protection against deleted pitches in url
 
     def edit
         @pitch = Pitch.find(params[:id])
@@ -39,7 +39,7 @@ class PitchesController < ApplicationController
     def destroy
         @pitch = Pitch.find(params[:id])
         @pitch.destroy
-        redirect_to user_pitches_path
+        redirect_to user_pitches_path(current_user)
     end
 
     private
