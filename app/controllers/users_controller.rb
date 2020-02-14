@@ -29,7 +29,7 @@ class UsersController < ApplicationController
 
     def update
         @user = User.find(params[:id])
-        if @user.update(user_params)
+        if @user.add_to_wallet(user_params[:wallet].to_i)
             redirect_to user_path(@user)
         else
             redirect_to user_path(@user)

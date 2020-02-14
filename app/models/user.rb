@@ -14,7 +14,7 @@ class User < ActiveRecord::Base
     end
 
     def add_to_wallet(money)
-        new_bank_balance = self.wallet + money
+        new_bank_balance = self.wallet + money.to_i
         self.update_attributes! wallet: new_bank_balance
         self.wallet
     end
