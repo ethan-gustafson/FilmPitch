@@ -33,7 +33,7 @@
 
 <div class="field<%= ' field_with_errors' if @pitch.errors.any? %>">
     <br>
-    <%= f.label "Video Link(You must submit the embed link)" %>
+    <%= f.label "Video Link(You must submit the link that is located within the embed 'iframe src=')" %>
     <br>
     <%= f.text_field :video_link %>
 </div>

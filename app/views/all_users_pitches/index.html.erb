@@ -4,6 +4,8 @@
 <%= link_to "All User Pitches", pitches_path %>
 <%= link_to "Log Out", logout_path, method: 'delete' %>
 <h1> Pitches: </h1>
+<ul>
 <% @pitches.each do |pitch| %>
-    <h3><%= link_to pitch.user.username, user_path(pitch.user) %>: <%= link_to pitch.title, user_pitch_path(pitch.user, pitch.id) %></h3>
+    <li><h3><%= link_to pitch.user.username, user_path(pitch.user) %>: <%= link_to pitch.title, user_pitch_path(pitch.user, pitch.id) %></h3></li>
 <% end %>
+</ul.
