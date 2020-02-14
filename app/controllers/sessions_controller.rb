@@ -19,14 +19,18 @@ class SessionsController < ApplicationController
     end
 
     def omniauth
-        # @user = User.find_or_create_by(uid: auth[:uid]) do |u|
-        #     u.username= auth[:info][:username]
-        #     u.email= auth[:info][:email]
-        #     u.password= SecureRandom.hex
-    #end
-    #session[:user_id] = @user.id
-    #redirect_to user_path(@user)
-        #byebug
+        @user = User.find_or_create_by(id: auth[:uid]) do |u|
+            u.name= auth[:info][:name]
+            u.username= auth[:info][:nickname]
+            u.email= auth[:info][:email]
+            u.wallet= 0
+            u.password= SecureRandom.hex
+        end
+        
+        if @user.valid?
+            session[:user_id] = @user.id
+            redirect_to user_path(@user)
+        end
     end
 
     private

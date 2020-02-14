@@ -1,6 +1,7 @@
 <h1><%= link_to "Home", root_path%></h1>
 <%= link_to "Profile", user_path(current_user) %>
 <%= link_to "Create a new Pitch", new_user_pitch_path(current_user) %>
+<%= link_to "All User Pitches", pitches_path %>
 <%= link_to "Log Out", logout_path, method: 'delete' %>
 <h1> Pitches: </h1>
 <% @pitches.each do |pitch| %>
