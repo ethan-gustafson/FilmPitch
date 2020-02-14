@@ -37,6 +37,7 @@ pitch_2 = Pitch.create(
     title: "The Flash",
     summary: "Live action Flashpoint",
     funding_goal: 0,
+    video_link: "https://www.youtube.com/embed/xe0JiobQ98o",
     user_id: 2,
     genre: "Comedy"
 )
