@@ -8,10 +8,15 @@ class FundsController < ApplicationController
 
     def create
         @fund = Fund.new(fund_params)
-        if @fund.save
-            @fund.user.transaction(@fund.amount)
-            @fund.pitch.user_fund(@fund.amount)
-            redirect_to pitch_path(@fund.pitch_id)
+
+        if @fund.pitch.funding_goal >= 1
+            if @fund.save
+                @fund.user.transaction(@fund.amount)
+                @fund.pitch.user_fund(@fund.amount)
+                redirect_to pitch_path(@fund.pitch_id)
+            else
+                redirect_to pitches_path
+            end
         else
             redirect_to pitches_path
         end
