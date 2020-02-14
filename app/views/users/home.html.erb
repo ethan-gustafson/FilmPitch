@@ -5,7 +5,7 @@
 <%= link_to "Log Out", logout_path, method: 'delete' %>
 
 <h4> Help make filmmakers dreams come true </h4>
-<h2><strong>Projects fully funded:</strong></h2>
+<h2>Projects fully funded:</h2>
 <% Pitch.order_by_title.each do |pitch| %>
     <h3><%= link_to pitch.title, pitch_path(pitch) %></h3>
     <p><%= pitch.summary %></p>
