@@ -17,10 +17,12 @@
 
 <% if @pitch.user == current_user %>
 <%= link_to "Edit Pitch", edit_user_pitch_path(@pitch.user, @pitch)%>
-<%= link_to "Delete Pitch", user_pitch_path(@pitch.user, @pitch), method: 'delete' %>
 <% end %>
 
+<% if @pitch.funding_goal != 0 %>
 <%= link_to "Fund me?", new_pitch_fund_path(@pitch) %>
+<%= link_to "Delete Pitch", user_pitch_path(@pitch.user, @pitch), method: 'delete' %>
+<% end %>
 
 <% if @pitch.funds.present? %>
 <p>Users who funded: </p>
