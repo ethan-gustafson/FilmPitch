@@ -227,6 +227,7 @@ DEPENDENCIES
   dotenv-rails
   jbuilder (~> 2.7)
   listen (>= 3.0.5, < 3.2)
+  omniauth
   omniauth-twitter
   pry
   puma (~> 4.1)

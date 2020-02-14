@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create' 
   delete '/logout', to: 'sessions#destroy'
 
+  get '/auth/twitter/callback', to: 'sessions#omniauth'
+
   resources :users, only: [:show, :edit, :update] do
     resources :pitches, only: [:index, :new, :create, :show, :edit, :update, :destroy]
   end
