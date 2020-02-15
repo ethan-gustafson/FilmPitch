@@ -4,29 +4,29 @@
 <%= link_to "All User Pitches", pitches_path %>
 <%= link_to "Log Out", logout_path, method: 'delete' %>
 
-<h1>"<%= @pitch.title %>"</h1>
-<p>By <%= @pitch.user.username %></p>
-<h5>Genre: <%= @pitch.genre %></h5>
-<% if @pitch.video_link.present? %>
-<iframe width="560" height="315" src=<%=@pitch.video_link%> frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<h1>"<%= set_pitch.title %>"</h1>
+<p>By <%= set_pitch.user.username %></p>
+<h5>Genre: <%= set_pitch.genre %></h5>
+<% if set_pitch.video_link.present? %>
+<iframe width="560" height="315" src=<%=set_pitch.video_link%> frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <% end %>
 <h2>Summary:</h2>
-<p><%= @pitch.summary %></p>
+<p><%= set_pitch.summary %></p>
 <h3>Funding Goal: </h3>
-<p>$<%= @pitch.funding_goal %></p>
+<p>$<%= set_pitch.funding_goal %></p>
 
-<% if @pitch.user == current_user %>
-<%= link_to "Edit Pitch", edit_pitch_path(@pitch)%>
+<% if set_pitch.user == current_user %>
+<%= link_to "Edit Pitch", edit_pitch_path(set_pitch)%>
 <% end %>
 
-<% if @pitch.funding_goal != 0 %>
-<%= link_to "Fund me?", new_pitch_fund_path(@pitch) %>
-<%= link_to "Delete Pitch", pitch_path(@pitch), method: 'delete' %>
+<% if set_pitch.funding_goal != 0 %>
+<%= link_to "Fund me?", new_pitch_fund_path(set_pitch) %>
+<%= link_to "Delete Pitch", pitch_path(set_pitch), method: 'delete' %>
 <% end %>
 
-<% if @pitch.funds.present? %>
+<% if set_pitch.funds.present? %>
 <p>Users who funded: </p>
-<% @pitch.funds.each do |fund| %>
+<% set_pitch.funds.each do |fund| %>
     <p><%= fund.user.username %> funded "<%= fund.pitch.title %>" $<%=fund.amount%></p>
     <% end %>
 <% end %>

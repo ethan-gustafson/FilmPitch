@@ -20,25 +20,25 @@ class PitchesController < ApplicationController
     end
 
     def show
-        @pitch = Pitch.find(params[:id]) # set pitch
+       set_pitch # set pitch
     end # could add protection against deleted pitches in url
 
     def edit
-        @pitch = Pitch.find(params[:id])
+        set_pitch
     end
 
     def update
-        @pitch = Pitch.find(params[:id])
-        if @pitch.update(pitch_params)
-            redirect_to user_pitch_path(@pitch.user, @pitch)
+        set_pitch
+        if set_pitch.update(pitch_params)
+            redirect_to pitch_path(set_pitch)
         else
             render :edit
         end
     end
 
     def destroy
-        @pitch = Pitch.find(params[:id])
-        @pitch.destroy
+        set_pitch
+        set_pitch.destroy
         redirect_to user_pitches_path(current_user)
     end
 

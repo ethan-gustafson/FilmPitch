@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
     helper_method :current_user
     helper_method :require_login
     include UserHelper
+    include PitchHelper
     
     def logged_in
         if !session[:user_id]
