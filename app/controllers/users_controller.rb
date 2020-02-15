@@ -20,19 +20,18 @@ class UsersController < ApplicationController
     end
 
     def show
-        @user = User.find(params[:id]) # set user
+        set_user # set user
     end
 
     def edit
-        @user = User.find(params[:id])
+        set_user
     end
 
     def update
-        @user = User.find(params[:id])
-        if @user.add_to_wallet(user_params[:wallet].to_i)
-            redirect_to user_path(@user)
+        if set_user.add_to_wallet(user_params[:wallet].to_i)
+            redirect_to user_path(set_user)
         else
-            redirect_to user_path(@user)
+            redirect_to user_path(set_user)
         end
     end
 
