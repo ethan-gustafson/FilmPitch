@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_12_112451) do
+ActiveRecord::Schema.define(version: 2020_02_15_132916) do
 
   create_table "funds", force: :cascade do |t|
     t.integer "user_id"
@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 2020_02_12_112451) do
     t.string "email"
     t.string "password_digest"
     t.integer "wallet"
+    t.string "uid"
   end
 
 end
