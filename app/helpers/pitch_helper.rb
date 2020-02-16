@@ -1,7 +1,11 @@
 module PitchHelper
 
     def set_pitch
-        @pitch = Pitch.find(params[:id])
+        if Pitch.find_by_id(params[:id])
+            @pitch = Pitch.find(params[:id])
+        else
+            redirect_to pitches_path
+        end
     end
 
 end
