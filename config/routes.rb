@@ -13,7 +13,7 @@ Rails.application.routes.draw do
     resources :pitches, only: [:index]
   end
 
-  get '/pitches', to: 'all_users_pitches#index', as: 'pitches'
+  resources :pitches, only: [:index]
 
   resources :pitches, only: [:new, :create, :edit, :update, :destroy, :show] do 
     resources :funds, only: [:new, :create]
