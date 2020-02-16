@@ -2,9 +2,13 @@ class PitchesController < ApplicationController
     before_action :require_login
 
     def index
-        user = User.find(params[:user_id]) # if user_id and find a user using that user_id
-        @pitches = user.pitches
-    end # if nested - do this - set pitch to be pitch.all 
+        if params[:user_id]
+            user = User.find(params[:user_id])
+            @pitches = user.pitches
+        else
+            @pitches = Pitch.all
+        end
+    end
 
     def new
         @pitch = Pitch.new
