@@ -20,8 +20,8 @@ class PitchesController < ApplicationController
     end
 
     def show
-       set_pitch # set pitch
-    end # could add protection against deleted pitches in url
+        set_pitch
+    end 
 
     def edit
         set_pitch
