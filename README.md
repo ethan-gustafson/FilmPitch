@@ -14,6 +14,7 @@ Or if you would just like to watch the YouTube presentation, watch here: (Video 
 This Rails App is currently in development as of February 2020.
 
 # LICENSE
+https://github.com/GoodGuyGuf/FilmPitch/blob/master/LICENSE
 
 # Contributing
 Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/FilmPitch This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the Contributor Covenant code of conduct.
