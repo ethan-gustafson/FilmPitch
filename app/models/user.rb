@@ -9,12 +9,12 @@ class User < ActiveRecord::Base
     
     def transaction(dollars)
         remaining_balance = self.wallet - dollars 
-        self.update_attributes! wallet: remaining_balance
-        self.wallet
+        self.update_attributes! wallet: remaining_balance # self.update_attributes! will update the user attribute wallet
+        self.wallet # with the argument of remaining balance
     end
 
     def add_to_wallet(money)
-        new_bank_balance = self.wallet + money.to_i
+        new_bank_balance = self.wallet + money.to_i # using to_i because of params value being added in the place of the argument
         self.update_attributes! wallet: new_bank_balance
         self.wallet
     end

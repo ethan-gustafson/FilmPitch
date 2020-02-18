@@ -2,11 +2,11 @@ class PitchesController < ApplicationController
     before_action :require_login
 
     def index
-        if params[:user_id]
-            user = User.find(params[:user_id])
-            @pitches = user.pitches
+        if params[:user_id] # if there is a user_id param
+            user = User.find(params[:user_id]) # we will then find the user.
+            @pitches = user.pitches # @pitches will then be equal to the users pitches.
         else
-            @pitches = Pitch.all
+            @pitches = Pitch.all # but if there is no valid user_id or if it is missing, we will show index of all pitches.
         end
     end
 
