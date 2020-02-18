@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
-    before_action :require_login
-    skip_before_action :require_login, only: [:new, :create]
+    before_action :require_login # this will wrap each method with this action preventing non-user access.
+    skip_before_action :require_login, only: [:new, :create] # this will skip only the sign up and log in pages.
 
     def home
     end
@@ -10,7 +10,7 @@ class UsersController < ApplicationController
     end
 
     def create
-        @user = User.new(user_params)
+        @user = User.new(user_params) # when a new user is created, their wallet is set to 0 to avoid invalid data.
         if @user.save
             session[:user_id] = @user.id
             redirect_to root_path
@@ -20,7 +20,7 @@ class UsersController < ApplicationController
     end
 
     def show
-        set_user # set user
+        set_user
     end
 
     def edit
