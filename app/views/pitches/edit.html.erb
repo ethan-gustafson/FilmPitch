@@ -2,7 +2,7 @@
 <h2><%= link_to "Profile", user_path(current_user) %></h2>
 <h3><%= link_to "Pitches", user_pitches_path(current_user)%></h3>
 <div class="pitch_form">
-<%= form_for set_pitch, :url => { :action => "update" } do |f| %>
+<%= form_for @pitch, :url => { :action => "update" } do |f| %>
         <%= render partial: "pitches/form", locals: {f: f } %>
 <%= f.submit "Submit" %>
 <% end %>

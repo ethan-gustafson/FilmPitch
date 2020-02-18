@@ -2,31 +2,31 @@ class FundsController < ApplicationController
     before_action :require_login
 
     def new
-        @fund = Fund.new
         @pitch = Pitch.find_by(id: params[:pitch_id])
+        @fund = @pitch.funds.build
     end
+
+    # @pitch = Pitch.find_by(id: params[:pitch_id])
 
     def create
-        @fund = Fund.new(fund_params)
+        @fund = current_user.funds.build(fund_params)
+        # @fund = Fund.new(fund_params)
 
-        if @fund.pitch.funding_goal >= 1
-            if @fund.save
-                @fund.user.transaction(@fund.amount)
-                @fund.pitch.user_fund(@fund.amount)
-                redirect_to pitch_path(@fund.pitch_id)
-            else
-                redirect_to pitches_path
-            end
+        if @fund.save
+            @fund.user.transaction(@fund.amount)
+            @fund.pitch.user_fund(@fund.amount)
+            redirect_to pitch_path(@fund.pitch_id)
         else
-            redirect_to pitches_path
+            render :new
         end
     end
+
+    # <%= f.hidden_field :user_id, value: current_user.id %>
 
     private
     
     def fund_params
-        params.require(:fund).permit(
-            :user_id, 
+        params.require(:fund).permit( 
             :pitch_id, 
             :amount
         )

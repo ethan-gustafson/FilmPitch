@@ -1,9 +1,8 @@
-<h1><%= @pitch.title %></h1>
+<h1><%= @fund.pitch.title %></h1>
 
 <%= form_for @fund, :url => { :action => "create" } do |f| %>
     <p>Enter amount: </p>
     <%= f.number_field :amount %>
-    <%= f.hidden_field :user_id, value: current_user.id %>
-    <%= f.hidden_field :pitch_id, value: @pitch.id %>
+    <%= f.hidden_field :pitch_id, value: @fund.pitch.id %>
     <%= f.submit %>
 <% end %>

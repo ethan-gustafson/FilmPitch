@@ -19,4 +19,8 @@ class Pitch < ActiveRecord::Base
 		fully_funded_projects.order(title: :asc)
 	end
 
+	# def sum_of_contributions
+	# 	self.funds.sum(:amount)
+	# end 
+
 end
