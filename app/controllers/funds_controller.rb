@@ -6,11 +6,8 @@ class FundsController < ApplicationController
         @fund = @pitch.funds.build
     end
 
-    # @pitch = Pitch.find_by(id: params[:pitch_id])
-
     def create
         @fund = current_user.funds.build(fund_params)
-        # @fund = Fund.new(fund_params)
 
         if @fund.save
             @fund.user.transaction(@fund.amount)
@@ -21,8 +18,6 @@ class FundsController < ApplicationController
         end
     end
 
-    # <%= f.hidden_field :user_id, value: current_user.id %>
-
     private
     
     def fund_params
@@ -31,6 +26,5 @@ class FundsController < ApplicationController
             :amount
         )
     end
-
 
 end
