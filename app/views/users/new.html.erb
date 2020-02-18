@@ -1,6 +1,6 @@
 <h1>FilmPitch</h1>
 <div class="form">
-<%= form_for(@user, url:'/signup') do |f| %>
+<%= form_for(@user, url: new_user_path) do |f| %>
 
 <% if @user.errors.any? %>
 <div id="error_explanation">
