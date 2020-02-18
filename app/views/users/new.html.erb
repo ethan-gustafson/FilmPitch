@@ -1,3 +1,4 @@
+<%= stylesheet_link_tag "signup" %>
 <h1>FilmPitch</h1>
 <div class="form">
 <%= form_for(@user, url: new_user_path) do |f| %>
@@ -51,8 +52,8 @@
     <br>
 
     <%= f.submit %>
+
+    <h3>Already have an account? <%= link_to "Log in", login_path %></h3>
+    <h3>Login through Twitter? <%= link_to "Log in", '/auth/twitter' %></h3>
     <% end %>
 </div>
-
-<h3>Already have an account? <%= link_to "Log in", login_path %></h3>
-<h3>Login through Twitter? <%= link_to "Log in", '/auth/twitter' %></h3>
