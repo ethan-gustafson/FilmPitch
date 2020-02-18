@@ -27,7 +27,7 @@ class PitchesController < ApplicationController
     end 
 
     def edit
-        set_pitch
+        private_pitch
     end
 
     def update
@@ -62,6 +62,12 @@ class PitchesController < ApplicationController
         if Pitch.find_by_id(params[:id])
             @pitch = Pitch.find(params[:id])
         else
+            redirect_to pitches_path
+        end
+    end
+
+    def private_pitch
+        if current_user.id != set_pitch.user_id
             redirect_to pitches_path
         end
     end
