@@ -18,3 +18,8 @@
      font-family: 'Karla', sans-serif;
      background-color: white;
 }
+
+#logo{
+    text-align: center;
+    cursor: default;
+}
