@@ -1,5 +1,5 @@
-<%= stylesheet_link_tag "signup" %>
-<h1>FilmPitch</h1>
+<%= stylesheet_link_tag "signup_login" %>
+<h1 id="signup_logo">FilmPitch</h1>
 <div class="form">
 <%= form_for(@user, url: new_user_path) do |f| %>
 
@@ -17,41 +17,36 @@
     <% end %>
 
 <div class="field<%= ' field_with_errors' if @user.errors.any? %>">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, placeholder: "Name" %>
 </div>
     <br>
 
 <div class="field<%= ' field_with_errors' if @user.errors.any? %>">
-    <%= f.label :username %>
-    <%= f.text_field :username %>
+    <%= f.text_field :username, placeholder: "Username" %>
 </div>
 
     <br>
 
 <div class="field<%= ' field_with_errors' if @user.errors.any? %>">
-    <%= f.label :email %>
-    <%= f.email_field :email %>
+    <%= f.email_field :email, placeholder: "Email" %>
 </div>
 
     <br>
 
 <div class="field<%= ' field_with_errors' if @user.errors.any? %>">
-    <%= f.label :password %>
-    <%= f.password_field :password %>
+    <%= f.password_field :password, placeholder: "Password" %>
 </div>
 
     <br>
 
 <div class="field<%= ' field_with_errors' if @user.errors.any? %>">
-    <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation %>
+    <%= f.password_field :password_confirmation, placeholder: "Password Confirmation" %>
     <%= f.hidden_field :wallet, value: 0 %>
 </div>
 
     <br>
 
-    <%= f.submit %>
+    <%= f.submit "Sign Up"%>
 
     <h3>Already have an account? <%= link_to "Log in", login_path %></h3>
     <h3>Login through Twitter? <%= link_to "Log in", '/auth/twitter' %></h3>

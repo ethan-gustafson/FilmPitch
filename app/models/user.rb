@@ -20,3 +20,5 @@ class User < ActiveRecord::Base
     end
 
 end
+
+# Find a way to reduce the number of times your project queries the database.
