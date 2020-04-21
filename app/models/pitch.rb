@@ -1,9 +1,8 @@
 class Pitch < ActiveRecord::Base
+	has_many :funds
+	belongs_to :user
 	validates :title, :genre, :summary, :funding_goal, presence: true
 	validates :funding_goal, numericality: {greater_than_or_equal_to: 0}
-    has_many :funds
-	has_many :pitch_funders, through: :funds, source: :user
-	belongs_to :user
 
 	def user_fund(money)
 		remaining_goal = self.funding_goal - money
