@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
 
     has_many :funds
     has_many :pitches
+    has_many :funded_pitches, through: :funds, source: :pitch # returns the pitch instance, not the fund instance.
     
     validates :name, :username, :email, presence: true
     validates :username, :email, uniqueness: true

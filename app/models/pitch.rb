@@ -1,6 +1,8 @@
 class Pitch < ActiveRecord::Base
 	has_many :funds
+	has_many :pitch_funders, through: :funds, source: :user # returns the user instance, not the fund instance.
 	belongs_to :user
+
 	validates :title, :genre, :summary, :funding_goal, presence: true
 	validates :funding_goal, numericality: {greater_than_or_equal_to: 0}
 
