@@ -1,12 +1,24 @@
-<h1 id="logo">FilmPitch</h1>
-<%= link_to "Profile", user_path(current_user) %>
-<%= link_to "Create a new Pitch", new_pitch_path %>
-<%= link_to "All User Pitches", pitches_path %>
-<%= link_to "Log Out", logout_path, method: 'delete' %>
+<header>
+    <h1 id="logo">FilmPitch</h1>
+</header>
+
+<nav>
+    <ol>
+        <li><%= link_to "Profile", user_path(current_user) %></li>
+        <li><%= link_to "Create a new Pitch", new_pitch_path %></li>
+        <li><%= link_to "All User Pitches", pitches_path %></li>
+        <li><%= link_to "Log Out", logout_path, method: 'delete' %></li>
+    </ol>
+<nav>
+
 
 <h4> Help make filmmakers dreams come true </h4>
 <h2>Projects fully funded:</h2>
-<% Pitch.order_by_title.each do |pitch| %>
-    <h3><%= link_to pitch.title, pitch_path(pitch) %></h3>
-    <p><%= pitch.summary %></p>
-<% end %>
+<main>
+    <% Pitch.order_by_title.each do |pitch| %>
+        <section>
+            <h3><%= link_to pitch.title, pitch_path(pitch) %></h3>
+            <p><%= pitch.summary %></p>
+        </section>
+    <% end %>
+</main>
