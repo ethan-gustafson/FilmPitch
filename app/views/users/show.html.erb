@@ -1,19 +1,36 @@
-<h1><%= link_to "Home", root_path%></h1>
-<%= link_to "Create a new Pitch", new_pitch_path %>
-<%= link_to "Log Out", logout_path, method: 'delete' %>
+<%= stylesheet_link_tag "home" %>
 
-<% if current_user.id == set_user.id %>
-<h1>Username: <%= current_user.username%></h1>
-<h4>Name: <%= current_user.name%></h4>
-<h4>Wallet Balance: <%= current_user.wallet%></h4>
-<h2><%= link_to "My Pitches", user_pitches_path(current_user)%></h2>
+<nav id="navbar" role="navigation" aria-label="Nav">
+    <ol>
+        <li><%= link_to "Home", root_path%></li>
+        <li><%= link_to "Create a new Pitch", new_pitch_path %></li>
+        <li><%= link_to "Log Out", logout_path, method: 'delete' %></li>
+    </ol>
+</nav>
 
-<% else %>
-<h1>Username: <%= set_user.username%></h1>
-<h4>Name: <%= set_user.name%></h4>
-<h2><%= link_to "Pitches", user_pitches_path(set_user)%></h2>
-<% end %>
+<main>
 
-<% if current_user.id == @user.id %>
-<h1><%= link_to "Add money to your account?", edit_user_path(current_user)%></h1>
-<% end %>
+    <% if current_user.id == set_user.id %>
+
+        <section>
+            <h3>Username: <%= current_user.username%></h3>
+            <h3>Name: <%= current_user.name%></h3>
+            <h3>Wallet Balance: <%= current_user.wallet%></h3>
+            <h3><%= link_to "My Pitches", user_pitches_path(current_user)%></h3>
+        </section>
+
+    <% else %>
+
+        <section>
+            <h3>Username: <%= set_user.username%></h3>
+            <h3>Name: <%= set_user.name%></h3>
+            <h3><%= link_to "Pitches", user_pitches_path(set_user)%></h3>
+        </section>
+
+    <% end %>
+
+    <% if current_user.id == @user.id %>
+        <h3><%= link_to "Add money to your account?", edit_user_path(current_user)%></h3>
+    <% end %>
+
+</main>
