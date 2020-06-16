@@ -1,49 +1,53 @@
 <% if @pitch.errors.any? %>
-<div id="error_explanation">
-<h2>There were some errors:</h2>
-<ol>
-  <% @pitch.errors.full_messages.each do |message| %>
-    <li>
-    <%= message %>
-    </l1>
-    <% end %>
-</ol>
-</div>
+
+    <div id="error_explanation">
+        <h2>There were some errors:</h2>
+
+        <ol>
+            <% @pitch.errors.full_messages.each do |message| %>
+                <li>
+                    <%= message %>
+                </l1>
+            <% end %>
+        </ol>
+    </div>
+
 <% end %>
 
 <div class="field<%= ' field_with_errors' if @pitch.errors.any? %>">
-    <%= f.label :title %>
+        <%= f.label :title %>
     <br>
-    <%= f.text_field :title%>
+        <%= f.text_field :title%>
 </div>
 
 <div class="field<%= ' field_with_errors' if @pitch.errors.any? %>">
     <br>
-    <%= f.label :summary %>
+        <%= f.label :summary %>
     <br>
-    <%= f.text_area :summary %>
+        <%= f.text_area :summary %>
 </div>
 
 <div class="field<%= ' field_with_errors' if @pitch.errors.any? %>">
     <br>
-    <%= f.label :genre %>
+        <%= f.label :genre %>
     <br>
-    <%= f.text_field :genre %>
+        <%= f.text_field :genre %>
 </div>
 
 <div class="field<%= ' field_with_errors' if @pitch.errors.any? %>">
     <br>
-    <%= f.label "Video Link(You must submit the link that is located within the embed 'iframe src=')" %>
+        <%= f.label "Video Link(You must submit the link that is located within the embed 'iframe src=')" %>
     <br>
-    <%= f.text_field :video_link %>
+        <%= f.text_field :video_link %>
 </div>
 
 <div class="field<%= ' field_with_errors' if @pitch.errors.any? %>">
     <br>
-    <%= f.label :funding_goal %>
+        <%= f.label :funding_goal %>
     <br>
-    <%= f.number_field :funding_goal %>
+        <%= f.number_field :funding_goal %>
 </div>
 
     <br>
-    <%= f.hidden_field :user_id, value: current_user.id %>
+
+<%= f.hidden_field :user_id, value: current_user.id %>
