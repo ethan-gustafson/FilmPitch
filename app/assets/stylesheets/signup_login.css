@@ -5,7 +5,7 @@ main form{
     border-width: 2px;
     border-radius: 2px;
     padding: 30px;
-    background-color: rgb(197, 197, 197);
+    background-color: #EEE8AA;
 }
 
 input[type=text], input[type=password], input[type=email]{
