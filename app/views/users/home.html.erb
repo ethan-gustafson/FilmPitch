@@ -1,20 +1,22 @@
-<header>
-    <h1 id="logo">FilmPitch</h1>
+<%= stylesheet_link_tag "home" %>
+
+<header id="logo">
+    <h1>FilmPitch</h1>
 </header>
 
-<nav>
+<nav id="navbar" role="navigation" aria-label="Nav">
     <ol>
         <li><%= link_to "Profile", user_path(current_user) %></li>
         <li><%= link_to "Create a new Pitch", new_pitch_path %></li>
         <li><%= link_to "All User Pitches", pitches_path %></li>
         <li><%= link_to "Log Out", logout_path, method: 'delete' %></li>
     </ol>
-<nav>
+</nav>
 
-
-<h4> Help make filmmakers dreams come true </h4>
-<h2>Projects fully funded:</h2>
 <main>
+    <h4> Help make filmmakers dreams come true </h4>
+
+    <h2>Projects fully funded:</h2>
     <% Pitch.order_by_title.each do |pitch| %>
         <section>
             <h3><%= link_to pitch.title, pitch_path(pitch) %></h3>
