@@ -1,13 +1,24 @@
 <%= stylesheet_link_tag "signup_login" %>
+
 <h1 id="logo">FilmPitch</h1>
-<div id="login_form">
-<%= form_for(:user, url: login_path) do |f| %>
-    <%= f.text_field :username, placeholder: "Username" %>
-    <br><br>
-    <%= f.password_field :password, placeholder: "Password" %>
-    <br><br>
-    <%= f.submit "Log In" %>
-    <h3>Login through Twitter? <%= link_to "Log in", '/auth/twitter' %></h3>
-    <h3>Don't have an account? <%= link_to "Sign up", new_user_path %></h3>
+
+<main id="login_form">
+    <%= form_for(:user, url: login_path) do |f| %>
+        <%= f.text_field :username, placeholder: "Username" %>
+
+        <br><br>
+
+        <%= f.password_field :password, placeholder: "Password" %>
+    
+        <br><br>
+
+        <%= f.submit "Log In" %>
+        
+    <div>
+        <h3>Login through Twitter? <%= link_to "Log in", '/auth/twitter' %></h3>
+        <h3>Don't have an account? <%= link_to "Sign up", new_user_path %></h3>
+    </div>
+
     <% end %>
-</div>
+
+</main>
