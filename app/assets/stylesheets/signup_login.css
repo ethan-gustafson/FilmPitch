@@ -27,6 +27,19 @@ input[type=submit]{
 }
 
 input:hover{
-    background-color: rgb(162, 255, 250);
+    background-color: #FFD700;
+    transition-duration: 0.5s;
+}
+
+section h3 a {
+    text-decoration: none;
+}
+
+section h3 a:visited {
+    color: #b3830b;
+}
+
+section h3 a:hover {
+    color: #746202;
     transition-duration: 0.5s;
 }
