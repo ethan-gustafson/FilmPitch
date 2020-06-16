@@ -1,5 +1,3 @@
-<%= stylesheet_link_tag "signup_login" %>
-
 <main id="login_form">
     <%= form_for(:user, url: login_path) do |f| %>
         <%= f.text_field :username, placeholder: "Username" %>
@@ -12,10 +10,10 @@
 
         <%= f.submit "Log In" %>
         
-    <div>
+    <section>
         <h3>Login through Twitter? <%= link_to "Log in", '/auth/twitter' %></h3>
         <h3>Don't have an account? <%= link_to "Sign up", new_user_path %></h3>
-    </div>
+    </section>
 
     <% end %>
 
