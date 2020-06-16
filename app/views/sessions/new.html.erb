@@ -1,7 +1,5 @@
 <%= stylesheet_link_tag "signup_login" %>
 
-<h1 id="logo">FilmPitch</h1>
-
 <main id="login_form">
     <%= form_for(:user, url: login_path) do |f| %>
         <%= f.text_field :username, placeholder: "Username" %>
