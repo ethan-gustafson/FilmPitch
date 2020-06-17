@@ -66,7 +66,10 @@
 
                 <% if @pitch.funding_goal != 0 %>
                     <%= link_to "Fund me?", new_pitch_fund_path(@pitch) %>
-                    <%= link_to "Delete Pitch", pitch_path(@pitch), method: 'delete' %>
+
+                        <% if @pitch.funds.count == 0%>
+                            <%= link_to "Delete Pitch", pitch_path(@pitch), method: 'delete' %>
+                        <% end %>
                 <% end %>
             </nav>
 
