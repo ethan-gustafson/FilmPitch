@@ -1,0 +1,11 @@
+#pitch_user_details, .without_video{
+    text-align: center;
+}
+
+.navbar ol{
+    list-style-type: none;
+}
+
+.navbar ol li{
+    display: inline;
+}
