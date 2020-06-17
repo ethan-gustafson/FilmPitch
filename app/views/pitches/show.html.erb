@@ -12,13 +12,13 @@
 
     <article>
 
-        <section id="pitch_user_details">
-            <h1>"<%= @pitch.title %>"</h1>
-            <p>By <%= @pitch.user.username %></p>
-            <h3>Genre: <%= @pitch.genre %></h3>
-        </section>
-
         <% if @pitch.video_link.present? %>
+
+            <section id="pitch_user_details">
+                <h1><strong><em>"<%= @pitch.title %>"</em></strong></h1>
+                <p>By <em><%= @pitch.user.username %></em> | <strong>Genre:</strong> <em><%= @pitch.genre %></em></p>
+            </section>
+
             <iframe width="560" height="315" src=<%=@pitch.video_link%> frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
             <section id="with_video">
@@ -41,10 +41,10 @@
 
             <section id="users_funding_with_video">
                 <% if @pitch.funds.present? %>
-                    <p>Users who funded: </p>
+                    <h3>Users who funded: </h3>
 
                     <% @pitch.funds.each do |fund| %>
-                        <p><%= fund.user.username %> funded "<%= fund.pitch.title %>" $<%=fund.amount%></p>
+                        <p><em><%= fund.user.username %></em> funded <em>"<%= fund.pitch.title %>"</em> <strong>$<%=fund.amount%></strong></p>
                     <% end %>
                 <% end %>
             </section>
@@ -52,10 +52,11 @@
             <% else %>
 
             <section class="without_video">
+                <h1><strong><em>"<%= @pitch.title %>"</em></strong></h1>
+                <p>By <em><%= @pitch.user.username %></em> | <strong>Genre:</strong> <em><%= @pitch.genre %></em></p>
                 <h3>Summary:</h3>
                 <p><%= @pitch.summary %></p>
-                <h3>Funding Goal: </h3>
-                <p>$<%= @pitch.funding_goal %></p>
+                <h3>Funding Goal: $<%= @pitch.funding_goal %></h3>
             </section>
 
             <nav class="without_video" class="navbar" role="navigation" aria-label="Nav">
@@ -71,10 +72,10 @@
 
             <section class="without_video">
                 <% if @pitch.funds.present? %>
-                    <p>Users who funded: </p>
+                    <h3>Users who funded: </h3>
 
                     <% @pitch.funds.each do |fund| %>
-                        <p><%= fund.user.username %> funded "<%= fund.pitch.title %>" $<%=fund.amount%></p>
+                        <p><em><%= fund.user.username %></em> funded <em>"<%= fund.pitch.title %>"</em> <strong>$<%=fund.amount%></strong></p>
                     <% end %>
                 <% end %>
             </section>
