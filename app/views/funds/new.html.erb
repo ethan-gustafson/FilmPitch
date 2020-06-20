@@ -1,8 +1,19 @@
-<h1><%= @fund.pitch.title %></h1>
+<nav role="navigation" aria-label="navigation">
+    <ol>
+        <li><%= link_to "Home", root_path%></li>
+        <li><%= link_to "Profile", user_path(current_user) %></li>
+        <li><%= link_to "Pitches", user_pitches_path(current_user)%></li>
+        <li><%= link_to "Log Out", logout_path, method: 'delete' %></li>
+    </ol>
+</nav>
 
-<%= form_for @fund, :url => { :action => "create" } do |f| %>
-    <p>Enter amount: </p>
-    <%= f.number_field :amount %>
-    <%= f.hidden_field :pitch_id, value: @fund.pitch.id %>
-    <%= f.submit %>
-<% end %>
+<main>
+    <h1>Funding: <em><%= @fund.pitch.title %></em></h1>
+
+    <%= form_for @fund, :url => { :action => "create" } do |f| %>
+        <p>Enter amount: </p>
+        <%= f.number_field :amount %>
+        <%= f.hidden_field :pitch_id, value: @fund.pitch.id %>
+        <%= f.submit %>
+    <% end %>
+</main>
