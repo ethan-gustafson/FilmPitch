@@ -23,3 +23,11 @@
     text-align: center;
     cursor: default;
 }
+
+#navbar ol{
+    list-style-type: none;
+}
+
+#navbar ol li{
+    display: inline;
+}
