@@ -2,7 +2,7 @@
     <ol>
         <li><%= link_to "Home", root_path%></li>
         <li><%= link_to "Profile", user_path(current_user) %></li>
-        <li><%= link_to "Pitches", user_pitches_path(current_user)%></li>
+        <li><%= link_to "Pitches", pitches_path%></li>
         <li><%= link_to "Log Out", logout_path, method: 'delete' %></li>
     <ol>
 </nav>
