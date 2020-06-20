@@ -1,11 +1,3 @@
-#navbar ol{
-    list-style-type: none;
-}
-
-#navbar ol li{
-    display: inline;
-}
-
 #email-creator{
     cursor: pointer;
     background-color: #EEE8AA;
