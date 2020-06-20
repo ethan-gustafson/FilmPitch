@@ -1,10 +1,11 @@
-<nav id="navbar" role="navigation" aria-label="navigation">
+<nav id="navbar" role="navigation" aria-label="Nav">
     <ol>
         <li><%= link_to "Home", root_path%></li>
         <li><%= link_to "Profile", user_path(current_user) %></li>
-        <li><%= link_to "Pitches", pitches_path%></li>
+        <li><%= link_to "Create a new Pitch", new_pitch_path %></li>
+        <li><%= link_to "All User Pitches", pitches_path %></li>
         <li><%= link_to "Log Out", logout_path, method: 'delete' %></li>
-    <ol>
+    </ol>
 </nav>
 
 
