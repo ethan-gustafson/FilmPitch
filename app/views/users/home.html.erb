@@ -18,3 +18,13 @@
         </section>
     <% end %>
 </main>
+
+<footer id="footer">
+    <button id="email-creator" onclick='handleOnClick()'>Have suggestions to improve this website?</button>
+</footer>
+
+<script>
+    function handleOnClick(){
+        document.getElementById("footer").innerHTML = `<p class="email-creator"><em>Email the creator:</em> <a href="mailto:ethan_gustafson@outlook.com">ethan_gustafson@outlook.com</a></p>`
+    }
+</script>
