@@ -1,6 +1,6 @@
 <% if @pitch.errors.any? %>
 
-    <div id="error_explanation">
+    <section id="error_explanation">
         <h2>There were some errors:</h2>
 
         <ol>
@@ -10,44 +10,45 @@
                 </l1>
             <% end %>
         </ol>
-    </div>
+    </section>
 
 <% end %>
 
-<div class="field<%= ' field_with_errors' if @pitch.errors.any? %>">
+<section class="field<%= ' field_with_errors' if @pitch.errors.any? %>">
         <%= f.label :title %>
     <br>
         <%= f.text_field :title%>
-</div>
+</section>
 
-<div class="field<%= ' field_with_errors' if @pitch.errors.any? %>">
+<section class="field<%= ' field_with_errors' if @pitch.errors.any? %>">
     <br>
         <%= f.label :summary %>
     <br>
         <%= f.text_area :summary %>
-</div>
+</section>
 
-<div class="field<%= ' field_with_errors' if @pitch.errors.any? %>">
+<section class="field<%= ' field_with_errors' if @pitch.errors.any? %>">
     <br>
         <%= f.label :genre %>
     <br>
         <%= f.text_field :genre %>
-</div>
+</section>
 
-<div class="field<%= ' field_with_errors' if @pitch.errors.any? %>">
+<section class="field<%= ' field_with_errors' if @pitch.errors.any? %>">
     <br>
         <%= f.label "Video Link(You must submit the link that is located within the embed 'iframe src=')" %>
     <br>
         <%= f.text_field :video_link %>
-</div>
+</section>
 
-<div class="field<%= ' field_with_errors' if @pitch.errors.any? %>">
+<section class="field<%= ' field_with_errors' if @pitch.errors.any? %>">
     <br>
         <%= f.label :funding_goal %>
     <br>
         <%= f.number_field :funding_goal %>
-</div>
-
     <br>
+</section>
 
-<%= f.hidden_field :user_id, value: current_user.id %>
+<section>
+    <%= f.hidden_field :user_id, value: current_user.id %>
+</section>
