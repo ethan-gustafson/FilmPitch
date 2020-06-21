@@ -30,8 +30,6 @@ class SessionsController < ApplicationController
         if @user.valid? # if the user is valid, create a session and redirect to that user.
             session[:user_id] = @user.id
             redirect_to user_path(@user)
-        else 
-            redirect_to login_path, :notice => "Something went wrong"
         end
     end
 
