@@ -1,5 +1,6 @@
 <main id="login_form">
     <%= form_for(:user, url: login_path) do |f| %>
+        <p><%= flash.notice %></p>
         <%= f.text_field :username, placeholder: "Username" %>
 
         <br><br>
