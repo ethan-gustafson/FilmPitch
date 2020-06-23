@@ -13,11 +13,12 @@
     <h1>Pitches:</h1>
 
     <nav role="navigation" aria-label="User Pitches">
-        <ul>
-            <% @pitches.each do |pitch| %>
-                <li><%= link_to pitch.user.username, user_path(pitch.user) %> - <%= link_to pitch.title, pitch_path(pitch.id) %></li>
-            <% end %>
-        </ul>
+        <% @pitches.each do |pitch| %>
+            <div class="user_pitch">
+                <p><strong><em><%= link_to pitch.title, pitch_path(pitch.id) %></em></strong> by: <%= link_to pitch.user.username, user_path(pitch.user) %></p>
+                <p><%= pitch.summary %></p>
+            </div>
+        <% end %>
     </nav>
 
 </main>

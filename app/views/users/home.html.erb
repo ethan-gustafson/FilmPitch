@@ -9,13 +9,16 @@
 </nav>
 
 <main>
-    <h4> Help make filmmakers dreams come true </h4>
+    <h4 class="align-center"> Help make filmmakers dreams come true </h4>
 
     <h2>Projects fully funded:</h2>
     <% Pitch.order_by_title.each do |pitch| %>
         <section>
-            <h3><%= link_to pitch.title, pitch_path(pitch) %></h3>
-            <p><%= pitch.summary %></p>
+            <figure>
+                <h3><strong><em><%= link_to pitch.title, pitch_path(pitch) %></strong></em></h3>
+                <iframe width="560" height="315" src=<%= pitch.video_link %> frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <figcaption><em><%= pitch.summary %></em></figcaption>
+            </figure>
         </section>
     <% end %>
 </main>
