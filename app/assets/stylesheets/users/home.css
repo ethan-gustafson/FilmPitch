@@ -26,3 +26,7 @@
     background-color: gold;
     transition-duration: 0.4s;
 }
+
+.align-center{
+    text-align: center;
+}
