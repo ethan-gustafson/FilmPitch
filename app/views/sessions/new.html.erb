@@ -1,21 +1,17 @@
-<main id="login_form">
-    <%= form_for(:user, url: login_path) do |f| %>
-        <p><%= flash.notice %></p>
-        <%= f.text_field :username, placeholder: "Username" %>
-
-        <br><br>
-
-        <%= f.password_field :password, placeholder: "Password" %>
-    
-        <br><br>
-
-        <%= f.submit "Log In" %>
+<main>
+    <article>
+        <section>
+            <%= form_for(:user, url: login_path) do |f| %>
+                <p><%= flash.notice %></p>
+                <%= f.text_field :username, placeholder: "Username" %>
+                <%= f.password_field :password, placeholder: "Password" %>
+                <%= f.submit "Log In" %>
+            <% end %>
+        </section>
         
-    <section>
-        <h3>Don't have an account? <%= link_to "Sign up", new_user_path %></h3>
-        <h3>Login through Twitter? <%= link_to "Log in", '/auth/twitter' %></h3>
-    </section>
-
-    <% end %>
-
+        <section>
+            <h2>Don't have an account? <%= link_to "Sign up", new_user_path %></h2>
+            <h2>Login through Twitter? <%= link_to "Log in", '/auth/twitter' %></h2>
+        </section>
+    </article>
 </main>
