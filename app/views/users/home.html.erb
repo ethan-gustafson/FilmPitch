@@ -1,4 +1,4 @@
-<nav id="navbar" role="navigation" aria-label="Nav">
+<nav role="navigation" aria-label="Nav">
     <ol>
         <li><%= link_to "Home", root_path%></li>
         <li><%= link_to "Profile", user_path(current_user) %></li>
@@ -9,34 +9,34 @@
 </nav>
 
 <main>
-    <h4 class="align-center"> Help make filmmakers dreams come true </h4>
+    <h2> Help make filmmakers dreams come true </h2>
 
-    <h2>Projects fully funded:</h2>
-    <% Pitch.order_by_title.each do |pitch| %>
-        <section>
-            <figure>
-                <h3><strong><em><%= link_to pitch.title, pitch_path(pitch) %></strong></em></h3>
-                <iframe width="560" height="315" src=<%= pitch.video_link %> frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                <figcaption><em><%= pitch.summary %></em></figcaption>
-            </figure>
-        </section>
-    <% end %>
+    <article>
+        <h3>Projects fully funded:</h3>
+        <% Pitch.order_by_title.each do |pitch| %>
+            <section>
+                <figure>
+                    <h3><strong><em><%= link_to pitch.title, pitch_path(pitch) %></strong></em></h3>
+                    <iframe width="560" height="315" src=<%= pitch.video_link %> frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <figcaption><em><%= pitch.summary %></em></figcaption>
+                </figure>
+            </section>
+        <% end %>
+    </article>
 </main>
+
 <aside>
     <h4>"FilmPitch enabled me to produce my first feature film. - <a href="users/<%= User.first.id %>">Telep@th</a>"</h4>
     <h4>"Everyone is so friendly and supportive. It is a great network of filmmakers looking to make their dreams come true - <a href="users/<%= User.second.id %>">Flash</a></h4>
 </aside>
 
-<footer id="footer">
-    <button id="email-creator" onclick='handleOnClick()'>Have suggestions to improve this website?</button>
+<footer>
+    <button id="footer" onclick='handleOnClick()'>Have suggestions to improve this website?</button>
 </footer>
 
 <script>
     function handleOnClick(){
         document.getElementById("footer").innerHTML = `
-            <p class="email-creator">
-                <em>Email the creator:</em> <a href="mailto:ethan_gustafson@outlook.com">ethan_gustafson@outlook.com</a>
-            </p>
-        `
+            <p><em>Email the creator:</em> <a href="mailto:ethan_gustafson@outlook.com">ethan_gustafson@outlook.com</a></p>`
     }
 </script>
