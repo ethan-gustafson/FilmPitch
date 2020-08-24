@@ -8,23 +8,21 @@
     </ol>
 </nav>
 
-<!-- Should separate the main if condition in the main section to use locals and partials to make this file shorter -->
-
-<main id="show_pitch">
+<main>
 
     <article>
 
         <% if @pitch.video_link.present? %>
 
             <section id="pitch_user_details">
-                <h1><strong><em>"<%= @pitch.title %>"</em></strong></h1>
+                <h2><strong><em>"<%= @pitch.title %>"</em></strong></h2>
                 <p>By <em><%= @pitch.user.username %></em> | <strong>Genre:</strong> <em><%= @pitch.genre %></em></p>
             </section>
 
             <iframe width="560" height="315" src=<%=@pitch.video_link%> frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
             <section id="with_video">
-                <h3>Summary:</h3>
+                <h2>Summary:</h2>
                 <p><%= @pitch.summary %></p>
                 <h3>Funding Goal: </h3>
                 <p>$<%= @pitch.funding_goal %></p>
@@ -32,29 +30,30 @@
 
             <nav id="options_with_video" class="navbar" role="navigation" aria-label="Pitch Options">
                 <% if @pitch.user == current_user %>
-                    <%= link_to "Edit Pitch", edit_pitch_path(@pitch)%>
+                    <p><%= link_to "Edit Pitch", edit_pitch_path(@pitch)%></p>
                 <% end %>
 
                 <% if @pitch.funding_goal != 0 %>
-                    <%= link_to "Fund me?", new_pitch_fund_path(@pitch) %>
-                    <%= link_to "Delete Pitch", pitch_path(@pitch), method: 'delete' %>
+                    <p><%= link_to "Fund me?", new_pitch_fund_path(@pitch) %></p>
+                    <p><%= link_to "Delete Pitch", pitch_path(@pitch), method: 'delete' %></p>
                 <% end %>
             </nav>
 
-            <section id="users_funding_with_video">
+            <section>
                 <% if @pitch.funds.present? %>
-                    <h3>Users who funded: </h3>
-
-                    <% @pitch.funds.each do |fund| %>
-                        <p><em><%= fund.user.username %></em> funded <em>"<%= fund.pitch.title %>"</em> <strong>$<%=fund.amount%></strong></p>
-                    <% end %>
+                    <h2>Users who funded: </h2>
+                    <ol>
+                        <% @pitch.funds.each do |fund| %>
+                            <li><em><%= fund.user.username %></em> funded <em>"<%= fund.pitch.title %>"</em> <strong>$<%=fund.amount%></strong></li>
+                        <% end %>
+                    </ol>
                 <% end %>
             </section>
 
             <% else %>
 
             <section class="without_video">
-                <h1><strong><em>"<%= @pitch.title %>"</em></strong></h1>
+                <h2><strong><em>"<%= @pitch.title %>"</em></strong></h2>
                 <p>By <em><%= @pitch.user.username %></em> | <strong>Genre:</strong> <em><%= @pitch.genre %></em></p>
                 <h3>Summary:</h3>
                 <p><%= @pitch.summary %></p>
@@ -63,25 +62,26 @@
 
             <nav class="without_video" class="navbar" role="navigation" aria-label="Nav">
                 <% if @pitch.user == current_user %>
-                    <%= link_to "Edit Pitch", edit_pitch_path(@pitch)%>
+                    <p><%= link_to "Edit Pitch", edit_pitch_path(@pitch)%></p>
                 <% end %>
 
                 <% if @pitch.funding_goal != 0 %>
-                    <%= link_to "Fund me?", new_pitch_fund_path(@pitch) %>
+                    <p><%= link_to "Fund me?", new_pitch_fund_path(@pitch) %></p>
                 <% end %>
 
                 <% if @pitch.funds.count == 0%>
-                    <%= link_to "Delete Pitch", pitch_path(@pitch), method: 'delete' %>
+                    <p><%= link_to "Delete Pitch", pitch_path(@pitch), method: 'delete' %></p>
                 <% end %>
             </nav>
 
             <section class="without_video">
                 <% if @pitch.funds.present? %>
-                    <h3>Users who funded: </h3>
-
-                    <% @pitch.funds.each do |fund| %>
-                        <p><em><%= fund.user.username %></em> funded <em>"<%= fund.pitch.title %>"</em> <strong>$<%=fund.amount%></strong></p>
-                    <% end %>
+                    <h2>Users who funded: </h2>
+                    <ol>
+                        <% @pitch.funds.each do |fund| %>
+                            <li><em><%= fund.user.username %></em> funded <em>"<%= fund.pitch.title %>"</em> <strong>$<%=fund.amount%></strong></li>
+                        <% end %>
+                    </ol>
                 <% end %>
             </section>
         <% end %>
