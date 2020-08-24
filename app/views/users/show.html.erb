@@ -12,25 +12,22 @@
 
     <% if current_user.id == set_user.id %>
 
-        <section>
-            <h3>Username: <%= current_user.username%></h3>
+        <article>
+            <h2>Username: <%= current_user.username%></h2>
             <h3>Name: <%= current_user.name%></h3>
             <h3>Wallet Balance: <%= current_user.wallet%></h3>
             <h3><%= link_to "My Pitches", user_pitches_path(current_user)%></h3>
-        </section>
+            <h3><%= link_to "Add money to your account?", edit_user_path(current_user)%></h3>
+        </article>
 
     <% else %>
 
-        <section>
-            <h3>Username: <%= set_user.username%></h3>
+        <article>
+            <h2>Username: <%= set_user.username%></h2>
             <h3>Name: <%= set_user.name%></h3>
             <h3><%= link_to "Pitches", user_pitches_path(set_user)%></h3>
-        </section>
+        </article>
 
-    <% end %>
-
-    <% if current_user.id == @user.id %>
-        <h3><%= link_to "Add money to your account?", edit_user_path(current_user)%></h3>
     <% end %>
 
 </main>
