@@ -8,7 +8,7 @@ pitch is fully funded, they can post their own link to their pitch so that their
 NOTE: If you would like to run this application, you will have to clone this repository into your terminal, make sure all gems included are installed and then you can run rails s.
 
 # Development
-This Rails App is currently in development as of February 2020.
+This Rails App was developed in February 2020.
 
 # LICENSE
 https://github.com/GoodGuyGuf/FilmPitch/blob/master/LICENSE
