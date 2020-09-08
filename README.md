@@ -1,14 +1,11 @@
 # Welcome to FilmPitch!
 
-A Rails CMS application that allows users to CRUD their own film pitches and/or fund other filmmaker's projects.
+FilmPitch is a web application that lets users create their own "pitches": their dream film project which could be a short film,
+silent, documentary, series, etc. Each "pitch" is allowed to be funded by any user until the funding goal is reached. When a users
+pitch is fully funded, they can post their own link to their pitch so that their finished product is viewable.
 
 # Installation
 NOTE: If you would like to run this application, you will have to clone this repository into your terminal, make sure all gems included are installed and then you can run rails s.
-
-Or if you would just like to watch the YouTube presentation, watch here: (Video currently in development)
-
-# Usage
-
 
 # Development
 This Rails App is currently in development as of February 2020.
@@ -17,7 +14,7 @@ This Rails App is currently in development as of February 2020.
 https://github.com/GoodGuyGuf/FilmPitch/blob/master/LICENSE
 
 # Contributing
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/FilmPitch This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the Contributor Covenant code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/GoodGuyGuf/FilmPitch This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the Contributor Covenant code of conduct.
 
 # Code of Conduct
 Everyone interacting in the FilmPitch project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the code of conduct.
