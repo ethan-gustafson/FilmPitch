@@ -16,7 +16,8 @@ Rails.application.routes.draw do
     sessions: 'users/sessions',
     registrations: 'users/registrations',
     confirmations: 'users/confirmations',
-    passwords: 'users/passwords'
+    passwords: 'users/passwords',
+    omniauth_callbacks: 'users/omniauth_callbacks'
   }
 
   # This method is going to look inside your User model and create the
@@ -41,13 +42,14 @@ Rails.application.routes.draw do
     # user_confirmation         GET    /users/confirmation(.:format)      users/confirmations#show
     #                           POST   /users/confirmation(.:format)      users/confirmations#create
 
+    # user_twitter_omniauth_authorize GET|POST /users/auth/twitter(.:format)          users/omniauth_callbacks#passthru
+    # user_twitter_omniauth_callback  GET|POST /users/auth/twitter/callback(.:format) users/omniauth_callbacks#twitter
+
   # You have to use `devise_for` on all routes where you'll need helpers such as `current_user`.
   # Use the `skip: :all` option in order to make them available without creating new routes.
     
   resources :projects, only: [:new, :create, :edit, :update, :destroy, :show]
   resources :comments, only: [:create, :update, :destroy]
-
-  # get '/auth/twitter/callback' => 'sessions#omniauth'
 
   # resources :pitches, only: [:new, :create, :edit, :update, :destroy, :show] do 
   #   resources :funds, only: [:new, :create]

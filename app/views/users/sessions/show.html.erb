@@ -11,6 +11,11 @@
   </nav> 
 <%
 =end%>
+<header>
+  <h1><%= "#{current_user.first_name} #{current_user.last_name}" %></h1>
+  <%= image_tag current_user.profile_image %>
+  <p><%= link_to "Log Out", destroy_user_session_path, method: 'delete' %></p>
+</header>
 
 <main>
   <h2> Help make filmmakers dreams come true </h2>

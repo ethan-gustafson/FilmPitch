@@ -27,7 +27,7 @@
 
     <section id="other-options">
       <p>Don't have an account? <%= link_to "Sign up", new_user_registration_path %></p>
-      <p>Login through Twitter? <%= link_to "Log in", '/auth/twitter' %></p>
+      <p><%= link_to "Sign in with twitter", user_twitter_omniauth_authorize_path %></p>
     </section>
   </article>
 </main>
