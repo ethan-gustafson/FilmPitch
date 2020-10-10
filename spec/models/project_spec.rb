@@ -10,7 +10,8 @@ RSpec.describe Project, type: :model do
       story_structure: "",
       themes: "",
       link: "",
-      goal: 20000.00
+      goal: 20000.00,
+      user_id: 1
     )
   }
 
