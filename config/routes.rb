@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   # based on what modules you have defined in your model.
   devise_scope :user do
     root to: 'users/sessions#show'
+    get '/users/:id', to: 'users/rest#show', as: 'user'
   end
 
   devise_for :users, 

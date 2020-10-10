@@ -12,8 +12,10 @@
 <%
 =end%>
 <header>
-  <h1><%= "#{current_user.first_name} #{current_user.last_name}" %></h1>
-  <%= image_tag current_user.profile_image %>
+  <p><%= "#{current_user.first_name} #{current_user.last_name}" %></p>
+  <%= link_to user_path(current_user) do%>
+    <%=image_tag current_user.profile_image %>
+  <% end %>
   <p><%= link_to "Log Out", destroy_user_session_path, method: 'delete' %></p>
 </header>
 

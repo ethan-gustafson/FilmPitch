@@ -9,7 +9,6 @@ class User < ApplicationRecord
   has_many :projects
 
   def self.from_omniauth(auth)
-
     where(:provider => auth.provider, :uid => auth.uid).first_or_create do |user|
       user.first_name = auth.info.name.split(" ")[0]
       user.last_name = auth.info.name.split(" ")[1]
