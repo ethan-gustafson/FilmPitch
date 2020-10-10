@@ -18,10 +18,12 @@ ActiveRecord::Schema.define(version: 2020_10_10_041311) do
   create_table "projects", force: :cascade do |t|
     t.string "name"
     t.string "description"
+    t.string "film_type"
+    t.string "genre"
     t.string "story_structure"
     t.string "themes"
     t.string "link"
-    t.decimal "goal", precision: 8, scale: 2
+    t.decimal "goal", precision: 8, scale: 2, default: "0.0"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
