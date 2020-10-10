@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-US" dir="ltr">
   <head>
-    <title>FilmPitch</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -13,10 +12,15 @@
   </head>
 
   <body>
-    <header id="logo">
-      <h1>FilmPitch</h1>
-    </header>
-    
+
+    <% if notice %>
+      <p class="alert alert-success"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+      <p class="alert alert-danger"><%= alert %></p>
+    <% end %>
+
     <%= yield %>
+    
   </body>
 </html>

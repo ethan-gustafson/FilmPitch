@@ -15,11 +15,5 @@
  */
 
  html{
-     font-family: 'Karla', sans-serif;
-     background-color: #ffffef;
-}
-
-#logo{
-    text-align: center;
-    cursor: default;
+  font-family: 'Karla', sans-serif;
 }

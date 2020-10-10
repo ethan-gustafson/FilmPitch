@@ -5,8 +5,8 @@ ruby '2.7.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.2', '>= 6.0.2.1'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3', '~> 1.4'
+# Use postgresql as the database for Active Record
+gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
 gem 'puma', '~> 4.1'
 # Use SCSS for stylesheets
@@ -18,13 +18,23 @@ gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.7'
 # Use Redis adapter to run Action Cable in production
-# gem 'redis', '~> 4.0'
-# Use Active Model has_secure_password
-gem 'bcrypt', '~> 3.1.7'
-gem 'omniauth'
-gem 'omniauth-twitter'
+gem 'redis', '~> 4.0'
+
+# dotenv loads environment variables from `.env`. Read more: https://github.com/bkeepers/dotenv
 gem 'dotenv-rails'
+# Devise - Flexible authentication solution for Rails with Warden. Read more: https://github.com/heartcombo/devise#omniauth
 gem 'devise'
+# OmniAuth is a flexible authentication system utilizing Rack middleware. Read more: https://github.com/omniauth/omniauth
+gem 'omniauth'
+# OmniAuth strategy for Twitter. Read more: https://github.com/arunagw/omniauth-twitter
+gem 'omniauth-twitter'
+# Draper - Decorators/View-Models for Rails Applications. Read more: https://github.com/drapergem/draper
+gem 'draper'
+# Bullet helps to kill N+1 queries and unused eager loading. Read more: https://github.com/flyerhzm/bullet
+gem 'bullet'
+# The official AWS SDK for Ruby. Read more: https://github.com/aws/aws-sdk-ruby
+gem "aws-sdk-s3", require: false
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
@@ -45,7 +55,6 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
-  gem 'bullet'
 end
 
 group :test do
@@ -53,7 +62,6 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
-  gem 'pry'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
