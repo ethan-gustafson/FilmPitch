@@ -1,0 +1,33 @@
+<main>
+  <article>
+    <section>
+      <div id="login-form-header">
+        <h2>Login</h2>
+        <p><%= flash.notice %></p>
+      </div>
+
+      <%= form_for(:user, url: user_session_path) do |f| %>
+
+      <div class="login-flex">
+        <%= f.label :email, "Email:" %>
+        <%= f.text_field :email, placeholder: "john@gmail.com" %>
+      </div>
+
+      <div class="login-flex">
+        <%= f.label :password, "Password:" %>
+        <%= f.password_field :password, placeholder: "Password" %>
+      </div>
+
+      <div class="login-flex">
+        <%= f.submit "Log In" %>
+      </div>
+
+      <% end %>
+    </section>
+
+    <section id="other-options">
+      <p>Don't have an account? <%= link_to "Sign up", new_user_registration_path %></p>
+      <p>Login through Twitter? <%= link_to "Log in", '/auth/twitter' %></p>
+    </section>
+  </article>
+</main>
