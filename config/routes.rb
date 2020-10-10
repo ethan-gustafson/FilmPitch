@@ -5,7 +5,6 @@ Rails.application.routes.draw do
   # based on what modules you have defined in your model.
   devise_scope :user do
     root to: 'users/sessions#show'
-    get '/users/:id', to: 'users/rest#show', as: 'user'
   end
 
   devise_for :users, 
@@ -48,8 +47,8 @@ Rails.application.routes.draw do
 
   # You have to use `devise_for` on all routes where you'll need helpers such as `current_user`.
   # Use the `skip: :all` option in order to make them available without creating new routes.
-    
-  resources :projects, only: [:new, :create, :edit, :update, :destroy, :show]
+  get '/users/:id', to: 'users/rest#show', as: 'user'
+  resources :projects, only: [:index, :new, :create, :edit, :update, :destroy, :show]
   resources :comments, only: [:create, :update, :destroy]
 
   # resources :pitches, only: [:new, :create, :edit, :update, :destroy, :show] do 

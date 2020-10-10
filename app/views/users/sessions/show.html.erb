@@ -1,24 +1,3 @@
-<%
-=begin%>
-  <nav role="navigation" aria-label="Nav">
-    <ol>
-      <li><%= link_to "Home", root_path%></li>
-      <li><%= link_to "Profile", user_path(current_user) %></li>
-      <li><%= link_to "Create a new Pitch", new_pitch_path %></li>
-      <li><%= link_to "All User Pitches", pitches_path %></li>
-      <li><%= link_to "Log Out", logout_path, method: 'delete' %></li>
-    </ol>
-  </nav> 
-<%
-=end%>
-<header>
-  <p><%= "#{current_user.first_name} #{current_user.last_name}" %></p>
-  <%= link_to user_path(current_user) do%>
-    <%=image_tag current_user.profile_image %>
-  <% end %>
-  <p><%= link_to "Log Out", destroy_user_session_path, method: 'delete' %></p>
-</header>
-
 <main>
   <h2> Help make filmmakers dreams come true </h2>
 

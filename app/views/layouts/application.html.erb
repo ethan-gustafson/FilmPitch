@@ -20,6 +20,10 @@
       <p class="alert alert-danger"><%= alert %></p>
     <% end %>
 
+    <% if !!current_user %>
+      <%= render partial: 'banner/loggedin_banner'%>
+    <% end %>
+
     <%= yield %>
     
   </body>
