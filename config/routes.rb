@@ -39,6 +39,7 @@ Rails.application.routes.draw do
   # Use the `skip: :all` option in order to make them available without creating new routes.
     
   resources :projects, only: [:new, :create, :edit, :update, :destroy, :show]
+  resources :comments, only: [:create, :update, :destroy]
 
   # get '/auth/twitter/callback' => 'sessions#omniauth'
 
