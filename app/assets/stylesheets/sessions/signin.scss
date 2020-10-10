@@ -1,0 +1,14 @@
+#loggedout_banner {
+  background-color: black;
+  overflow: hidden;
+  div{
+    text-align: center;
+    h1 {
+      display: inline-block;
+      background: -webkit-linear-gradient(top left,#ff7b00, purple);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+}

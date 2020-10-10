@@ -15,5 +15,10 @@
  */
 
  html{
-  font-family: 'Karla', sans-serif;
+  font-family: 'Karla', georgia, serif, sans-serif;
+  box-sizing: border-box;
+}
+
+body{
+  margin: 0;
 }

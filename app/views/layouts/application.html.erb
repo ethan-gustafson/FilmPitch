@@ -21,7 +21,9 @@
     <% end %>
 
     <% if !!current_user %>
-      <%= render partial: 'banner/loggedin_banner'%>
+      <%= render partial: 'banner/loggedin_banner' %>
+    <% else %>
+      <%= render partial: 'banner/loggedout_banner' %>
     <% end %>
 
     <%= yield %>
