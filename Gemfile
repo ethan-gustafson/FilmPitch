@@ -22,7 +22,7 @@ gem 'redis', '~> 4.0'
 
 # dotenv loads environment variables from `.env`. Read more: https://github.com/bkeepers/dotenv
 gem 'dotenv-rails'
-# Devise - Flexible authentication solution for Rails with Warden. Read more: https://github.com/heartcombo/devise#omniauth
+# Devise - Flexible authentication solution for Rails with Warden. Read more: https://github.com/heartcombo/devise
 gem 'devise'
 # OmniAuth is a flexible authentication system utilizing Rack middleware. Read more: https://github.com/omniauth/omniauth
 gem 'omniauth'

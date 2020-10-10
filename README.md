@@ -7,8 +7,8 @@ pitch is fully funded, they can post their own link to their pitch so that their
 # Installation
 NOTE: If you would like to run this application, you will have to clone this repository into your terminal, make sure all gems included are installed and then you can run rails s.
 
-# Gems
-This application uses dotenv-rails, redis, postgresql, devise, omniauth-twitter, activestorage, draper, bullet, rspec-rails, capybara and aws-sdk-s3.
+# Gems & Features
+This application uses [dotenv-rails](https://github.com/bkeepers/dotenv), [redis](https://github.com/redis/redis-rb), [postgresql](https://github.com/ged/ruby-pg), [devise](https://github.com/heartcombo/devise), [omniauth-twitter](https://github.com/arunagw/omniauth-twitter), [activestorage](https://github.com/rails/rails/tree/master/activestorage), [draper](https://github.com/drapergem/draper), [bullet](https://github.com/flyerhzm/bullet), [rspec-rails](https://github.com/rspec/rspec-rails), [capybara](https://github.com/teamcapybara/capybara) and [aws-sdk-s3](https://github.com/aws/aws-sdk-ruby).
 
 # Development
 This Rails App was developed in February 2020.
