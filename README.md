@@ -7,6 +7,9 @@ pitch is fully funded, they can post their own link to their pitch so that their
 # Installation
 NOTE: If you would like to run this application, you will have to clone this repository into your terminal, make sure all gems included are installed and then you can run rails s.
 
+# Gems
+This application uses dotenv-rails, redis, postgresql, devise, omniauth-twitter, activestorage, draper, bullet, rspec-rails, capybara and aws-sdk-s3.
+
 # Development
 This Rails App was developed in February 2020.
 
