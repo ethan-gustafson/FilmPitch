@@ -37,22 +37,10 @@ Rails.application.routes.draw do
 
   # You have to use `devise_for` on all routes where you'll need helpers such as `current_user`.
   # Use the `skip: :all` option in order to make them available without creating new routes.
-  # devise_for :projects, skip: :all
-  # devise_for :funds, skip: :all
     
-  # get '/signup', to: 'users#new', as: "new_user"
-  # post '/signup', to: 'users#create', as: 'users_path'
-  # get '/login', to: 'sessions#new' 
-  # post '/login', to: 'sessions#create' 
-  # delete '/logout', to: 'sessions#destroy'
+  resources :projects, only: [:new, :create, :edit, :update, :destroy, :show]
 
   # get '/auth/twitter/callback' => 'sessions#omniauth'
-
-  # resources :users, only: [:show, :edit, :update] do
-  #   resources :pitches, only: [:index]
-  # end
-
-  # resources :pitches, only: [:index]
 
   # resources :pitches, only: [:new, :create, :edit, :update, :destroy, :show] do 
   #   resources :funds, only: [:new, :create]
