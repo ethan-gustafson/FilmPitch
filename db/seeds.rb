@@ -6,19 +6,24 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-# User.create(
-#   first_name: "Ethan",
-#   last_name: "Gustafson",
-#   email: "ethan_gustafson@outlook.com",
-#   password: "123"
-# )
+User.create(
+  first_name: "Ethan",
+  last_name: "Gustafson",
+  email: "ethan_gustafson@outlook.com",
+  password: "123456"
+)
 
-# User.create(
-#   first_name: "Alli",
-#   last_name: "Karavas",
-#   email: "allistar23@hotmail.com",
-#   password: "123"
-# )
+Project.create(
+  name: "Dramaq Weighn",
+  description: "The sight of blood makes this vampire queasy.",
+  film_type: "Short Film",
+  genre: "Comedy",
+  story_structure: "",
+  themes: "",
+  link: "",
+  goal: 20000.00,
+  user_id: 1
+)
 
 # User.create(
 #   first_name: "Momo",

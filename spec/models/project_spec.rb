@@ -1,16 +1,24 @@
 require 'rails_helper'
 
 RSpec.describe Project, type: :model do
+  
+  User.create(
+    first_name: "Ethan",
+    last_name: "Gustafson",
+    email: "ethan_gustafson@outlook.com",
+    password: "123456"
+  )
+
   subject{
     described_class.new(
-      name: "Dramaq Weighn",
-      description: "The sight of blood makes this vampire queasy.",
+      name: "Plasmids by Ryan Industries",
+      description: "A product saves a life.",
       film_type: "Short Film",
-      genre: "Comedy",
+      genre: "Action",
       story_structure: "",
       themes: "",
-      link: "",
-      goal: 20000.00,
+      link: "https://youtu.be/_6XZJMRpszs",
+      goal: 0,
       user_id: 1
     )
   }
@@ -24,5 +32,13 @@ RSpec.describe Project, type: :model do
     subject.description = ""
     subject.goal = ""
     expect(subject).to_not be_valid
+  end
+
+  it "has a cover image" do
+    expect(!!subject.cover_image).to be true
+  end
+
+  it "has one script attached" do
+    expect(!!subject.script).to be true
   end
 end
