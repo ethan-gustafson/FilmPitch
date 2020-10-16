@@ -6,7 +6,7 @@
       <li>
         <%= link_to user_path(current_user) do %>
             <% if current_user.profile_image.attached? %>
-              <%= image_tag current_user.profile_image  %>
+              <%= image_tag current_user.profile_image, size: "30x30", alt: "profile image"  %>
             <% else %>
               <%= image_tag "alien.png", size: "30x30", alt: "default profile image" %>
             <% end %>
