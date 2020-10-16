@@ -6,4 +6,8 @@ class Project < ApplicationRecord
   has_one_attached :cover_image
   has_one_attached :script
   belongs_to :user
+
+  def self.fully_funded
+    where(goal: 0)
+  end
 end
