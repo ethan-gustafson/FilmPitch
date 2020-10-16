@@ -1,2 +1,15 @@
-<h1><%= "#{current_user.first_name} #{current_user.last_name}" %></h1>
-<%= link_to  "Edit Account", edit_user_registration_path(current_user) %>
+<main>
+  <section>
+    <h1><%= "#{current_user.first_name} #{current_user.last_name}" %></h1>
+    <%= link_to  "Edit Account", edit_user_registration_path(current_user) %>
+  </section>
+
+  <section>
+    <h2>Projects</h2>
+    <ul>
+      <% current_user.projects.each do |p|%>
+        <li><%= link_to  p.name, p %></li>
+      <% end %>
+    </ul>
+  </section>
+</main>

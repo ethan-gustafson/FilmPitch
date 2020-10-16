@@ -16,7 +16,7 @@ class ProjectsController < ApplicationController
   end
 
   def show
-    @project = Project.find_by_id(params[:id])
+    find_project_by_id
   end
 
   def index
@@ -24,7 +24,7 @@ class ProjectsController < ApplicationController
   end
 
   def edit
-
+    find_project_by_id
   end
 
   def update
@@ -60,5 +60,9 @@ class ProjectsController < ApplicationController
       :themes,
       :link
     )
+  end
+
+  def find_project_by_id
+    @project = Project.find_by_id(params[:id])
   end
 end

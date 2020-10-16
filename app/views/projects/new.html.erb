@@ -9,39 +9,11 @@
       </div>
 
       <div>
-        <%= f.label :description %>
-        <%= f.text_area :description, placeholder: "Description" %>
-      </div>
-
-      <div>
         <%= f.label :goal %>
         <%= f.number_field :goal, placeholder: "Goal" %>
       </div>
 
-      <div>
-        <%= f.label :film_type %>
-        <%= f.text_field :film_type, placeholder: "'short film', 'feature'" %>
-      </div>
-
-      <div>
-        <%= f.label :genre %>
-        <%= f.text_field :genre, placeholder: "Horror, Comedy" %>
-      </div>
-
-      <div>
-        <%= f.label :story_structure %>
-        <%= f.text_field :story_structure, placeholder: "3 Act Structure" %>
-      </div>
-
-      <div>
-        <%= f.label :themes %>
-        <%= f.text_field :themes, placeholder: "symbolism" %>
-      </div>
-
-      <div>
-        <%= f.label :link %>
-        <%= f.text_field :link, placeholder: "Project video, website, etc." %>
-      </div>
+      <%= render partial: 'form', locals: {f: f} %>
 
       <div>
         <%= f.submit "Submit" %>

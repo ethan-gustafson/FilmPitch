@@ -5,6 +5,12 @@
         <h1><%= @project.name %></h1>
       </div>
 
+      <% if current_user_project? %>
+        <div>
+          <p><%= link_to  "Edit", edit_project_path(@project) %></p>
+        </div>
+      <% end %>
+
       <div>
         <h2>Film Type: <%= @project.film_type %></h2>
       </div>
@@ -34,8 +40,6 @@
         <p><%= @project.themes %></p>
       </div>
     </section>
-
-
 
   </article>
 </main>
