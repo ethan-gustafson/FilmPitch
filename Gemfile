@@ -30,8 +30,6 @@ gem 'omniauth'
 gem 'omniauth-twitter'
 # Draper - Decorators/View-Models for Rails Applications. Read more: https://github.com/drapergem/draper
 gem 'draper'
-# Bullet helps to kill N+1 queries and unused eager loading. Read more: https://github.com/flyerhzm/bullet
-gem 'bullet'
 # The official AWS SDK for Ruby. Read more: https://github.com/aws/aws-sdk-ruby
 gem "aws-sdk-s3", require: false
 # Figaro parses a Git-ignored YAML file in your application and loads its values into ENV. Read more here: https://github.com/laserlemon/figaro
@@ -57,6 +55,8 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  # Bullet helps to kill N+1 queries and unused eager loading. Read more: https://github.com/flyerhzm/bullet
+  gem 'bullet'
 end
 
 group :test do
