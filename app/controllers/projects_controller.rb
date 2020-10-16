@@ -38,7 +38,10 @@ class ProjectsController < ApplicationController
   end
 
   def destroy
-    
+    find_project_by_id
+    @project.destroy
+
+    redirect_to root_path
   end
 
   private

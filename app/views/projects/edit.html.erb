@@ -1,11 +1,18 @@
 <main>
-<h2>Edit <%= @project.name %></h2>
-  <div>
-    <%= form_with model: @project, class: "new-project-form" do |f| %>
-      <%= render partial: 'form', locals: {f: f} %>
-      <div>
-        <%= f.submit "Submit" %>
-      </div>
-    <% end %>
-  </div>
+  <section>
+    <h2>Edit: <%= @project.name %></h2>
+    <div>
+      <%= form_with model: @project, class: "new-project-form" do |f| %>
+        <%= render partial: 'form', locals: {f: f} %>
+        <div>
+          <%= f.submit "Submit" %>
+        </div>
+      <% end %>
+    </div>
+  </section>
+
+  <section>
+    <h2>Delete <%= @project.name %>?</h2>
+    <p><%= link_to  "Permanently Delete Project", @project, method: :delete %></p>
+  </section>
 </main>
