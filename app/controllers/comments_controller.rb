@@ -1,34 +1,34 @@
 class CommentsController < ApplicationController
   def create
-    comment = comment.new(comment_params)
+    comment = Comment.new(comment_params)
 
     if comment.valid?
       comment.save
-      redirect_to post_path(comment.post)
+      redirect_to project_path(comment.project)
     else
-      redirect_to post_path(comment.post)
+      redirect_to project_path(comment.project)
     end
   end
   
   def update
-    @comment = Comment.find_by_id(params[:comment_id])
+    comment = Comment.find_by_id(params[:comment_id])
     
     if current_user_comment?
-      if @comment.update(comment_params)
-        @comment.save
-        redirect_to post_path(@comment.post)
+      if comment.update(comment_params)
+        comment.save
+        redirect_to project_path(comment.project)
       end
     else
-      redirect_to post_path(@comment.post)
+      redirect_to project_path(comment.project)
     end
   end
 
   def destroy
-    @comment = Comment.find_by_id(params[:comment_id])
-    project = @comment.project
+    comment = Comment.find_by_id(params[:comment_id])
+    project = comment.project
     
     if current_user_comment?
-      @comment.destroy
+      comment.destroy
       redirect_to project_path(project)
     else
       redirect_to project_path(project)

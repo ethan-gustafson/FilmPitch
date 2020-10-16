@@ -10,6 +10,8 @@ class Project < ApplicationRecord
   has_one_attached :script
   belongs_to :user
 
+  has_many :comments
+
   def self.fully_funded
     where(goal: 0)
   end
