@@ -9,6 +9,8 @@ class User < ApplicationRecord
   has_many :projects
 
   def self.from_omniauth(auth)
+    # first_or_create will try and find the instance where the provider and uid match, 
+    # else it will create a new instance.
     where(:provider => auth.provider, :uid => auth.uid).first_or_create do |user|
       user.first_name = auth.info.name.split(" ")[0]
       user.last_name = auth.info.name.split(" ")[1]

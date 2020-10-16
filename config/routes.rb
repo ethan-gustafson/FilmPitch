@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   # `devise_for` is responsible to generate all needed routes for devise, 
   # based on what modules you have defined in your model.
   devise_scope :user do
-    root to: 'users/sessions#show'
+    root 'users/sessions#show'
   end
 
   devise_for :users, 
@@ -48,10 +48,19 @@ Rails.application.routes.draw do
   # You have to use `devise_for` on all routes where you'll need helpers such as `current_user`.
   # Use the `skip: :all` option in order to make them available without creating new routes.
   get '/users/:id', to: 'users/rest#show', as: 'user'
-  resources :projects, only: [:index, :new, :create, :edit, :update, :destroy, :show]
+
+  resources :projects do
+    get 'search', on: :collection
+  end
+  
   resources :comments, only: [:create, :update, :destroy]
 
   # resources :pitches, only: [:new, :create, :edit, :update, :destroy, :show] do 
   #   resources :funds, only: [:new, :create]
   # end
 end
+
+# To get a complete list of the available routes in your application, 
+# visit http://localhost:3000/rails/info/routes in your browser while your server 
+# is running in the development environment. You can also execute the `rails routes` 
+# command in your terminal to produce the same output.
