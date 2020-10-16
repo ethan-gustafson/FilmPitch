@@ -17,6 +17,7 @@ class ProjectsController < ApplicationController
 
   def show
     find_project_by_id
+    @comments = @project.comments.last(10).reverse
   end
 
   def index
