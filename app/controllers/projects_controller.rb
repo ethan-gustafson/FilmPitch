@@ -29,8 +29,9 @@ class ProjectsController < ApplicationController
 
   def update
     find_project_by_id
+    current_user_project?
 
-    if @project.update(project_update_params)
+    if @project.update(project_params)
       redirect_to project_path(@project)
     else
       redirect_to project_path(@project)
@@ -46,7 +47,7 @@ class ProjectsController < ApplicationController
 
   private
 
-  def project_creation_params
+  def project_params
     params.require(:project).permit(
       :name,
       :description,
@@ -57,17 +58,6 @@ class ProjectsController < ApplicationController
       :themes,
       :link,
       :user_id
-    )
-  end
-
-  def project_update_params
-    params.require(:project).permit(
-      :description,
-      :film_type,
-      :genre,
-      :story_structure,
-      :themes,
-      :link
     )
   end
 
