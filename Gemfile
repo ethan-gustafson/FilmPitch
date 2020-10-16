@@ -34,6 +34,8 @@ gem 'draper'
 gem 'bullet'
 # The official AWS SDK for Ruby. Read more: https://github.com/aws/aws-sdk-ruby
 gem "aws-sdk-s3", require: false
+# Figaro parses a Git-ignored YAML file in your application and loads its values into ENV. Read more here: https://github.com/laserlemon/figaro
+gem 'figaro'
 
 # Use Active Storage variant
 gem 'image_processing', '~> 1.2'
