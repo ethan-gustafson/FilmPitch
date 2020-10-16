@@ -1,5 +1,10 @@
-<% Project.all.each do |project|%>
-  <h2><%=project.name%></h2>
-  <p><%=project.description%></p>
-  <p><%=project.film_type%></p>
+<main>
+  <% @projects.each do |project|%>
+    <section>
+      <h2><%= link_to project.name, project %></h2>
+      <p><%=project.description%></p>
+      <p><%=project.film_type%></p>
+      <p><%=project.user.display_name%></p>
+    </section>
   <% end %>
+</main>

@@ -1,2 +1,41 @@
-<h1>Projects#show</h1>
-<p>Find me in app/views/projects/show.html.erb</p>
+<main>
+  <article>
+    <section id="name-goal-filmtype">
+      <div>
+        <h1><%= @project.name %></h1>
+      </div>
+
+      <div>
+        <h2>Film Type: <%= @project.film_type %></h2>
+      </div>
+
+      <div>
+        <p>Goal: $<%= @project.goal %></p>
+      </div>
+    </section>
+
+    <section>
+      <iframe src=<%= @project.link %>></iframe>
+    </section>
+
+    <section id="description">
+      <div>
+        <h2>Description:</h2>
+        <p><%= @project.description %></p>
+      </div>
+
+      <div>
+        <h2>Story Structure:</h2>
+        <p><%= @project.story_structure %></p>
+      </div>
+
+      <div>
+        <h2>Themes:</h2>
+        <p><%= @project.themes %></p>
+      </div>
+    </section>
+
+
+
+  </article>
+</main>

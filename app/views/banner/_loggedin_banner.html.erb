@@ -1,8 +1,9 @@
 <header>
   <nav>
     <ul>
-      <li><%= link_to "Home", root_path %></li>
       <li><%= link_to "Projects", projects_path %></li>
+      <li><%= link_to "Create New Project", new_project_path %></li>
+      <li><%= link_to "FilmPitch", root_path %></li>
       <li>
         <%= link_to user_path(current_user) do %>
             <% if current_user.profile_image.attached? %>

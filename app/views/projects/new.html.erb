@@ -1,6 +1,8 @@
 <main>
+  <h2>Create New Project</h2>
   <div>
     <%= form_with model: @project, class: "new-project-form" do |f| %>
+      <%= f.hidden_field :user_id, value: current_user.id %>
       <div>
         <%= f.label :name %>
         <%= f.text_field :name, placeholder: "Name" %>
@@ -13,7 +15,7 @@
 
       <div>
         <%= f.label :goal %>
-        <%= f.text_field :goal, placeholder: "Goal" %>
+        <%= f.number_field :goal, placeholder: "Goal" %>
       </div>
 
       <div>
