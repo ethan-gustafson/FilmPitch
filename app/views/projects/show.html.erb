@@ -1,7 +1,7 @@
 <main>
   <article>
     <section id="name-goal-filmtype">
-      <div>
+      <div id="project-name">
         <h1><%= @project.name %></h1>
       </div>
 
@@ -20,11 +20,13 @@
       </div>
     </section>
 
-    <section>
-      <iframe src=<%= @project.link %>></iframe>
-    </section>
+    <% if !@project.link.blank? %>
+      <section>
+        <iframe src=<%= @project.link %>></iframe>
+      </section>
+    <% end %>
 
-    <section id="description">
+    <section id="project-description-structure-themes">
       <div>
         <h2>Description:</h2>
         <p><%= @project.description %></p>

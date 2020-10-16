@@ -20,7 +20,7 @@ class ProjectsController < ApplicationController
   end
 
   def index
-    @projects = Project.take(3)
+    @projects = Project.take(10)
   end
 
   def edit
