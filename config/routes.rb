@@ -7,6 +7,8 @@ Rails.application.routes.draw do
     root 'users/sessions#show'
   end
 
+  mount ActionCable.server => '/cable'
+
   devise_for :users, 
   path_names: {
     sign_in: 'login', 
