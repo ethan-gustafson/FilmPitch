@@ -1,3 +1,6 @@
+// https://github.com/rails/rails/blob/master/actioncable/app/javascript/action_cable/subscriptions.js
+// https://github.com/rails/rails/blob/master/actioncable/app/javascript/action_cable/subscription.js
+
 import consumer from "./consumer";
 
 // Generated with `rails g channel Comments`
