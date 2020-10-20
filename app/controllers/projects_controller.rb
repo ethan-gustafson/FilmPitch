@@ -1,4 +1,5 @@
 class ProjectsController < ApplicationController
+  before_action :authenticate_user!
 
   def new
     @project = Project.new
@@ -17,7 +18,16 @@ class ProjectsController < ApplicationController
 
   def show
     find_project_by_id
-    @comments = @project.comments.last(10).reverse
+    
+    @comments = @project.comments.joins(
+      :user
+    ).select(
+      "comments.id, 
+      comments.description, 
+      comments.user_id, 
+      users.first_name || ' ' || users.last_name 
+      AS display_name"
+    ).reverse.as_json
   end
 
   def index

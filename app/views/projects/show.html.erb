@@ -56,23 +56,9 @@
       <% end %>
     </section>
 
-    <section>
+    <section id="comments">
       <% @comments.each do |comment|%>
-        <div>
-
-          <div>
-            <h4><%= comment.user.display_name %></h4>
-            <p><%= comment.description %></p>
-          </div>
-
-          <% if current_user.id == comment.user_id %>
-            <div>
-              <button>Edit</button>
-              <p><%= link_to  "Delete", comment, method: :delete %></p>
-            </div>
-          <% end %>
-
-        </div>
+        <%= render partial: "comments/comment", locals: {comment: comment} %>
       <% end %>
     </section>
   </article>

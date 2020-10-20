@@ -1,0 +1,18 @@
+<div>
+  <div>
+    <h4><%= comment['display_name'] %></h4>
+    <p><%= comment['description'] %></p>
+  </div>
+
+  <% if current_user.id == comment['user_id'] %>
+    <div>
+      <button>Edit</button>
+      <p>
+        <%= link_to 'delete', 
+        { controller: "comments", action: "destroy", id: comment['id'] }, 
+        data: { confirm: 'Are you sure?' }, 
+        method: :delete %>
+      </p>
+    </div>
+  <% end %>
+</div>

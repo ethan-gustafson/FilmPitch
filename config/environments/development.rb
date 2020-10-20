@@ -90,5 +90,9 @@ Rails.application.configure do
     Bullet.stacktrace_includes = [ 'your_gem', 'your_middleware' ]
     Bullet.stacktrace_excludes = [ 'their_gem', 'their_middleware', ['my_file.rb', 'my_method'], ['my_file.rb', 16..20] ]
   end
-  
+
+  config.action_cable.url = "ws:localhost:3000/cable"
+
+  config.action_cable.allowed_request_origins = [/http:\/\/*/, /https:\/\/*/]
+  config.action_cable.worker_pool_size = 5
 end

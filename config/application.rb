@@ -15,5 +15,8 @@ module FilmPitch
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
+    config.active_job.queue_name_prefix = Rails.env
+    
+    config.action_cable.mount_path = '/cable'
   end
 end

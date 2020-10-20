@@ -22,7 +22,7 @@ Project.create(
   themes: "",
   link: "",
   goal: 20000.00,
-  user_id: 1
+  user_id: 16
 )
 
 # User.create(
