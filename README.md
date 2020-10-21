@@ -8,7 +8,7 @@ pitch is fully funded, they can post their own link to their pitch so that their
 NOTE: If you would like to run this application, you will have to clone this repository into your terminal, make sure all gems included are installed and then you can run rails s.
 
 # Gems & Features
-This application uses [dotenv-rails](https://github.com/bkeepers/dotenv), [redis](https://github.com/redis/redis-rb), [postgresql](https://github.com/ged/ruby-pg), [devise](https://github.com/heartcombo/devise), [omniauth-twitter](https://github.com/arunagw/omniauth-twitter), [activestorage](https://github.com/rails/rails/tree/master/activestorage), [draper](https://github.com/drapergem/draper), [bullet](https://github.com/flyerhzm/bullet), [rspec-rails](https://github.com/rspec/rspec-rails), [capybara](https://github.com/teamcapybara/capybara) and [aws-sdk-s3](https://github.com/aws/aws-sdk-ruby).
+This application uses [dotenv-rails](https://github.com/bkeepers/dotenv), [redis](https://github.com/redis/redis-rb), [postgresql](https://github.com/ged/ruby-pg), [devise](https://github.com/heartcombo/devise), [omniauth-twitter](https://github.com/arunagw/omniauth-twitter), [ActiveStorage](https://github.com/rails/rails/tree/master/activestorage), [Action Cable](https://github.com/rails/rails/tree/master/actioncable), [Action Mailer](https://github.com/rails/rails/tree/master/actionmailer), [ActiveJob](https://github.com/rails/rails/tree/master/activejob), [draper](https://github.com/drapergem/draper), [bullet](https://github.com/flyerhzm/bullet), [rspec-rails](https://github.com/rspec/rspec-rails), [capybara](https://github.com/teamcapybara/capybara) and [aws-sdk-s3](https://github.com/aws/aws-sdk-ruby).
 
 # Development
 This Rails App was developed in February 2020.
