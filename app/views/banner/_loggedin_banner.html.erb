@@ -5,7 +5,7 @@
       <li><%= link_to "Create New Project", new_project_path %></li>
       <li><%= link_to "FilmPitch", root_path %></li>
       <li>
-        <%= link_to user_path(current_user) do %>
+        <%= link_to user_path(current_user), id: "current_user" do %>
             <% if current_user.profile_image.attached? %>
               <%= image_tag current_user.profile_image, size: "30x30", alt: "profile image"  %>
             <% else %>

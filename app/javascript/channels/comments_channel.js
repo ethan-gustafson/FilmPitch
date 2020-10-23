@@ -30,7 +30,45 @@ consumer.subscriptions.create({channel: "CommentsChannel", id: id}, {
 
   appendComment(data){
     const commentSection = document.getElementById("comments");
-    commentSection.insertAdjacentHTML("afterbegin", data);
+
+    const currentUserElement = document.getElementById("current_user").href;
+    const currentUserId = parseInt(currentUserElement.split('/users/')[1]);
+
+    console.log(`this is you: ${currentUserId}`);
+    console.log(`this is the data sent in: ${data.user_id}`)
+
+    var div = document.createElement("div");
+
+    if (currentUserId === data.user_id){
+      div.innerHTML = `
+        <div>
+          <h4>${data.display_name}</h4>
+          <p>${data.description}</p>
+        </div>
+
+        <div>
+          <button>Edit</button>
+          <p>
+            <a data-confirm="Are you sure?" 
+              rel="nofollow" 
+              data-method="delete" 
+              href="/comments/${data.id}"
+            >
+              delete
+            </a>
+          </p>
+        </div>
+      `
+    } else {
+      div.innerHTML = `
+        <div>
+          <h4>${data.display_name}</h4>
+          <p>${data.description}</p>
+        </div>
+      `
+    }
+
+    commentSection.insertAdjacentHTML("afterbegin", div.innerHTML);
   }
 })
 

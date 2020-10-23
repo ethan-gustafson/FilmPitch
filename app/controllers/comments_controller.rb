@@ -1,32 +1,25 @@
 class CommentsController < ApplicationController
   def create
-    @comment = Comment.new(comment_params)
+    comment = Comment.new(comment_params)
 
-    if @comment.valid?
+    if comment.valid?
 
-      @comment.save
+      comment.save
       # You have to use methods found in ActiveJob::Core::ClassMethods -> 
       # https://edgeapi.rubyonrails.org/classes/ActiveJob/Core/ClassMethods.html
 
       # To enqueue a job to be performed as soon as the queuing system is free, use:
       # .perform_later(record)
 
-      @obj = {
-        id: @comment.id,
-        description: @comment.description,
-        user_id: @comment.user_id,
-        project_id: @comment.project_id,
-        display_name: @comment.user.display_name
-      }.as_json
-
       CommentBroadcastJob.perform_later(
-        @comment.project, 
-        render_to_string(
-          partial: 'comments/comment',
-          locals: {
-            comment: @obj
-          } 
-        )
+        comment.project, 
+        {
+          id: comment.id,
+          description: comment.description,
+          user_id: comment.user_id,
+          project_id: comment.project_id,
+          display_name: comment.user.display_name
+        }.as_json
       )
 
     else

@@ -27,7 +27,7 @@ class ProjectsController < ApplicationController
       comments.user_id, 
       users.first_name || ' ' || users.last_name 
       AS display_name"
-    ).reverse.as_json
+    ).last(10).reverse.as_json
   end
 
   def index
