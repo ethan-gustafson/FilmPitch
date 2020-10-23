@@ -1,13 +1,13 @@
-<header>
-  <nav>
+<header id="loggedin-header">
+  <nav id="site-nav">
     <ul>
-      <li><%= link_to "Projects", projects_path %></li>
-      <li><%= link_to "Create New Project", new_project_path %></li>
-      <li><%= link_to "FilmPitch", root_path %></li>
-      <li>
+      <li id="projects-path"><%= link_to "Projects", projects_path %></li>
+      <li id="projects-new-path"><%= link_to "Create New Project", new_project_path %></li>
+      <li id="root-path"><%= link_to "FilmPitch", root_path %></li>
+      <li id="current_user-path">
         <%= link_to user_path(current_user), id: "current_user" do %>
             <% if current_user.profile_image.attached? %>
-              <%= image_tag current_user.profile_image, size: "30x30", alt: "profile image"  %>
+              <%= image_tag current_user.profile_image, size: "40x40", alt: "profile image"  %>
             <% else %>
               <%= image_tag "alien.png", size: "30x30", alt: "default profile image" %>
             <% end %>

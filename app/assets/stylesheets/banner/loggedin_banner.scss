@@ -1,0 +1,55 @@
+#loggedin-header{
+  background-color: black;
+  #site-nav{
+    ul{
+      list-style-type: none;
+      padding-inline-start: 0;
+
+      margin-block-start: 0;
+      margin-block-end: 0;
+
+      display: grid;
+      grid-template-columns: repeat(20, 1fr);
+      grid-template-rows: 80px;
+      grid-auto-columns: 1fr;
+      justify-content: center;
+      align-items: center;
+
+      img{
+        border-radius: 50%;
+      }
+
+      li{
+        padding: 10px;
+        white-space: nowrap;
+      }
+
+      a{
+        text-decoration: none;
+        color: orangered;
+      }
+
+      a:hover{
+        color: white;
+        transition-duration: 0.3s;
+      }
+
+      #projects-path{
+        grid-column: 2 / 3;
+      }
+
+      #projects-new-path{
+        grid-column: 4 / 5;
+      }
+
+      #root-path{
+        font-size: 28px;
+        grid-column: 10 / 11;
+      }
+
+      #current_user-path{
+        grid-column: 18 / 19;
+      }
+    }
+  }
+}
