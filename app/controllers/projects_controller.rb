@@ -56,6 +56,30 @@ class ProjectsController < ApplicationController
     redirect_to root_path
   end
 
+  def search
+
+  end
+
+  def new_projects
+    
+  end
+
+  def popular_projects
+
+  end
+
+  def fully_funded
+
+  end
+
+  def genres
+
+  end
+
+  def film_types
+    
+  end
+
   private
 
   def project_params
