@@ -15,6 +15,7 @@ class Users::SessionsController < Devise::SessionsController
 
   def show
     redirect_to new_user_registration_path if !user_signed_in?
+    @projects = Project.last(3)
   end
 
   # DELETE /resource/sign_out

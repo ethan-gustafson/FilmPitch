@@ -53,6 +53,11 @@ Rails.application.routes.draw do
 
   resources :projects do
     get 'search', on: :collection
+    get 'new-projects', on: :collection
+    get 'popular-projects', on: :collection
+    get 'fully-funded', on: :collection
+    get 'genres', on: :collection
+    get 'film-types', on: :collection
   end
   
   resources :comments, only: [:create, :update, :destroy]
