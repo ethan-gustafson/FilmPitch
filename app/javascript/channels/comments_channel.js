@@ -6,7 +6,7 @@ import consumer from "./consumer";
 // Generated with `rails g channel Comments`
 
 var url = window.location.href;
-let id = url.slice(url.length - 1, url.length);
+let id = url.split('/projects/')[1];
 
 consumer.subscriptions.create({channel: "CommentsChannel", id: id}, {
   connected() {
