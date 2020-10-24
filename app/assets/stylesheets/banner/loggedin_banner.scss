@@ -53,3 +53,15 @@
     }
   }
 }
+
+#projects-nav-container{
+  width:100%;
+  #projects-nav{
+    list-style-type: none;
+    display: flex;
+    width: 100%;
+    li{
+      flex: 1 1 20%;
+    }
+  }
+}
