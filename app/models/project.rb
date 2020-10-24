@@ -13,12 +13,18 @@ class Project < ApplicationRecord
   has_many :comments
 
   @@genres = {
-    :action=>"Action", :adventure=>"Adventure", :comedy=>"Comedy", 
-    :crime=>"Crime", :drama=>"Drama", :fantasy=>"Fantasy", 
-    :historical=>"Historical", :horror=>"Horror", :mystery=>"Mystery", 
+    :action=>"Action", :adventure=>"Adventure", biopic: "Biopic", 
+    :comedy=>"Comedy", :crime=>"Crime", :drama=>"Drama", :fantasy=>"Fantasy", 
+    :historical=>"Historical", :horror=>"Horror", :mystery=>"Mystery", noir: "Noir" 
     :philosophical=>"Philosophical", :political=>"Political", :romance=>"Romance", 
-    :satire=>"Satire", :"science fiction"=>"Science Fiction", :social=>"Social", 
-    :thriller=>"Thriller", :urban=>"Urban", :western=>"Western"
+    :satire=>"Satire", :"science fiction"=>"Science Fiction", :silent=>"Silent", 
+    :social=>"Social", :thriller=>"Thriller", :urban=>"Urban", :western=>"Western"
+  }
+
+  @@film_types = {
+    advertisement: "Advertisement", animation: "Animation", 
+    documentary: "Documentary", feature: "Feature", short: "Short",
+    episodic: "Episodic"
   }
 
   def self.fully_funded
@@ -46,5 +52,9 @@ class Project < ApplicationRecord
     key = genre.downcase.to_sym
     
     !self.genres.has_key?(key) ? errors.add(key, "invalid type") : true
+  end
+
+  def self.film_types
+    @@film_types
   end
 end
