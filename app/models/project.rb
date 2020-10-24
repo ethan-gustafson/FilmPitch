@@ -29,21 +29,12 @@ class Project < ApplicationRecord
     episodic: "Episodic"
   }
 
-  def self.fully_funded
-    joins(
-      :user
-    ).select("
-      projects.id, 
-      projects.name,
-      projects.goal,
-      projects.description, 
-      projects.film_type, 
-      users.first_name || ' ' || users.last_name AS author
-    ").where(goal: 0).as_json
-  end
-
   def self.genres
     @@genres
+  end
+
+  def self.film_types
+    @@film_types
   end
 
   def self.find_projects_by_attr(key:, value:)
@@ -64,7 +55,36 @@ class Project < ApplicationRecord
     end
   end
 
-  def self.film_types
-    @@film_types
+  def self.fully_funded
+    joins(
+      :user
+    ).select("
+      projects.id, 
+      projects.name,
+      projects.goal,
+      projects.description, 
+      projects.film_type, 
+      users.first_name || ' ' || users.last_name AS author
+    ").where(goal: 0).as_json
+  end
+
+  def self.most_popular
+    joins(:comments).select("
+      projects.id, 
+      projects.name,
+      projects.goal,
+      projects.description, 
+      projects.film_type,
+      count(comments.id) AS comments_count
+    ").group("projects.id, 
+      projects.name,
+      projects.goal,
+      projects.description, 
+      projects.film_type
+    ").order("comments_count DESC").last(10).as_json
+  end
+
+  def self.newly_created
+    
   end
 end

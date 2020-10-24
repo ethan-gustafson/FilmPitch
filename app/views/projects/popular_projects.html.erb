@@ -1,2 +1,10 @@
 <main>
+  <% @projects.each do |project|%>
+    <section>
+      <h2><%= link_to project['name'], project_path(project['id']) %>: <%=project['comments_count']%> comments</h2>
+      <p>Remaining: $<%=project['goal']%></p>
+      <p><%=project['description']%></p>
+      <p><%=project['film_type']%></p>
+    </section>
+  <% end %>
 </main>

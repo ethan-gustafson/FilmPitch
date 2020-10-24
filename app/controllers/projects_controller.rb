@@ -61,11 +61,11 @@ class ProjectsController < ApplicationController
   end
 
   def new_projects
-    
+    # @projects = Project.newly_created
   end
 
   def popular_projects
-
+    @projects = Project.most_popular
   end
 
   def fully_funded
