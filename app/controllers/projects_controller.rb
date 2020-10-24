@@ -6,7 +6,7 @@ class ProjectsController < ApplicationController
   end
   
   def create
-    @project = Project.new(project_creation_params)
+    @project = Project.new(project_params)
 
     if @project.valid?
       @project.save
@@ -69,7 +69,16 @@ class ProjectsController < ApplicationController
   end
 
   def fully_funded
-
+    @projects = Project.joins(
+      :user
+    ).select("
+      projects.id, 
+      projects.name,
+      projects.goal,
+      projects.description, 
+      projects.film_type, 
+      users.first_name || ' ' || users.last_name AS author
+    ").where(goal: 0).as_json
   end
 
   def genres
