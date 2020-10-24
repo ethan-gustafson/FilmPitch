@@ -13,6 +13,11 @@
             <% end %>
         <% end %>
       </li>
+      <%
+=begin%>
+ <li id="stripe-billing-path"><%= stripe_elements_tag submit_path: billing_path %></li> 
+<%
+=end%>
       <li><%= link_to "Log Out", destroy_user_session_path, method: 'delete' %></li>
     </ul>
   </nav>
