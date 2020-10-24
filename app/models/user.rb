@@ -6,7 +6,10 @@ class User < ApplicationRecord
     omniauth_providers: %i[twitter]
   
   has_one_attached :profile_image
+  
   has_many :projects
+  has_many :comments 
+  has_many :donations
 
   def self.from_omniauth(auth)
     # first_or_create will try and find the instance where the provider and uid match, 
