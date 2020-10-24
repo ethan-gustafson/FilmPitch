@@ -61,7 +61,7 @@ class ProjectsController < ApplicationController
   end
 
   def new_projects
-    # @projects = Project.newly_created
+    @projects = Project.newly_created
   end
 
   def popular_projects

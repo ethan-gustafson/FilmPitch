@@ -85,6 +85,15 @@ class Project < ApplicationRecord
   end
 
   def self.newly_created
-    
+    select(
+      :id,
+      :name,
+      :goal,
+      :description,
+      :film_type,
+      :created_at
+      ).order(
+        created_at: :desc
+      ).last(10).as_json
   end
 end
