@@ -3,6 +3,8 @@ class Project < ApplicationRecord
   validates :name, uniqueness: true
   validates :goal, numericality: { greater_than_or_equal_to: 0 }
 
+  validate :acceptable_genre?, :acceptable_film_type?
+
   # before_destroy -> When donations are created, projects will no longer be allowed
   # to be destroyed if there are donations on the project.
 
@@ -50,10 +52,16 @@ class Project < ApplicationRecord
     where(key => value).last(10)
   end
 
-  def acceptable_genre?(genre)
-    key = genre.downcase.to_sym
-    
-    !self.genres.has_key?(key) ? errors.add(key, "invalid type") : true
+  def acceptable_film_type?
+    if !@@film_types.has_key?(self.film_type.downcase.to_sym) 
+      errors.add(:film_type, "invalid type")
+    end
+  end
+
+  def acceptable_genre?
+    if !@@genres.has_key?(self.genre.downcase.to_sym) 
+      errors.add(:genre, "invalid category")
+    end
   end
 
   def self.film_types

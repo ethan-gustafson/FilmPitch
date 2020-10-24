@@ -5,12 +5,13 @@
 
 <div>
   <%= f.label :film_type %>
-  <%= f.text_field :film_type, placeholder: "'short film', 'feature'" %>
+  <% # collection_select(method, collection, value_method, text_method, options = {}, html_options = {})%>
+  <%= f.collection_select :film_type, Project.film_types, :last, :last%>
 </div>
 
 <div>
   <%= f.label :genre %>
-  <%= f.text_field :genre, placeholder: "Horror, Comedy" %>
+  <%= f.collection_select :genre, Project.genres, :last, :last%>
 </div>
 
 <div>
