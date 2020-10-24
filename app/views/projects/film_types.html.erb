@@ -1,2 +1,9 @@
 <main>
+<main>
+  <ol>
+  <% @types.each do |k, v| %>
+    <li><%= link_to v, film_type_path(k) %></li>
+  <% end %>
+  </ol>
+</main>
 </main>

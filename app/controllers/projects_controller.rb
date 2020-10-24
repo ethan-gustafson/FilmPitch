@@ -73,7 +73,13 @@ class ProjectsController < ApplicationController
   end
 
   def film_types
-    
+    @types = Project.film_types
+  end
+
+  def film_type
+    type = Project.film_types[params[:type].to_sym]
+
+    @projects = Project.find_projects_by_attr(key: :film_type, value: type)
   end
 
   private

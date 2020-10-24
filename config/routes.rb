@@ -59,6 +59,8 @@ Rails.application.routes.draw do
     get 'film-types', on: :collection
   end
 
+  get '/projects/film-types/:type', to: 'projects#film_type', as: 'film_type'
+
   get '/genres', to: 'genres#index'
   get '/genres/:name', to: 'genres#show', as: "genre"
   
