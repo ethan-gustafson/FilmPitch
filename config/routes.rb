@@ -56,9 +56,11 @@ Rails.application.routes.draw do
     get 'new-projects', on: :collection
     get 'popular-projects', on: :collection
     get 'fully-funded', on: :collection
-    get 'genres', on: :collection
     get 'film-types', on: :collection
   end
+
+  get '/genres', to: 'genres#index'
+  get '/genres/:name', to: 'genres#show', as: "genre"
   
   resources :comments, only: [:create, :update, :destroy]
 

@@ -1,0 +1,7 @@
+<main>
+  <ol>
+  <% @genres.each do |k, v| %>
+    <li><%= link_to v, genre_path(k) %></li>
+  <% end %>
+  </ol>
+</main>
