@@ -15,17 +15,17 @@
 
   <body>
 
+    <% if !!current_user %>
+      <%= render partial: 'banner/loggedin_banner' %>
+    <% else %>
+      <%= render partial: 'banner/loggedout_banner' %>
+    <% end %>
+
     <% if notice %>
       <p class="alert alert-success"><%= notice %></p>
     <% end %>
     <% if alert %>
       <p class="alert alert-danger"><%= alert %></p>
-    <% end %>
-
-    <% if !!current_user %>
-      <%= render partial: 'banner/loggedin_banner' %>
-    <% else %>
-      <%= render partial: 'banner/loggedout_banner' %>
     <% end %>
 
     <%= yield %>
