@@ -1,1 +1,12 @@
-// will handle banner instead of sessions/signin
+@import "../mixins/text";
+
+#loggedout_banner {
+  background-color: black;
+  overflow: hidden;
+  div{
+    text-align: center;
+    h1 {
+      @include gradient-color;
+    }
+  }
+}
