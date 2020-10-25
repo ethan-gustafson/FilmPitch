@@ -1,0 +1,64 @@
+@import "../mixins/text";
+
+#login{
+  margin: 40px auto;
+  width: 500px;
+  padding: 20px;
+
+  background-color: rgb(24, 24, 24);
+  box-shadow: 0 0 2px black;
+  border-radius: 6px;
+
+  h2{
+    @include gradient-color;
+    width: 100%;
+    margin: 0 auto 20px auto;
+    text-align: center;
+  }
+
+  form{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    .field{
+      display: flex;
+      flex-direction: column;
+      flex: 0 1 20%;
+      label {
+        font-size: 24px;
+        text-align: center;
+  
+        @include gradient-color;
+      }
+      input{
+        margin: 1%;
+        font-size: 16px;
+        padding: 10px;
+      }
+    }
+    #remember_me {
+      display: inline-block;
+    }
+  }
+  .actions{
+    margin-top: 10px;
+    text-align: center;
+    input[type='submit']{
+      font-size: 16px;
+      padding: 10px;
+      cursor: pointer;
+    }
+  }
+  .links{
+    a{
+      font-size: 16px;
+      color: orange;
+      line-height: 1.5;
+      text-decoration: none;
+    }
+    a:hover{
+      text-decoration: underline;
+    }
+  }
+}
