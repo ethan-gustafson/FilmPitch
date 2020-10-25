@@ -1,0 +1,123 @@
+#root{
+
+  width: 100%;
+  height: 600px;
+  
+  article{
+
+    height: 500px;
+    width: 90%;
+    margin: 0 auto;
+
+    h2{
+      font-size: 32px;
+    }
+
+    #featured-projects{
+
+      height: 100%;
+      width: 100%;
+      
+      display: flex;
+
+      #featured{
+
+        flex: 1 1 50%;
+        margin-right: 10px;
+
+        box-shadow: 0 1px 3px black;
+        border-radius: 10px;
+
+        .featured-image-container{
+
+          width: 100%;
+          height: 300px;
+
+          margin: 0 auto;
+
+          .featured-project-image{
+
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+
+            width: 100%;
+            height: 100%;
+
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+
+          }
+        }
+        .featured-project-info{
+          h3{
+            text-align: center;
+          }
+
+          p{
+            width: 80%;
+            margin: 0 auto;
+            line-height: 1.5;
+            text-align: left;
+          }
+        }
+      }
+
+      #projects{
+        flex: 1 1 40%;
+        overflow: scroll;
+
+        display: flex;
+        flex-direction: column;
+
+        margin-left: 10px;
+
+        box-shadow: 0 1px 3px black;
+
+        border-radius: 10px
+      }
+
+      .project-container{
+
+        height: 500px;
+
+        border-bottom: solid black 1px;
+
+        .project-positioning-container{
+
+          display: flex;
+          align-items: stretch;
+
+          .image-container{
+
+            flex: 1 1 40%;
+            height: 167px;
+
+            .project-image{
+
+              width: 100%;
+              height: 100%;
+
+              background-size: cover;
+              background-repeat: no-repeat;
+              background-position: center;
+  
+            }
+          }
+          .project-info{
+            flex: 1 1 60%;
+
+            h3{
+              text-align: center;
+            }
+
+            p{
+              width: 80%;
+              margin: 0 auto;
+            }
+          }
+        }
+      }
+    }
+  }
+}
