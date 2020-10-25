@@ -94,7 +94,9 @@ class ProjectsController < ApplicationController
       :story_structure,
       :themes,
       :link,
-      :user_id
+      :user_id,
+      :cover_image,
+      :script
     )
   end
 
