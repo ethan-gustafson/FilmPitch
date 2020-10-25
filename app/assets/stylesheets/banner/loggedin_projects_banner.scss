@@ -1,0 +1,14 @@
+#projects-nav-container{
+  width: 100%;
+  #projects-nav{
+    margin: 20px auto;
+    width: 80%;
+    list-style-type: none;
+
+    padding-inline-start: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
