@@ -1,67 +1,103 @@
+$text-background: -webkit-linear-gradient(top left,#ff7b00, purple);
+
+@mixin text-color {
+  display: inline-block;
+  background: $text-background;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 #loggedin-header{
   background-color: black;
+  height: 70px;
+  width: 100%;
+
+  a{
+    text-decoration: none;
+    @include text-color;
+  }
+
+  a:hover{
+    color: white;
+    transition-duration: 0.3s;
+  }
+
+  img{
+    background-color: white;
+    border-radius: 50%;
+  }
+
   #site-nav{
+    width: 90%;
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    h1{
+      flex: 1 1 30%;
+      margin-block-start: 0;
+      margin-block-end: 0;
+
+      text-align: center;
+      position: relative;
+      width: 50%;
+      left: 0;
+      top: 0;
+    }
+
     ul{
+      flex: 1 1 30%;
+
+      height: 70px;
+
       list-style-type: none;
       padding-inline-start: 0;
 
       margin-block-start: 0;
       margin-block-end: 0;
 
-      display: grid;
-      grid-template-columns: repeat(20, 1fr);
-      grid-template-rows: 80px;
-      grid-auto-columns: 1fr;
-      justify-content: center;
-      align-items: center;
-
-      img{
-        border-radius: 50%;
-      }
+      display: flex;
 
       li{
-        padding: 10px;
         white-space: nowrap;
       }
+    }
 
-      a{
-        text-decoration: none;
-        color: orangered;
-      }
-
-      a:hover{
-        color: white;
-        transition-duration: 0.3s;
-      }
-
-      #projects-path{
-        grid-column: 2 / 3;
-      }
-
-      #projects-new-path{
-        grid-column: 4 / 5;
-      }
-
-      #root-path{
-        font-size: 28px;
-        grid-column: 10 / 11;
-      }
-
-      #current_user-path{
-        grid-column: 18 / 19;
+    .align-left, .align-right{
+      font-size: 20px;
+      align-items: center;
+      position: relative;
+      width: 100%;
+      left: 0;
+      top: 0;
+      @media (max-width: 600px) {
+        font-size: 16px;
       }
     }
-  }
-}
 
-#projects-nav-container{
-  width:100%;
-  #projects-nav{
-    list-style-type: none;
-    display: flex;
-    width: 100%;
-    li{
-      flex: 1 1 20%;
+    #root-path{
+      font-size: 28px;
+      @media (max-width: 600px) {
+        font-size: 20px;
+      }
+    }
+
+    .align-left{
+      justify-content: flex-start;
+      li{
+        flex: 0 1 25%;
+        margin-right: 10px;
+      }
+    }
+
+    .align-right{
+      justify-content: flex-end;
+      li{
+        margin-left: 10px;
+        flex: 0 1 70px;
+      }
     }
   }
 }
