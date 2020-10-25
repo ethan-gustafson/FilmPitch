@@ -1,0 +1,9 @@
+$text-background: -webkit-linear-gradient(top left,#ff7b00, purple) !default;
+
+@mixin gradient-color {
+  display: inline-block;
+  background: -webkit-linear-gradient(top left,#ff7b00, purple);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

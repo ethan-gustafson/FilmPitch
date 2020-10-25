@@ -1,12 +1,4 @@
-$text-background: -webkit-linear-gradient(top left,#ff7b00, purple);
-
-@mixin text-color {
-  display: inline-block;
-  background: $text-background;
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
+@import "../mixins/text";
 
 #loggedout_banner {
   background-color: black;
@@ -14,7 +6,7 @@ $text-background: -webkit-linear-gradient(top left,#ff7b00, purple);
   div{
     text-align: center;
     h1 {
-      @include text-color;
+      @include gradient-color;
     }
   }
 }
@@ -30,7 +22,7 @@ $text-background: -webkit-linear-gradient(top left,#ff7b00, purple);
 
   h2{
     text-align: center;
-    @include text-color;
+    @include gradient-color;
   }
 
   form{
@@ -46,7 +38,7 @@ $text-background: -webkit-linear-gradient(top left,#ff7b00, purple);
         font-size: 24px;
         text-align: center;
   
-        @include text-color;
+        @include gradient-color;
       }
       input{
         margin: 1%;

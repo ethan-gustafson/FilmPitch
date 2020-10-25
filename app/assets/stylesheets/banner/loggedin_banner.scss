@@ -1,12 +1,5 @@
-$text-background: -webkit-linear-gradient(top left,#ff7b00, purple);
+@import "../mixins/text.scss";
 
-@mixin text-color {
-  display: inline-block;
-  background: $text-background;
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
 #loggedin-header{
   background-color: black;
   height: 70px;
@@ -14,7 +7,7 @@ $text-background: -webkit-linear-gradient(top left,#ff7b00, purple);
 
   a{
     text-decoration: none;
-    @include text-color;
+    @include gradient-color;
   }
 
   a:hover{
