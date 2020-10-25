@@ -1,35 +1,25 @@
 <header id="loggedin-header">
   <nav id="site-nav">
-    <ul>
-      <li id="projects-path"><%= link_to "Projects", projects_path %></li>
-      <li id="projects-new-path"><%= link_to "Create New Project", new_project_path %></li>
-      <li id="root-path"><%= link_to "FilmPitch", root_path %></li>
-      <li id="current_user-path">
+    <ul class="align-left">
+      <li><%= link_to "Projects", projects_path %></li>
+      <li><%= link_to "Create New Project", new_project_path %></li>
+    </ul>
+
+    <h1 id="root-path"><%= link_to "FilmPitch", root_path %></h1>
+
+    <ul class="align-right">
+      <li>
         <%= link_to user_path(current_user), id: "current_user" do %>
             <% if current_user.profile_image.attached? %>
               <%= image_tag current_user.profile_image.variant(resize_to_limit: [40, 40]), alt: "profile image"  %>
             <% else %>
-              <%= image_tag "alien.png", size: "30x30", alt: "default profile image" %>
+              <%= image_tag "alien.png", size: "40x40", alt: "default profile image" %>
             <% end %>
         <% end %>
       </li>
-      <%
-=begin%>
- <li id="stripe-billing-path"><%= stripe_elements_tag submit_path: billing_path %></li> 
-<%
-=end%>
       <li><%= link_to "Log Out", destroy_user_session_path, method: 'delete' %></li>
     </ul>
   </nav>
 </header>
-<section id="projects-nav-container">
-  <nav>
-    <ul id="projects-nav">
-      <li><%= link_to  "Popular", popular_projects_projects_path %></li>
-      <li><%= link_to  "New", new_projects_projects_path %></li>
-      <li><%= link_to  "Fully Funded", fully_funded_projects_path %></li>
-      <li><%= link_to  "Genres", genres_path %></li>
-      <li><%= link_to  "Film Types", film_types_projects_path %></li>
-    </ul>
-  </nav>
-</section>
+
+<%= render partial: "banner/loggedin_projects_banner" %>
