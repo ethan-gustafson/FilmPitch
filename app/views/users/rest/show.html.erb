@@ -1,14 +1,20 @@
 <main>
   <section>
-    <h1><%= "#{current_user.first_name} #{current_user.last_name}" %></h1>
-    <%= link_to  "Edit Account", edit_user_registration_path(current_user) %>
+    <% if @user == current_user %>
+      <h1><%= "#{current_user.first_name} #{current_user.last_name}" %></h1>
+      <p><%= current_user.email %></p>
+      <%= link_to  "Edit Account", edit_user_registration_path(current_user) %>
+    <% else %>
+      <h1><%= "#{@user.first_name} #{current_user.last_name}" %></h1>
+      <p><%= @user.email %></p>
+    <% end %>
   </section>
 
   <section>
     <h2>Projects</h2>
     <ul>
-      <% current_user.projects.each do |p|%>
-        <li><%= link_to  p.name, p %></li>
+      <% @user.projects.each do |p|%>
+        <li><%= link_to p.name, p %></li>
       <% end %>
     </ul>
   </section>
