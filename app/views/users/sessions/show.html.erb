@@ -1,15 +1,62 @@
-<main>
+<main id="root">
   <article>
     <h2>Featured</h2>
-    <section>
-      <% @projects.each do |p|%>
-        <div>
-          <h3><%= link_to p.name, p %></h3>
-          <p>Posted by: <%=p.user.display_name%></p>
-          <p><%=p.description%></p>
-          <p>Funding Goal: $<%=p.goal%></p>
+
+    <section id="featured-projects">
+
+      <div id="featured">
+        <% if @featured.cover_image.attached? %>
+          <div class="featured-image-container">
+            <div 
+            class="featured-project-image" 
+            style="background-image: url('<%= rails_blob_url(@featured.cover_image) %>');">
+            </div>
+          </div>
+        <% end %>
+
+        <div class="featured-project-info">
+          <h3><%= link_to @featured.name, @featured %></h3>
+          <p>Posted by: <%=@featured.user.display_name%></p>
+          <p>Funding Goal: $<%=@featured.goal%></p>
+          <p><%= @featured.description %></p>
         </div>
-      <%end%>
+
+      </div>
+
+      <div id="projects">
+        <% @projects.reverse.each do |p|%>
+          <div class="project-container">
+
+            <div class="project-positioning-container">
+
+              <% if p.cover_image.attached? %>
+                <div class="image-container">
+                  <div 
+                  class="project-image" 
+                  style="background-image: url('<%= rails_blob_url(p.cover_image) %>');">
+                  </div>
+                </div>
+              <% else %>
+                <div class="image-container">
+                  <div 
+                  class="project-image" 
+                  style="background-image: url('<%= asset_path 'photo-missing.png' %>');">
+                  </div>
+                </div>
+              <% end %>
+
+              <div class="project-info">
+                <h3><%= link_to p.name, p %></h3>
+                <p>Posted by: <%=p.user.display_name%></p>
+                <p>Funding Goal: $<%=p.goal%></p>
+              </div>
+
+            </div>
+
+          </div>
+        <%end%>
+      </div>
     </section>
+    
   </article>
 </main>
