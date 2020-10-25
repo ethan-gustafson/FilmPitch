@@ -19,7 +19,8 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.7'
 # Use Redis adapter to run Action Cable in production
 gem 'redis', '~> 4.0'
-
+# Integration of RubyMoney - Money with Rails. Read more: https://github.com/RubyMoney/money-rails
+gem 'money-rails', '~>1.12'
 # dotenv loads environment variables from `.env`. Read more: https://github.com/bkeepers/dotenv
 gem 'dotenv-rails'
 # Devise - Flexible authentication solution for Rails with Warden. Read more: https://github.com/heartcombo/devise
