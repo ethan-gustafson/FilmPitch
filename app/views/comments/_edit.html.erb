@@ -1,7 +1,4 @@
 <%= form_with model: comment do |f| %>
-  <%= render partial: 'new', locals: {f: f, project: @project} %>
-
-  <div>
-    <%= f.submit "Submit" %>
-  </div>
+  <%= f.text_field :description %>
+  <%= f.submit "Update" %>
 <% end %>
