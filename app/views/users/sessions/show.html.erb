@@ -15,9 +15,9 @@
         <% end %>
 
         <div class="featured-project-info">
-          <h3><%= link_to @featured.name, @featured %></h3>
+          <h3><%= link_to @featured.name, @featured, "data-turbolinks" => "false" %></h3>
           <p>Posted by: <%=@featured.user.display_name%></p>
-          <p>Funding Goal: $<%=@featured.goal%></p>
+          <p>Funding Goal: <%=humanized_money_with_symbol @featured.goal%></p>
           <p><%= @featured.description %></p>
         </div>
 
@@ -48,7 +48,7 @@
               <div class="project-info">
                 <h3><%= link_to p.name, p %></h3>
                 <p>Posted by: <%=p.user.display_name%></p>
-                <p>Funding Goal: $<%=p.goal%></p>
+                <p>Funding Goal: <%= humanized_money_with_symbol p.goal %></p>
               </div>
 
             </div>
