@@ -1,0 +1,11 @@
+<main>
+  <% @projects.each do |project|%>
+    <section>
+      <h2><%= link_to project.name, project_path(project.id) %></h2>
+      <p>Remaining: <%= humanized_money_with_symbol project.goal_cents %></p>
+      <p><%=project.description%></p>
+      <p>Type: <%=project.film_type%></p>
+      <p>By: <%=project.user.display_name%></p>
+    </section>
+  <% end %>
+</main>
