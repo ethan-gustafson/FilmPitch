@@ -1,8 +1,14 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
+  # To get a complete list of the available routes in your application, 
+  # visit http://localhost:3000/rails/info/routes in your browser while your server 
+  # is running in the development environment. You can also execute the `rails routes` 
+  # command in your terminal to produce the same output.
+
   # `devise_for` is responsible to generate all needed routes for devise, 
   # based on what modules you have defined in your model.
+
   devise_scope :user do
     root 'users/sessions#show'
   end
@@ -22,7 +28,7 @@ Rails.application.routes.draw do
     omniauth_callbacks: 'users/omniauth_callbacks'
   }
 
-  # This method is going to look inside your User model and create the
+  # The devise_for method is going to look inside your User model and create the
     # needed routes:
 
     # new_user_session          GET    /users/login(.:format)             users/sessions#new
@@ -47,31 +53,23 @@ Rails.application.routes.draw do
     # user_twitter_omniauth_authorize GET|POST /users/auth/twitter(.:format)          users/omniauth_callbacks#passthru
     # user_twitter_omniauth_callback  GET|POST /users/auth/twitter/callback(.:format) users/omniauth_callbacks#twitter
 
-  # You have to use `devise_for` on all routes where you'll need helpers such as `current_user`.
-  # Use the `skip: :all` option in order to make them available without creating new routes.
   get '/users/:id', to: 'users/rest#show', as: 'user'
 
-  resources :projects do
-    get 'search', on: :collection
-    get 'new-projects', on: :collection
-    get 'popular-projects', on: :collection
-    get 'fully-funded', on: :collection
-    get 'film-types', on: :collection
-  end
+  resources :projects, only: [:index, :new, :create, :show, :edit, :update, :destroy]
 
-  get '/projects/film-types/:type', to: 'projects#film_type', as: 'film_type'
+  scope 'projects' do
+    scope 'catelog' do
+      get '/search', to: 'project_variations#search', as: 'search_projects'
+      get '/new-projects', to: 'project_variations#new_projects', as: 'newly_created_projects'
+      get '/popular-projects', to: 'project_variations#popular_projects', as: 'popular_projects'
+      get '/fully-funded', to: 'project_variations#fully_funded', as: 'fully_funded_projects'
+      get '/film-types', to: 'project_variations#film_types', as: 'film_types_projects'
+      get '/film-types/:type', to: 'project_variations#film_type', as: 'film_type_projects'
+    end
+  end
 
   get '/genres', to: 'genres#index'
   get '/genres/:name', to: 'genres#show', as: "genre"
   
   resources :comments, only: [:create, :update, :destroy]
-
-  # resources :pitches, only: [:new, :create, :edit, :update, :destroy, :show] do 
-  #   resources :funds, only: [:new, :create]
-  # end
 end
-
-# To get a complete list of the available routes in your application, 
-# visit http://localhost:3000/rails/info/routes in your browser while your server 
-# is running in the development environment. You can also execute the `rails routes` 
-# command in your terminal to produce the same output.
