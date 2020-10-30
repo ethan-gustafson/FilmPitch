@@ -1,4 +1,5 @@
 require_relative 'boot'
+require 'open-uri'
 
 require 'rails/all'
 
