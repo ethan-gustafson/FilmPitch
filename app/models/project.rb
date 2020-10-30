@@ -15,6 +15,18 @@ class Project < ApplicationRecord
   has_many :comments
   has_many :donations
 
+  monetize :goal_cents, allow_nil: false, numericality: { 
+    greater_than_or_equal_to: 0, 
+    less_than_or_equal_to: 1000000
+  }
+
+  # ----------------
+
+  scope :newly_created, -> { order(created_at: :desc) }
+  scope :fully_funded, -> { includes(:user).where(goal_cents: 0) }
+
+  # ----------------
+
   @@genres = {
     :action=>"Action", :adventure=>"Adventure", biopic: "Biopic", 
     :comedy=>"Comedy", :crime=>"Crime", :drama=>"Drama", :fantasy=>"Fantasy", 
@@ -38,12 +50,6 @@ class Project < ApplicationRecord
     @@film_types
   end
 
-  def self.find_projects_by_attr(key:, value:)
-    # key = :genre, value = "Comedy"
-    # where(:genre => "Comedy").last(10)
-    where(key => value).last(10)
-  end
-
   def acceptable_film_type?
     if !@@film_types.has_key?(self.film_type.downcase.to_sym) 
       errors.add(:film_type, "invalid type")
@@ -56,45 +62,15 @@ class Project < ApplicationRecord
     end
   end
 
-  def self.fully_funded
-    joins(
-      :user
-    ).select("
-      projects.id, 
-      projects.name,
-      projects.goal,
-      projects.description, 
-      projects.film_type, 
-      users.first_name || ' ' || users.last_name AS author
-    ").where(goal: 0).as_json
+  def self.find_projects_by_attr(key:, value:)
+    # key = :genre, value = "Comedy"
+    # where(:genre => "Comedy")
+    where(key => value)
   end
 
   def self.most_popular
-    joins(:comments).select("
-      projects.id, 
-      projects.name,
-      projects.goal,
-      projects.description, 
-      projects.film_type,
-      count(comments.id) AS comments_count
-    ").group("projects.id, 
-      projects.name,
-      projects.goal,
-      projects.description, 
-      projects.film_type
-    ").order("comments_count DESC").last(10).as_json
-  end
-
-  def self.newly_created
-    select(
-      :id,
-      :name,
-      :goal,
-      :description,
-      :film_type,
-      :created_at
-      ).order(
-        created_at: :desc
-      ).last(10).as_json
+    joins(:comments).select(
+      "projects.*, count(comments.id) AS comments_count"
+    ).group("projects.id").order("comments_count DESC")
   end
 end
