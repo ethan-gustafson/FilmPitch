@@ -29,11 +29,11 @@ class CommentsChannel < ApplicationCable::Channel
 
     # if there is a record, subscribe the user and start a stream, else reject
     # the user and don't start a new stream.
-      if project
-        stream_for project
-      else
-        reject
-      end
+    if project
+      stream_for project
+    else
+      reject
+    end
   end
 
   def receive(data)
@@ -43,6 +43,8 @@ class CommentsChannel < ApplicationCable::Channel
 
   def unsubscribed
     # Any cleanup needed when channel is unsubscribed
-    # stop_all_streams() -> Unsubscribes all streams associated with this channel from the pubsub queue
+    
+    # stop_all_streams -> Unsubscribes all streams associated with this channel from the pubsub queue
+     stop_all_streams
   end
 end
