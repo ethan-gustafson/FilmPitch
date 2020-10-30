@@ -4,7 +4,7 @@
     <% @projects.each do |project|%>
       <section>
         <h2><%= link_to project.name, project_path(project.id) %></h2>
-        <p>Remaining: $<%=project.goal%></p>
+        <p>Remaining: <%=humanized_money_with_symbol project.goal%></p>
         <p><%=project.description%></p>
         <p><%=project.film_type%></p>
       </section>
