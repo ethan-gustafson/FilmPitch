@@ -16,8 +16,8 @@ class CommentBroadcastJob < ApplicationJob
   # ActiveJob::Base class. The only necessary method to implement is the “perform” method.
   
 
-  def perform(project, partial)
-    CommentsChannel.broadcast_to(project, partial)
+  def perform(project, data)
+    CommentsChannel.broadcast_to(project, data)
   end
 end
 
