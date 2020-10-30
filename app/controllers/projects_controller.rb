@@ -1,6 +1,10 @@
 class ProjectsController < ApplicationController
   before_action :authenticate_user!
 
+  def index
+    @projects = Project.includes(:user).last(10)
+  end
+
   def new
     @project = Project.new
   end
@@ -18,20 +22,7 @@ class ProjectsController < ApplicationController
 
   def show
     find_project_by_id
-    
-    @comments = @project.comments.joins(
-      :user
-    ).select(
-      "comments.id, 
-      comments.description, 
-      comments.user_id, 
-      users.first_name || ' ' || users.last_name 
-      AS display_name"
-    ).last(10).reverse.as_json
-  end
-
-  def index
-    @projects = Project.take(10)
+    show_comments?
   end
 
   def edit
@@ -56,32 +47,6 @@ class ProjectsController < ApplicationController
     redirect_to root_path
   end
 
-  def search
-
-  end
-
-  def new_projects
-    @projects = Project.newly_created
-  end
-
-  def popular_projects
-    @projects = Project.most_popular
-  end
-
-  def fully_funded
-    @projects = Project.fully_funded
-  end
-
-  def film_types
-    @types = Project.film_types
-  end
-
-  def film_type
-    type = Project.film_types[params[:type].to_sym]
-
-    @projects = Project.find_projects_by_attr(key: :film_type, value: type)
-  end
-
   private
 
   def project_params
@@ -98,9 +63,5 @@ class ProjectsController < ApplicationController
       :cover_image,
       :script
     )
-  end
-
-  def find_project_by_id
-    @project = Project.find_by_id(params[:id])
   end
 end
