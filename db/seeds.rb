@@ -9,25 +9,54 @@
 User.create(
   first_name: "Ethan",
   last_name: "Gustafson",
-  email: "ethan_gustafson@outlook.com",
+  email: "ethan_gustafson@yahoo.com",
   password: "123456"
 )
 
 Project.create(
   name: "Dramaq Weighn",
   description: "The sight of blood makes this vampire queasy.",
-  film_type: "Short Film",
+  film_type: "Short",
   genre: "Comedy",
-  story_structure: "",
-  themes: "",
+  story_structure: "3-Act Structure",
+  themes: "Themes in story",
   link: "",
-  goal: 20000.00,
-  user_id: 16
+  goal: 2000,
+  user_id: 1
 )
 
-# User.create(
-#   first_name: "Momo",
-#   last_name: "Gustafson",
-#   email: "ethan_gustafson@yahoo.com",
-#   password: "123"
-# )
+Project.create(
+  name: "Switched",
+  description: "Modern freaky friday.",
+  film_type: "Short",
+  genre: "Comedy",
+  story_structure: "3-Act Structure",
+  themes: "Themes in story",
+  link: "https://www.youtube.com/embed/-byF27tdrnA",
+  goal: 2000,
+  user_id: 1
+)
+
+Project.create(
+  name: "Plasmids by Ryan Industries",
+  description: "In a desperate situation, a product presents itself.",
+  film_type: "Short",
+  genre: "Action",
+  story_structure: "3-Act Structure",
+  themes: "Themes in story",
+  link: "https://www.youtube.com/embed/_6XZJMRpszs",
+  goal: 2000,
+  user_id: 1
+)
+
+Project.create(
+  name: "Bite On This",
+  description: "Doritoz Zombies Commercial",
+  film_type: "Advertisement",
+  genre: "Comedy",
+  story_structure: "3-Act Structure",
+  themes: "Themes in story",
+  link: "https://www.youtube.com/embed/UQBw3o0PZcY",
+  goal: 2000,
+  user_id: 1
+)
