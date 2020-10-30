@@ -17,6 +17,8 @@ gem 'webpacker', '~> 4.0'
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.7'
+# Use Active Storage variant
+gem 'image_processing', '~> 1.2'
 # Use Redis adapter to run Action Cable in production
 gem 'redis', '~> 4.0'
 # Integration of RubyMoney - Money with Rails. Read more: https://github.com/RubyMoney/money-rails
@@ -37,9 +39,9 @@ gem "aws-sdk-s3", require: false
 gem 'figaro'
 # A Rails Engine for integrating with Stripe. Read more: https://github.com/tansengming/stripe-rails
 gem 'stripe-rails'
-
-# Use Active Storage variant
-gem 'image_processing', '~> 1.2'
+# Elasticsearch integrations for ActiveModel/Record and Ruby on Rails. Read more: https://github.com/elastic/elasticsearch-rails
+# gem 'elasticsearch-model'
+# gem 'elasticsearch-rails'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
