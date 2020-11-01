@@ -21,4 +21,10 @@
 
 body{
   margin: 0;
+  height: 100%;
+  width: 100%;
+}
+
+button, a, input[type="submit"]{
+  cursor: pointer;
 }
