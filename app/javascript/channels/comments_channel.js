@@ -129,7 +129,7 @@ consumer.subscriptions.create({channel: "CommentsChannel", id: id}, {
 
   updateComment(data){
     const commentElementDiv = document.querySelector(`#comment_${data.id}`);
-    this.createComment(commentElementDiv, data, data.action);
+    this.createComment(commentElementDiv, data);
   },
   
   deleteComment(id){
