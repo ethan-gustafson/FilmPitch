@@ -64,7 +64,7 @@ consumer.subscriptions.create({channel: "CommentsChannel", id: id}, {
   },
 
   appendComment(element, action){
-    // commentSection is the parent element of all comment elements
+    // commentHeader is the heading element above all comments. 'afterend' places the element after the targetElement itself
     const commentHeader = document.querySelector("#comments h3");
     
     switch (action) {
