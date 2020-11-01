@@ -1,0 +1,233 @@
+@import "../mixins/text";
+
+#welcome-message{
+  margin-block-end: 0;
+  width: 100%;
+
+  float: left;
+  top: 0;
+  text-align: center;
+}
+
+#flex-project-media-comments-container{
+
+  width: 90%;
+  height: 540px;
+  margin: 20px auto 0 auto;
+
+  display: flex;
+  flex-wrap: nowrap;
+
+  article{
+    margin: 20px;
+
+    box-shadow: 0px 1px 3px grey;
+    border-radius: 10px;
+  }
+
+  #project-media-container{
+    flex: 1 1 60%;
+  }
+
+  #project-media-container{
+
+    #iframe-container{
+
+      width: 100%;
+      height: 500px;
+      margin: 0 auto;
+
+      #project-link{
+        border-radius: 10px;
+
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    #background-image{
+      width: 100%;
+      height: 500px;
+      margin: 0 auto;
+
+      border-radius: 10px;
+
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  }
+
+  #comments-container{
+    flex: 1 1 40%;
+
+    #comments-align{
+      width: 100%;
+      margin: 0 auto;
+
+      h3{
+        text-align: center;
+      }
+
+      #form-container{
+        width: 100%;
+        height: 200px;
+        padding-bottom: 10px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        border-bottom: solid grey 1px;
+        background-color: black;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+
+        #comment-fields{
+          display: flex;
+          flex-direction: column;
+
+          label{
+            font-size: 24px;
+            @include gradient-color;
+          }
+
+          label, textarea{
+            margin: 10px auto;
+          }
+
+          textarea{
+            resize: none;
+            font-size: 16px;
+
+            width: 90%;
+            height: 70px;
+            padding: 10px;
+            border-radius: 10px;
+          }
+        }
+        #submit-container{
+          text-align: center;
+          #comment-submit{
+            width: 65px;
+            height: 30px;
+          }
+        }
+      }
+    }
+
+    #comments{
+      overflow: scroll;
+      height: 290px;
+      width: 100%;
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+
+      h3{
+        font-size: 18px;
+        border-bottom: solid grey 1px;
+
+        padding-top: 15px;
+        padding-bottom: 15px;
+        margin-block-start: 0;
+        margin-block-end: 0;
+        text-align: center;
+      }
+
+      div[id^="comment_"]{
+        height: 70%;
+        width: 100%;
+        border-bottom: solid grey 1px;
+
+        background-color: rgb(221, 221, 221);
+
+        h4{
+          display:inline-block;
+          padding: 5% 0 0 5%;
+          margin-block-start: 0;
+        }
+
+        span{
+          display:inline-block;
+          font-size:12px;
+          padding-left:20px;
+        }
+
+        .comment-description{
+          margin: 0 auto;
+          width: 80%;
+          padding: 1px 10px 30px 10px;
+          border-radius: 10px;
+          background-color: white;
+        }
+
+        form{
+          text-align: center;
+          display: flex;
+          flex-direction: column;
+
+          textarea{
+            resize: none;
+            border: none;
+            border-radius: 10px;
+
+            width: 80%;
+            height: 50px;
+            margin: 0 auto;
+
+            padding: 10px;
+            font-size: 16px;
+            font-family: 'Karla', georgia, serif, sans-serif;
+          }
+          textarea:active{
+            border: black;
+          }
+
+          .edit-delete{
+            display: flex;
+            align-items: center;
+            margin: 0 auto;
+            p, input[type="submit"]{
+              margin: 10px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+#project-info{
+
+  width: 90%;
+  height: 100%;
+  margin: 0 auto;
+
+  #title-author{
+    text-align: center;
+    h1{
+      font-size: 28px;
+    }
+  }
+
+  #name-goal-filmtype{
+    display: flex;
+    justify-content: space-around;
+
+    text-align: center;
+    border-bottom: solid lightgrey 1px;
+  }
+
+  #project-info-container{
+    padding: 20px;
+    width: 80%;
+    margin: 0 auto 50px auto;
+    div{
+      padding: 20px;
+      p{
+        padding: 50px;
+      }
+    }
+  }
+
+}
