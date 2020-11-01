@@ -1,4 +1,13 @@
 <%= form_with model: comment do |f| %>
-  <%= f.text_field :description %>
-  <%= f.submit "Update" %>
+  <%= f.hidden_field :user_id, value: current_user.id %>
+  <%= f.hidden_field :project_id, value: comment.project_id%>
+  <%= f.text_area :description, class: "comment_description" %>
+  <div class="edit-delete">
+    <%= f.submit "Update" %>
+    <span>
+      <%= link_to 'Delete', 
+      { controller: "comments", action: "destroy", id: comment.id }, 
+      method: :delete %>
+    </span>
+  </div>
 <% end %>
