@@ -15,7 +15,7 @@
         <% end %>
 
         <div class="featured-project-info">
-          <h3><%= link_to @featured.name, @featured, "data-turbolinks" => "false" %></h3>
+          <h3><%= link_to @featured.name, @featured, data: {turbolinks: "false"} %></h3>
           <p>Posted by: <%=@featured.user.display_name%></p>
           <p>Funding Goal: <%=humanized_money_with_symbol @featured.goal%></p>
           <p><%= @featured.description %></p>
@@ -24,31 +24,29 @@
       </div>
 
       <div id="projects">
-        <% @projects.reverse.each do |p|%>
+        <% @projects.reverse.each do |project|%>
           <div class="project-container">
 
             <div class="project-positioning-container">
 
-              <% if p.cover_image.attached? %>
-                <div class="image-container">
-                  <div 
-                  class="project-image" 
-                  style="background-image: url('<%= rails_blob_url(p.cover_image) %>');">
+              <div class="image-container">
+
+                <% if project.cover_image.attached? %>
+                  <div class="project-image" 
+                    style="background-image: url('<%= rails_blob_url(project.cover_image) %>');">
                   </div>
-                </div>
-              <% else %>
-                <div class="image-container">
-                  <div 
-                  class="project-image" 
-                  style="background-image: url('<%= asset_path 'photo-missing.png' %>');">
+                <% else %>
+                  <div class="project-image" 
+                    style="background-image: url('<%= asset_path 'photo-missing.png' %>');">
                   </div>
-                </div>
-              <% end %>
+                <% end %>
+                
+              </div>
 
               <div class="project-info">
-                <h3><%= link_to p.name, p %></h3>
-                <p>Posted by: <%=p.user.display_name%></p>
-                <p>Funding Goal: <%= humanized_money_with_symbol p.goal %></p>
+                <h3><%= link_to project.name, project, data: {turbolinks: "false"} %></h3>
+                <p>Posted by: <%=project.user.display_name%></p>
+                <p>Funding Goal: <%= humanized_money_with_symbol project.goal %></p>
               </div>
 
             </div>
