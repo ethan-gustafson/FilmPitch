@@ -1,7 +1,7 @@
 <main>
   <% @projects.each do |project|%>
     <section>
-      <h2><%= link_to project.name, project_path(project.id) %></h2>
+      <h2><%= link_to project.name, project_path(project.id), data: {turbolinks: "false"} %></h2>
       <p>Remaining: <%= humanized_money_with_symbol project.goal_cents %></p>
       <p><%=project.description%></p>
       <p>Type: <%=project.film_type%></p>

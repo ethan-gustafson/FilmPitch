@@ -1,7 +1,7 @@
 <main>
   <% @projects.each do |project|%>
     <section>
-      <h2><%= link_to project.name, project_path(project) %></h2>
+      <h2><%= link_to project.name, project_path(project), data: {turbolinks: "false"} %></h2>
       <p>Created at: <%=project.created_at.strftime("%a %m/%d/%y")%></p>
       <p>Remaining: <%= humanized_money_with_symbol project.goal%> </p>
       <p><%=project.description%></p>

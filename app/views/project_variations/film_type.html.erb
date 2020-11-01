@@ -3,7 +3,7 @@
     <h2>Projects: </h2>
     <% @projects.each do |project|%>
       <section>
-        <h2><%= link_to project.name, project_path(project.id) %></h2>
+        <h2><%= link_to project.name, project_path(project.id), data: {turbolinks: "false"} %></h2>
         <p>Remaining: $<%=project.goal%></p>
         <p><%=project.description%></p>
         <p><%=project.film_type%></p>
