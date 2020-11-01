@@ -1,74 +1,144 @@
 // https://github.com/rails/rails/blob/master/actioncable/app/javascript/action_cable/subscriptions.js
 // https://github.com/rails/rails/blob/master/actioncable/app/javascript/action_cable/subscription.js
 
-import consumer from "./consumer";
-
 // Generated with `rails g channel Comments`
 
-var url = window.location.href;
-let id = url.split('/projects/')[1];
+import consumer from "./consumer";
 
+// Capture the project id by getting the url and splitting it between the route and number
+let id = window.location.href.split('/projects/')[1];
+
+// id will be sent to comments_channel.rb#subscribed as params[:id]
 consumer.subscriptions.create({channel: "CommentsChannel", id: id}, {
   connected() {
     // Called when the subscription is ready for use on the server
-    console.log("Connected to the comments channel!");
+    var count = 9;
+    const projectsNav = document.querySelector("#projects-nav");
+    // connectedMessage appears as the first child element of the project nav links header
+    const connectedMessage = document.createElement("p");
+    
+    connectedMessage.id = "welcome-message";
+    connectedMessage.innerHTML = `Welcome to this project's stream! Comments will display in real time. Removing in ${count}...`;
+
+    // The insertAdjacentElement() method of the Element interface inserts a given element node at a given position relative to the element it is invoked upon
+    projectsNav.insertAdjacentElement("afterend", connectedMessage);
+
+    var countDown = setInterval(() => {
+      connectedMessage.innerHTML = `Welcome to this project's stream! Comments will display in real time. Removing in ${count}...`;
+
+      count === 0 ? clearInterval(countDown) : count--;
+    }, 1000);
+
+    setTimeout(() => {
+      connectedMessage.remove();
+    }, 10000);
   },
 
   disconnected() {
     // Called when the subscription has been terminated by the server
+    console.log("disconnected from comments_channel");
   },
 
   received(data) {
     // Called when there's incoming data on the websocket for this channel
-    // console.log("Recieving...")
-    console.log(data);
 
-    // console.log("Appending...")
-    this.appendComment(data);
-    // console.log("I have appended!")
+    switch (data.action) {
+      case "create":
+        let containerDiv = document.createElement("div");
+        containerDiv.id = `comment_${data.id}`;
+
+        this.createComment(containerDiv, data);
+        break;
+      case "update":
+        this.updateComment(data);
+        break;
+      case "destroy":
+        this.deleteComment(data.id);
+        break;
+      case "error":
+        this.handleError(data);
+        break;
+      default:
+        console.log("No match found");
+    }
   },
 
-  appendComment(data){
+  appendComment(element, action){
+    // commentSection is the parent element of all comment elements
     const commentSection = document.getElementById("comments");
+    
+    switch (action) {
+      case "create":
+        commentSection.insertAdjacentElement("afterbegin", element);
+        break;
+      case "update":
+        console.log("Comment updated");
+        break;
+      default:
+        console.log("No match found");
+    }
+  },
 
-    const currentUserElement = document.getElementById("current_user").href;
-    const currentUserId = parseInt(currentUserElement.split('/users/')[1]);
+  createComment(element, data){
+    // The current user id is found from the top right profile picture anchor tag
+    const currentUserId = parseInt(document.getElementById("current_user").href.split('/users/')[1]);
 
-    console.log(`this is you: ${currentUserId}`);
-    console.log(`this is the data sent in: ${data.user_id}`)
-
-    var div = document.createElement("div");
+    // The csrf authenticity token is grabbed from a meta tag in the head element
+    const csrfAuthenticityToken = document.getElementsByName('csrf-token')[0].content;
 
     if (currentUserId === data.user_id){
-      div.innerHTML = `
+      element.innerHTML = `
         <div>
           <h4>${data.display_name}</h4>
-          <p>${data.description}</p>
-        </div>
+          <span>Created: ${data.created_at} - Updated: ${data.updated_at}</span>
 
-        <div>
-          <button>Edit</button>
-          <p>
-            <a data-confirm="Are you sure?" 
-              rel="nofollow" 
-              data-method="delete" 
-              href="/comments/${data.id}"
-            >
-              delete
-            </a>
-          </p>
+          <form action="/comments/${data.id}" accept-charset="UTF-8" method="post">
+            <input type="hidden" name="authenticity_token" value="${csrfAuthenticityToken}">
+            <input type="hidden" name="_method" value="put">
+            <input type="hidden" name="comment[user_id]" value="${data.user_id}">
+            <input type="hidden" name="comment[project_id]" value="${data.project_id}">
+            
+            <textarea class="comment_description" name="comment[description]">${data.description}</textarea>
+
+            <div class="edit-delete">
+              <input type="submit" value="Update">
+
+              <span>
+                <a rel="nofollow" data-method="delete" href="/comments/${data.id}">Delete</a>
+              </span>
+            </div>
+          </form>
         </div>
-      `
+      `;
     } else {
-      div.innerHTML = `
+      element.innerHTML = `
         <div>
           <h4>${data.display_name}</h4>
-          <p>${data.description}</p>
+          <div class="comment-description">
+            <span>Posted: ${data.updated_at}</span>
+            <p>${data.description}</p>
+          </div>
         </div>
-      `
-    }
+      `;
+    };
+    this.appendComment(element, data.action)
+  },
 
-    commentSection.insertAdjacentHTML("afterbegin", div.innerHTML);
+  // updateComment works by selecting the correct comment, and calling createComment with
+  // the passed in values. createComment will just change the innerHTML of that element.
+
+  updateComment(data){
+    const commentElementDiv = document.querySelector(`#comment_${data.id}`);
+    this.createComment(commentElementDiv, data, data.action);
+  },
+  
+  deleteComment(id){
+    const grabCommentElementDiv = document.querySelector(`#comment_${id}`);
+    grabCommentElementDiv.remove();
+  },
+
+  handleError(data){
+    alert(data.error_message);
   }
 })
 
