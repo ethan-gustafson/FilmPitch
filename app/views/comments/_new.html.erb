@@ -1,6 +1,8 @@
 <div>
   <%= f.hidden_field :user_id, value: current_user.id %>
   <%= f.hidden_field :project_id, value: project.id%>
-  <%= f.label :comment, "Comment: " %>
-  <%= f.text_field :description, placeholder: "comment" %>
+  <div id="comment-fields">
+    <%= f.label :comment, "Comment:" %>
+    <%= f.text_area :description, placeholder: "Comment" %>
+  </div>
 </div>
