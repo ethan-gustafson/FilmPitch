@@ -65,11 +65,11 @@ consumer.subscriptions.create({channel: "CommentsChannel", id: id}, {
 
   appendComment(element, action){
     // commentSection is the parent element of all comment elements
-    const commentSection = document.getElementById("comments");
+    const commentHeader = document.querySelector("#comments h3");
     
     switch (action) {
       case "create":
-        commentSection.insertAdjacentElement("afterbegin", element);
+        commentHeader.insertAdjacentElement("afterend", element);
         break;
       case "update":
         console.log("Comment updated");
