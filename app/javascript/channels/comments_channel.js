@@ -4,6 +4,7 @@
 // Generated with `rails g channel Comments`
 
 import consumer from "./consumer";
+import moment from "moment";
 
 // Capture the project id by getting the url and splitting it between the route and number
 let id = window.location.href.split('/projects/')[1];
@@ -90,7 +91,7 @@ consumer.subscriptions.create({channel: "CommentsChannel", id: id}, {
       element.innerHTML = `
         <div>
           <h4>${data.display_name}</h4>
-          <span>Created: ${data.created_at} - Updated: ${data.updated_at}</span>
+          <span>Created: ${moment(data.created_at).format("llll")} - Updated: ${moment(data.updated_at).format("llll")}</span>
 
           <form action="/comments/${data.id}" accept-charset="UTF-8" method="post">
             <input type="hidden" name="authenticity_token" value="${csrfAuthenticityToken}">
@@ -115,7 +116,7 @@ consumer.subscriptions.create({channel: "CommentsChannel", id: id}, {
         <div>
           <h4>${data.display_name}</h4>
           <div class="comment-description">
-            <span>Posted: ${data.updated_at}</span>
+            <span>Posted: ${moment(data.updated_at).format("llll")}</span>
             <p>${data.description}</p>
           </div>
         </div>
