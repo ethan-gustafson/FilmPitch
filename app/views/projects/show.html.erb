@@ -1,32 +1,74 @@
 <main>
-  <article>
-    <section id="name-goal-filmtype">
-      <div id="project-name">
-        <h1><%= @project.name %></h1>
-      </div>
+  <div id="flex-project-media-comments-container">
 
-      <% if current_user_project? %>
+    <article id="project-media-container">
+      <section id="media-container">
         <div>
-          <p><%= link_to  "Edit", edit_project_path(@project) %></p>
+          <% if !@project.link.blank? %>
+            <div id="iframe-container">
+              <iframe id="project-link" src=<%= @project.link %>></iframe>
+            </div>
+          <% else %>
+            <% if @project.cover_image.attached?%>
+              <div 
+                id="background-image" 
+                style="background-image: url('<%= rails_blob_url(@project.cover_image) %>');">
+              </div>
+            <% else %>
+              <div 
+                id="background-image" 
+                style="background-image: url('<%= asset_path 'hacker_wallpaper.jpg' %>');">
+              </div>
+            <% end %>
+          <% end %>
         </div>
-      <% end %>
+      </section>
+    </article>
 
-      <div>
-        <h2>Film Type: <%= @project.film_type %></h2>
+    <article id="comments-container">
+      <div id="comments-align">
+
+        <section id="form-container">
+          <%= form_with model: Comment.new do |f| %>
+            <%= render partial: "comments/new", locals: {f: f, project: @project} %>
+            <div id="submit-container">
+              <%= f.submit "Submit", id: "comment-submit" %>
+            </div>
+          <% end %>
+        </section>
+
+        <section id="comments">
+          <h3>Comments:</h3>
+          <% if @comments %>
+            <% @comments.each do |comment|%>
+              <%= render partial: "comments/comment", locals: {comment: comment} %>
+            <% end %>
+          <% end %>
+        </section>
+
+      </div>
+    </article>
+  </div>
+
+  <article id="project-info">
+    <section>
+      <div id="title-author">
+        <h1><%= @project.name %></h1>
+        <p>By <%=@project.user.display_name%></p>
       </div>
 
-      <div>
-        <p>Goal: <%= humanized_money_with_symbol @project.goal %></p>
+      <div id="name-goal-filmtype">
+        <% if current_user_project? %>
+          <p><%= link_to  "Edit", edit_project_path(@project) %></p>
+        <% end %>
+        <p>Film Type: <%= @project.film_type %></p>
+        <p>Original Goal: <%= humanized_money_with_symbol @project.goal %></p>
+        <p>Donations: </p>
+        <p>Remaining:</p>
       </div>
     </section>
 
-    <% if !@project.link.blank? %>
-      <section>
-        <iframe src=<%= @project.link %>></iframe>
-      </section>
-    <% end %>
-
-    <section id="project-description-structure-themes">
+    <section id="project-info-container">
       <div>
         <h2>Description:</h2>
         <p><%= @project.description %></p>
@@ -43,25 +85,5 @@
       </div>
     </section>
 
-  </article>
-
-  <article>
-    <h3>Comments:</h3>
-    <section>
-      <%= form_with model: Comment.new do |f| %>
-        <%= render partial: "comments/new", locals: {f: f, project: @project} %>
-        <div>
-          <%= f.submit "Submit" %>
-        </div>
-      <% end %>
-    </section>
-
-    <% if @comments %>
-      <section id="comments">
-        <% @comments.each do |comment|%>
-          <%= render partial: "comments/comment", locals: {comment: comment} %>
-        <% end %>
-      </section>
-    <% end %>
   </article>
 </main>
