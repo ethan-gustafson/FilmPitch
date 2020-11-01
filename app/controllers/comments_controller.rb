@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+  
   def create
     comment = Comment.new(comment_params)
 
@@ -10,33 +11,45 @@ class CommentsController < ApplicationController
 
       # To enqueue a job to be performed as soon as the queuing system is free, use:
       # .perform_later(record)
+      comment_values = comment.as_json
+      comment_values["display_name"] = comment.user.display_name
+      comment_values["action"] = "create"
 
       CommentBroadcastJob.perform_later(
         comment.project, 
-        {
-          id: comment.id,
-          description: comment.description,
-          user_id: comment.user_id,
-          project_id: comment.project_id,
-          display_name: comment.user.display_name
-        }.as_json
+        comment_values
       )
-
     else
-      redirect_to project_path(comment.project)
+      CommentBroadcastJob.perform_later(
+        comment.project, {
+          action: "error",
+          error_message: "There was an issue posting the comment"
+        }
+      )
     end
   end
   
   def update
-    comment = Comment.find_by_id(params[:id])
+    @comment = Comment.find_by_id(params[:id])
     
-    if current_user_comment?
-      if comment.update(comment_params)
-        comment.save
-        redirect_to project_path(comment.project)
-      end
+    if current_user_comment? && @comment.update(comment_params)
+
+      comment_values = @comment.as_json
+      comment_values["display_name"] = @comment.user.display_name
+      comment_values["action"] = "update"
+
+      CommentBroadcastJob.perform_later(
+        @comment.project, 
+        comment_values
+      )
     else
-      redirect_to project_path(comment.project)
+      CommentBroadcastJob.perform_later(
+        @comment.project, {
+          comment_id: @comment.id,
+          action: "error",
+          error_message: "There was an issue updating the comment"
+        }
+      )
     end
   end
 
@@ -46,19 +59,26 @@ class CommentsController < ApplicationController
     
     if current_user_comment?
       @comment.destroy
-      redirect_to project_path(project)
+      CommentBroadcastJob.perform_later(
+        project, {
+          id: params[:id],
+          action: "destroy"
+        }
+      )
     else
-      redirect_to project_path(project)
+      CommentBroadcastJob.perform_later(
+        project, {
+          id: params[:id],
+          action: "error",
+          error_message: "There was an issue deleting the comment"
+        }
+      )
     end
   end
 
   private
 
   def comment_params
-    params.require(:comment).permit(
-      :description,
-      :user_id,
-      :project_id
-    )
+    params.require(:comment).permit(:description, :user_id, :project_id)
   end
 end
