@@ -1,18 +1,17 @@
-<div>
+<div id="comment_<%=comment.id%>">
   <div>
     <h4><%= comment.user.display_name %></h4>
-    <p><%= comment.description %></p>
+    <% if current_user.id == comment.user_id %>
+      <span>Created: <%= comment.created_at.strftime("%a %m/%d/%y") %> - Updated: <%= comment.updated_at.strftime("%a %m/%d/%y") %></span>
+      <div>
+        <%= render partial: "comments/edit", locals: { comment: comment} %>
+      </div>
+    <% else %>
+      <span>Posted: <%= comment.updated_at.strftime("%a %m/%d/%y") %></span>
+      <div class="comment-description">
+        <p><%= comment.description %></p>
+      </div>
+    <% end %>
+    
   </div>
-
-  <% if current_user.id == comment.user_id %>
-    <div>
-      <button>Edit</button>
-      <p>
-        <%= link_to 'delete', 
-        { controller: "comments", action: "destroy", id: comment.id }, 
-        data: { confirm: 'Are you sure?' }, 
-        method: :delete %>
-      </p>
-    </div>
-  <% end %>
 </div>
