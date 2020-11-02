@@ -1,7 +1,6 @@
 class ApplicationController < ActionController::Base
   include ApplicationHelper
   include ProjectsHelper
-  include CommentsHelper
 
   # protect_from_forgery(options = {})
   # Turn on request forgery protection. Bear in mind that GET and HEAD requests are not checked.
