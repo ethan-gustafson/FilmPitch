@@ -3,10 +3,7 @@ class CommentsController < ApplicationController
   def create
     comment = Comment.new(comment_params)
 
-    if comment.valid?
-       
-       comment.save
-
+    if comment.valid? then comment.save
       # You have to use methods found in ActiveJob::Core::ClassMethods -> 
       # https://edgeapi.rubyonrails.org/classes/ActiveJob/Core/ClassMethods.html
 
@@ -63,8 +60,7 @@ class CommentsController < ApplicationController
     @comment = Comment.find_by_id(params[:id])
     project = @comment.project
     
-    if current_user_comment?
-      @comment.destroy
+    if current_user_comment? then @comment.destroy
       CommentBroadcastJob.perform_later(
         project, {
           id: params[:id],
