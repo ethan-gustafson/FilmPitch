@@ -7,6 +7,6 @@ class GenresController < ApplicationController
   def show
     genre = Project.genres[params[:name].to_sym]
 
-    @projects = Project.find_projects_by_attr(key: :genre, value: genre)
+    @projects = Project.where(genre: genre)
   end
 end

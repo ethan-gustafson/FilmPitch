@@ -23,7 +23,7 @@ class ProjectVariationsController < ApplicationController
   def film_type
     type = Project.film_types[params[:type].to_sym]
 
-    @projects = Project.find_projects_by_attr(key: :film_type, value: type).last(10)
+    @projects = Project.where(film_type: type).last(10)
   end
   
 end

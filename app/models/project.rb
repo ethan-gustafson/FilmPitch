@@ -62,12 +62,6 @@ class Project < ApplicationRecord
     end
   end
 
-  def self.find_projects_by_attr(key:, value:)
-    # key = :genre, value = "Comedy"
-    # where(:genre => "Comedy")
-    where(key => value)
-  end
-
   def self.most_popular
     joins(:comments).select(
       "projects.*, count(comments.id) AS comments_count"
