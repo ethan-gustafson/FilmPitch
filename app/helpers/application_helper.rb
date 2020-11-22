@@ -1,13 +1,4 @@
 module ApplicationHelper
-
-  def current_user_project?
-    current_user.id == @project.user_id
-  end
-
-  def current_user_comment?
-    current_user.id == @comment.user_id
-  end
-
   def add_to_hash(hash = {}, **values)
     if hash.class.eql?(Hash)
       values.each do |k,v| 
@@ -22,5 +13,4 @@ module ApplicationHelper
       end
     end
   end
-
 end
