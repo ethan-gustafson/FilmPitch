@@ -63,7 +63,7 @@ Rails.application.routes.draw do
       get '/new-projects', to: 'project_variations#new_projects', as: 'newly_created_projects'
       get '/popular-projects', to: 'project_variations#popular_projects', as: 'popular_projects'
       get '/fully-funded', to: 'project_variations#fully_funded', as: 'fully_funded_projects'
-      get '/film-types', to: 'project_variations#film_types', as: 'film_types_projects'
+      get '/film-types', to: 'project_variations#film_types_projects', as: 'film_types_projects'
       get '/film-types/:type', to: 'project_variations#film_type', as: 'film_type_projects'
     end
   end
