@@ -1,12 +1,10 @@
 class GenresController < ApplicationController
-
   def index
-    @genres = Project.genres
+    @genres = genres
   end
 
   def show
-    genre = Project.genres[params[:name].to_sym]
-
+    genre = genres[params[:name].to_sym]
     @projects = Project.where(genre: genre)
   end
 end
