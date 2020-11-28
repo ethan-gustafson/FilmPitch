@@ -2,7 +2,9 @@ class ProjectsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @projects = Project.includes(:user).last(10)
+    @project_info = "index"
+    @projects = Project.includes(:user, {cover_image_attachment: :blob}).last(10)
+    render "project_variations/shared_project_variations"
   end
 
   def new
@@ -11,7 +13,6 @@ class ProjectsController < ApplicationController
   
   def create
     @project = Project.new(project_params)
-
     if @project.valid?
       @project.save
       redirect_to project_path(@project)
@@ -32,7 +33,6 @@ class ProjectsController < ApplicationController
   def update
     find_project_by_id
     current_user_project?
-
     if @project.update(project_params)
       redirect_to project_path(@project)
     else
@@ -43,7 +43,6 @@ class ProjectsController < ApplicationController
   def destroy
     find_project_by_id
     @project.destroy
-
     redirect_to root_path
   end
 
