@@ -15,7 +15,6 @@ class Users::SessionsController < Devise::SessionsController
 
   def show
     redirect_to new_user_registration_path if !user_signed_in?
-    
     @featured = Project.includes([:user, {cover_image_attachment: :blob}]).last
     @projects = Project.includes([:user, {cover_image_attachment: :blob}]).first(10)
   end
