@@ -1,0 +1,33 @@
+#types-genres-list-container{
+  width: 90%;
+  height: 500px;
+  margin: 0 auto;
+
+  #types-genres-list{
+    height: 100%;
+    width: 100%;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+    padding-inline-start: 0;
+    li{
+      margin: 1%;
+      width: 10%;
+      height: 50px;
+      padding: 10px 20px;
+
+      font-size: large;
+      list-style-type: none;
+      border-radius: 10px;
+      box-shadow: 0px 1px 3px grey;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
