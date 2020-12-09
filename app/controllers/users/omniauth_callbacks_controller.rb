@@ -2,22 +2,17 @@
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def twitter
     @user = User.from_omniauth(request.env["omniauth.auth"])
-    
+
     # .persisted? returns true if the record is persisted, i.e. it's not a new record and it was not destroyed, otherwise returns false.
     if @user.persisted?
-      image = open(request.env["omniauth.auth"].info.image)
-      @user.profile_image.attach(
-        io: image, 
-        filename: "#{@user.first_name}_#{@user.last_name}_image.jpg", 
-        content_type: image.content_type
-      )
       # Sign in a user and tries to redirect first to the stored location and
       # then to the url specified by after_sign_in_path_for. It accepts the same
       # parameters as the sign_in method.
       sign_in_and_redirect @user, event: :authentication #this will throw if @user is not activated
       set_flash_message(:notice, :success, kind: "Twitter") if is_navigational_format?
     else
-      session["devise.twitter_data"] = request.env["omniauth.auth"].except(:extra) # Removing extra as it can overflow some session stores
+      # Removing extra as it can overflow some session stores, but it may still not be enough.
+      session["devise.twitter_data"] = request.env["omniauth.auth"]["info"]
       redirect_to new_user_registration_path
     end
   end
