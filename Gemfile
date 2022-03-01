@@ -18,7 +18,7 @@ gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.7'
 # Use Active Storage variant
-gem 'image_processing', '~> 1.2'
+gem 'image_processing', '~> 1.12'
 # Use Redis adapter to run Action Cable in production
 gem 'redis', '~> 4.0'
 # Integration of RubyMoney - Money with Rails. Read more: https://github.com/RubyMoney/money-rails
